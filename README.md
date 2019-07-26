@@ -9,3 +9,6 @@ Click [here](https://jadonwolffs.github.io/csc3003s-capstone/) to check out the 
 * [A'aisha Dout](https://github.com/adout1902)
 * [Kiara Beilinsohn](https://github.com/kiaraBeilinsohn)
 * [Jadon Wolffs](https://github.com/jadonwolffs)
+
+## Things to inspire
+* [Information is Beautiful](https://informationisbeautiful.net/)
