@@ -10,5 +10,16 @@ Click [here](https://jadonwolffs.github.io/csc3003s-capstone/) to check out the 
 * [Kiara Beilinsohn](https://github.com/kiaraBeilinsohn)
 * [Jadon Wolffs](https://github.com/jadonwolffs)
 
+## Requirements
+* [csvkit](https://github.com/wireservice/csvkit) (not included in requirements.txt, has to be set up manually)
+* Django==2.2.3
+* gunicorn==19.9.0
+* Pillow==5.2.0
+* psycopg2==2.7.5
+* psycopg2-binary==2.7.5
+* pytz==2019.1
+* sqlparse==0.3.0
+
 ## Things to inspire
 * [Information is Beautiful](https://informationisbeautiful.net/)
+
