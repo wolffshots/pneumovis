@@ -1,0 +1,52 @@
+
+*{
+    background: linear-gradient(to bottom, #63adac,#7e63ad ) fixed;
+    font-family: 'Poppins', sans-serif;
+    color: white;
+    text-align: center;
+}
+
+
+header{
+
+    font-size: 15vw;
+    padding-top:50px;
+
+}
+
+#virus-gif{
+    padding-top:0px;
+    text-align: center;
+}
+
+#buttons{
+    display: block;
+    padding-top: 100px;
+    text-align: center
+}
+
+.choice{
+
+    display: block;
+    widows: 500px;
+    padding: 5px;
+    background: white;
+    color: #63adac;
+    font-size: 35px;
+    width: 500px;
+    text-align: center;
+    margin: 50px 10px;
+    transition: all 0.3s ease;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+    border-radius: 25px;
+
+}
+
+.choice:hover{ 
+    background:#63adac;
+    color:white;
+}
+
