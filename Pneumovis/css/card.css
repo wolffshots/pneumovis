@@ -1,0 +1,31 @@
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  transition: 0.3s;
+  width: 500px;
+  length: 500px;
+  border-radius: 5px; /* 8px rounded corners */
+  margin-left: auto;
+  margin-right: auto;
+
+
+.cards{
+
+	  position: relative;
+			
+}
+
+}
+
+/* Add rounded corners to the top left and the top right corner of the image */
+img {
+  margin-left: 120px;
+  border-radius: 3px 3px 0 0;
+
+}
+.your-element {
+	overflow: scroll;
+	/* or */
+	overflow-x: scroll;
+	overflow-y: scroll;
+	position: relative;
+}
