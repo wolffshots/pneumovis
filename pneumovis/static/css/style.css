@@ -105,6 +105,10 @@ footer#main-footer {
     width: 100%;
 }
 
-element.style {
-    width: 25% !important;
+#showcase {
+    background: hsla(0, 0%, 95%, 1);
+    position: relative;
+    min-height: -webkit-fill-available;
+    color: #fff;
+    padding-top: 6rem;
 }
