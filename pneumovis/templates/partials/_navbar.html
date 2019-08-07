@@ -1,0 +1,92 @@
+{% load static %}
+<!-- Navbar -->
+<!-- <div class="w3-top" id="myNavbar">
+    <div class="w3-bar w3-black w3-opacity-on w3-hover-opacity-on w3-center w3-small">
+        <a href="{%url 'index'%}" class="w3-bar-item w3-button" style="width:25% !important">HOME</a>
+        <a href="Login.html" class="w3-bar-item w3-button" style="width:25% !important">LOGIN</a>
+        <a href="About.html" class="w3-bar-item w3-button" style="width:25% !important">ABOUT</a>
+        <a href="Statistics.html" class="w3-bar-item w3-button" style="width:25% !important">STATISTICS</a>
+    </div>
+</div> -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary sticky-top">
+    <div class="container"> <!-- this makes the branding go back to the home page -->
+        <!-- <a class="navbar-brand" href="{% url 'index'%}"> 
+            <img src="{% static 'img/microscope.png' %}" class="logo" alt="">
+        </a> -->
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <ul class="navbar-nav">
+                <li
+                    
+                    {% if '/' == request.path %}
+                    class="nav-item active mr-3"
+                    {% else %}
+                    class="nav-item mr-3"
+                    {% endif %}
+                >
+                <!-- this if else is what highlights navbar items -->
+                    <!-- <a class="nav-link" href="{% url 'index' %}">Home</a> -->
+                    <a href="{%url 'index'%}" class="nav-link" style="width:25% !important">HOME</a>
+                </li>
+                <li {% if 'about' in request.path %}
+                    class="nav-item active mr-3"
+                    {% else %}
+                    class="nav-item mr-3"
+                    {% endif %}
+                >
+                    <!-- <a class="nav-link" href="{% url 'about' %}">About</a> -->
+                    <a href="{% url 'about' %}" class="nav-link" style="width:25% !important">ABOUT</a>
+                </li>
+                <li {% if 'listings' in request.path %}
+                    class="nav-item active mr-3"
+                    {% else %}
+                    class="nav-item mr-3"
+                    {% endif %}
+                >
+                </li>
+            </ul>
+
+            <ul class="navbar-nav ml-auto">
+                {%if user.is_authenticated%}
+                <!-- logout and dashboard links -->
+                    <li class="nav-item mr-3">
+                        <a href="javascript:{document.getElementById('logout').submit()}" class="nav-link">
+                            <i class="fas fa-sign-out-alt">Logout</i>
+                        </a>
+                        <form action="{%url 'logout'%}" method="POST" id="logout">
+                            {% csrf_token %}
+                            <input type="hidden">
+                        </form>
+                    </li>
+                {%else%}
+                    <li
+                    {% if 'register' in request.path %}
+                        class="nav-item active mr-3"
+                        {% else %}
+                        class="nav-item mr-3"
+                        {% endif %}
+                    >
+                        <!-- replace links with logout and dashboard -->
+                        <a class="nav-link" href="{% url 'register'%}">
+                            <i class="fas fa-user-plus"></i> Register</a>
+                    </li>
+                    <li
+                    {% if 'login' in request.path %}
+                        class="nav-item active mr-3"
+                        {% else %}
+                        class="nav-item mr-3"
+                        {% endif %}
+                    >
+                    <!-- these conditionals are to highlight if on that page -->
+                        <a class="nav-link" href="{% url 'login'%}">
+                            <i class="fas fa-sign-in-alt"></i>
+
+                            Login</a>
+                    </li>
+                {%endif%}
+            </ul>
+        </div>
+    </div>
+</nav>

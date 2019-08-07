@@ -20,17 +20,23 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/2.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'katr_z$pr$jxxo93*r4sommi$h^-6ft#@b5*!-c7bzn5yaew7y'
+# SECRET_KEY = 'random_string'
+# Moved to local settings for security
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+# DEBUG = boolean_value
+# Moved to local settings for security
 
-ALLOWED_HOSTS = []
+
+# ALLOWED_HOSTS = [list_of_strings]
+# Moved to local settings for security
 
 
 # Application definition
 
 INSTALLED_APPS = [
+    'pages.apps.PagesConfig',  # found in pages/apps.py
+    'django.contrib.humanize',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -51,10 +57,26 @@ MIDDLEWARE = [
 
 ROOT_URLCONF = 'pneumovis.urls'
 
+# TEMPLATES = [
+#     {
+#         'BACKEND': 'django.template.backends.django.DjangoTemplates',
+#         'DIRS': [],
+#         'APP_DIRS': True,
+#         'OPTIONS': {
+#             'context_processors': [
+#                 'django.template.context_processors.debug',
+#                 'django.template.context_processors.request',
+#                 'django.contrib.auth.context_processors.auth',
+#                 'django.contrib.messages.context_processors.messages',
+#             ],
+#         },
+#     },
+# ]
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        # tell django to look at root/templates
+        'DIRS': [os.path.join(BASE_DIR, 'templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -73,12 +95,13 @@ WSGI_APPLICATION = 'pneumovis.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/2.2/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-    }
-}
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+#     }
+# }
+# Moved to local settings for security
 
 
 # Password validation
@@ -117,4 +140,30 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.2/howto/static-files/
 
+# Static files
+# when you deploy app you collect static to a specific dir and that's set here
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 STATIC_URL = '/static/'
+STATICFILES_DIRS = [  # paths to other static resources
+    os.path.join(BASE_DIR, 'pneumovis/static')
+]
+
+# Email settings
+# Moved to local settings for security
+
+# Media folder settings
+# This points the media folder to be in the root of the project
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+MEDIA_URL = '/media/'
+
+# Messages
+from django.contrib.messages import constants as messages
+MESSAGE_TAGS = {
+    messages.ERROR: 'danger'
+}
+
+# This try-except is what brings in the local settings
+try:
+    from .local_settings import *
+except ImportError:
+    pass

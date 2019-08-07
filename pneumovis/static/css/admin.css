@@ -1,0 +1,26 @@
+#header {
+    height: 100px;
+    background: #10184e;
+    color: #fff;
+}
+
+#branding h1{
+    color: #fff;
+}
+
+a:link,
+a:visited{
+    color:#10184e;
+}
+div.breadcrumbs{/*the breadcrumb area*/
+    background: #30caa0;
+    color: #10184e;
+}
+div.breadcrumbs a {/*the breadcrumb links*/
+    color: black;
+}
+
+.module h2, .module caption, .inline-group h2{/*the boxes that have the object names*/
+    color: white;
+    background: #10184e
+}

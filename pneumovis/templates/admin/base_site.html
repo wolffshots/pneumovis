@@ -1,0 +1,14 @@
+{% extends 'admin/base.html' %}
+{% load static %}
+<!-- extends the admin base page and loads our static assets to be used -->
+
+{% block branding %}
+    <h1 id="head">
+        <!-- BT Logo and name -->
+        <img src="{%static 'img/microscope.png'%}" alt="BT Real Estate" height="100" width="100">
+    </h1>
+{% endblock %}
+
+{%block extrastyle%}
+<link rel="stylesheet" href="{% static 'css/admin.css'%}">
+{%endblock%}
