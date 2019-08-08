@@ -1,6 +1,7 @@
 {% extends 'base.html' %}
 
 {% load humanize %}
+{% load static %}
 <!-- Dynamic page title -->
 {%block title%}| Index page{%endblock%}
 
@@ -10,10 +11,40 @@
     <div class="container text-center">
         <div class="home-search p-5">
             <div class="overlay p-5">
+                    <div class="card" style=""style="color:black;">
+                        <div class="card-header"style="color:black;">Card header</div>
+                        
+                        <div class="card-body">
+                            <h5 class="card-title"style="color:black;">Card title</h5>
+                            <h6 class="text-secondary">Big graph</h6>
+                            
+                            <p class="card-text" style="color:black;">Example graph content
+                                <img src="{% static 'img/graph.png' %}" />
+                            </p>
+                        </div>
+                        <div class="card-footer"style="color:black;">
+                            <div class="col-sm-12 d-flex pb-3">
+                            <div class="card">
+                                <div class="card-header" style="color:black;">Small graph 1 header</div>
+                                <!-- <h5 class="card-title" style="color:black;">Card title</h5> -->
+                                <!-- Card content -->
+                                <img src="{% static 'img/graph.png' %}"/>
+                            </div>
+                            <div class="card">
+                                <div class="card-header" style="color:black;">Small graph 2 header</div>
+                                <img src="{% static 'img/graph.png' %}"/>
+                            </div>
+                            <div class="card">
+                                <div class="card-header" style="color:black;">Small graph 3 header</div>
+                                <img src="{% static 'img/graph.png' %}" />
+                            </div>
+                            </div>
+                        </div>
+                    </div>
                 <h1 class="display-4 mb-4">
                     PneumoVis Overview page
                 </h1>
-                <p class="lead">Main graph here?
+                <p class="lead">This block of text is just to demonstrate scrolling and could act as a dynamic detail panel about a selected graph
                 </p>
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla consequat venenatis aliquet. Quisque ullamcorper
                 fermentum maximus. Aliquam accumsan finibus bibendum. Pellentesque habitant morbi tristique senectus et netus et
