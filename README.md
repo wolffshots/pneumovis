@@ -5,7 +5,8 @@ Click [here](http://165.73.96.80) to check out the live site
 
 ## Installation
 1.  Clone the repo and navigate into it
-2.  Create a new Python virtual environment (`python -m venv nameofvenv` will create a virtual environment name "nameofvenv")
+2.  Create a new Python virtual environment
+    *   `python -m venv nameofvenv` - will create a virtual environment name "nameofvenv"
 3.  Activate the virtual environment 
     *   Linux and MacOS: `source nameofvenv/bin/activate`
     *   Windows: `.\nameofvenv\Scripts\activate`
