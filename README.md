@@ -6,7 +6,7 @@ Click [here](http://165.73.96.80) to check out the live site
 ## Installation
 1.  Clone the repo and navigate into it
 2.  Create a new Python virtual environment
-    *   `python -m venv nameofvenv` - will create a virtual environment name "nameofvenv"
+    *   `python -m venv nameofvenv` - will create a virtual environment named "nameofvenv"
 3.  Activate the virtual environment 
     *   Linux and MacOS: `source nameofvenv/bin/activate`
     *   Windows: `.\nameofvenv\Scripts\activate`
@@ -20,9 +20,13 @@ Click [here](http://165.73.96.80) to check out the live site
     *   `python manage.py runserver`
 
 ## Docs
+### Official documentation
 *   [django](https://docs.djangoproject.com/en/2.2/)
 *   [dash plotly](https://dash.plot.ly/)
 *   [django-plotly-dash](https://django-plotly-dash.readthedocs.io/en/latest/index.html)
+### Unofficial resources
+*   [Django cheatsheet gist](https://gist.github.com/bradtraversy/0df61e9b306db3d61eb24793b6b7132d)
+*   [Django deployment gist](https://gist.github.com/bradtraversy/cfa565b879ff1458dba08f423cb01d71)
 
 ## Credits
 * [A'aisha Dout](https://github.com/adout1902)
