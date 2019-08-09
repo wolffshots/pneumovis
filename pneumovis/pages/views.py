@@ -4,53 +4,7 @@ from django.shortcuts import render, redirect
     
 from django.contrib import messages, auth
 from django.contrib.auth.models import User
-# from listings.choices import price_choices, bedroom_choices, state_choices
-
-# from listings.models import listing as Listing
-# from realtors.models import Realtor
-
-# Create your views here.
-import dash
-import dash_core_components as dcc
-import dash_html_components as html
-
-from django_plotly_dash import DjangoDash
-
-app = DjangoDash('SimpleExample')
-
-app.layout = html.Div([
-    dcc.RadioItems(
-        id='dropdown-color',
-        options=[{'label': c, 'value': c.lower()}
-                 for c in ['Red', 'Green', 'Blue']],
-        value='red'
-    ),
-    html.Div(id='output-color'),
-    dcc.RadioItems(
-        id='dropdown-size',
-        options=[{'label': i, 'value': j}
-                 for i, j in [('L', 'large'), ('M', 'medium'), ('S', 'small')]],
-        value='medium'
-    ),
-    html.Div(id='output-size')
-
-])
-
-
-@app.callback(
-    dash.dependencies.Output('output-color', 'children'),
-    [dash.dependencies.Input('dropdown-color', 'value')])
-def callback_color(dropdown_value):
-    return "The selected color is %s." % dropdown_value
-
-
-@app.callback(
-    dash.dependencies.Output('output-size', 'children'),
-    [dash.dependencies.Input('dropdown-color', 'value'),
-     dash.dependencies.Input('dropdown-size', 'value')])
-def callback_size(dropdown_color, dropdown_size):
-    return "The chosen T-shirt is a %s %s one." % (dropdown_size,
-                                                   dropdown_color)
+from .dash_app import * # this imports the app from a separate file (just for easier editing and modularity)
 
 def index(request):
     # listings = Listing.objects.order_by(
