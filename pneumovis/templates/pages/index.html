@@ -12,16 +12,16 @@
     <div class="container text-center">
         <div class="home-search p-5">
             <div class="overlay p-5">
-                    <div class="card" style=""style="color:black;">
+                    <div class="card" style="color:black;">
                         <div class="card-header"style="color:black;">Card header</div>
                         
                         <div class="card-body">
                             <h5 class="card-title"style="color:black;">Card title</h5>
                             <h6 class="text-secondary">Big graph</h6>
-                            
+                            {% plotly_app name="SimpleExample" ratio=1 %}
                             <p class="card-text" style="color:black;">Example graph content
                                 <!-- <img src="{% static 'img/graph.png' %}" /> -->                             
-                                {% plotly_app name="SimpleExample" %}
+                                
                             </p>
                         </div>
                         <div class="card-footer"style="color:black;">
@@ -31,17 +31,17 @@
                                 <!-- <h5 class="card-title" style="color:black;">Card title</h5> -->
                                 <!-- Card content -->
                                 <!-- <img src="{% static 'img/graph.png' %}"/> -->
-                                {% plotly_app name="SimpleExample" %}
+                                {% plotly_app name="SimpleExample" use_frameborder="0" ratio=1%}
                             </div>
                             <div class="card">
                                 <div class="card-header" style="color:black;">Small graph 2 header</div>
                                 <!-- <img src="{% static 'img/graph.png' %}"/> -->
-                                {% plotly_app name="SimpleExample" %}
+                                {% plotly_app name="SimpleExample" ratio=1%}
                             </div>
                             <div class="card">
                                 <div class="card-header" style="color:black;">Small graph 3 header</div>
                                 <!-- <img src="{% static 'img/graph.png' %}" /> -->
-                                {% plotly_app name="SimpleExample" %}
+                                {% plotly_app name="SimpleExample" ratio=1%}
                                 
                             </div>
                             </div>
