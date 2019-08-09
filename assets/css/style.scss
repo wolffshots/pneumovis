@@ -23,7 +23,10 @@ a {
     font-weight: 400;
     text-decoration: none;
 }
-
 a:hover {
     color: #da98ef;
+}
+
+#header nav li a:hover {
+    background-color: #da98ef;
 }
