@@ -18,8 +18,10 @@ Click [here](http://165.73.96.80) to check out the live site
 7.  Run the server
     *   `python manage.py runserver`
 
-
-## Description
+## Docs
+*   [django](https://docs.djangoproject.com/en/2.2/)
+*   [dash plotly](https://dash.plot.ly/)
+*   [django-plotly-dash](https://django-plotly-dash.readthedocs.io/en/latest/index.html)
 
 ## Credits
 * [A'aisha Dout](https://github.com/adout1902)
