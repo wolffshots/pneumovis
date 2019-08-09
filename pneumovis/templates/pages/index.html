@@ -2,6 +2,7 @@
 
 {% load humanize %}
 {% load static %}
+{% load plotly_dash %}
 <!-- Dynamic page title -->
 {%block title%}| Index page{%endblock%}
 
@@ -19,7 +20,8 @@
                             <h6 class="text-secondary">Big graph</h6>
                             
                             <p class="card-text" style="color:black;">Example graph content
-                                <img src="{% static 'img/graph.png' %}" />
+                                <!-- <img src="{% static 'img/graph.png' %}" /> -->                             
+                                {% plotly_app name="SimpleExample" %}
                             </p>
                         </div>
                         <div class="card-footer"style="color:black;">
@@ -28,15 +30,19 @@
                                 <div class="card-header" style="color:black;">Small graph 1 header</div>
                                 <!-- <h5 class="card-title" style="color:black;">Card title</h5> -->
                                 <!-- Card content -->
-                                <img src="{% static 'img/graph.png' %}"/>
+                                <!-- <img src="{% static 'img/graph.png' %}"/> -->
+                                {% plotly_app name="SimpleExample" %}
                             </div>
                             <div class="card">
                                 <div class="card-header" style="color:black;">Small graph 2 header</div>
-                                <img src="{% static 'img/graph.png' %}"/>
+                                <!-- <img src="{% static 'img/graph.png' %}"/> -->
+                                {% plotly_app name="SimpleExample" %}
                             </div>
                             <div class="card">
                                 <div class="card-header" style="color:black;">Small graph 3 header</div>
-                                <img src="{% static 'img/graph.png' %}" />
+                                <!-- <img src="{% static 'img/graph.png' %}" /> -->
+                                {% plotly_app name="SimpleExample" %}
+                                
                             </div>
                             </div>
                         </div>
@@ -53,30 +59,6 @@
                 fermentum sodales turpis nec blandit. Fusce ullamcorper ullamcorper maximus. Aenean lobortis eros non turpis
                 sollicitudin dictum. Aenean cursus blandit magna, ac blandit purus efficitur vitae. Cras ultrices justo a nulla
                 volutpat, nec tincidunt mauris faucibus.</p>
-                <p>Nulla facilisi. Suspendisse fringilla quam vel felis pellentesque, eget laoreet lacus ullamcorper. Etiam semper tellus
-                non felis venenatis, a eleifend lacus dapibus. Cras quis vulputate nulla, a tincidunt ante. Cras porta sem sed lacus
-                tempus gravida. Donec vel metus sed metus dignissim vehicula vel ac enim. Ut rhoncus elit id dolor iaculis volutpat.
-                Morbi augue odio, iaculis at viverra in, imperdiet auctor erat. Integer imperdiet et eros quis euismod. Donec magna
-                nunc, condimentum in sapien non, euismod ultrices orci. Class aptent taciti sociosqu ad litora torquent per conubia
-                nostra, per inceptos himenaeos.</p>
-                <p>Cras eu ullamcorper enim, eget vehicula orci. Curabitur semper sem sit amet diam vulputate, in finibus arcu molestie.
-                Maecenas ac odio sem. Phasellus finibus lacus et ipsum vestibulum, sed laoreet risus rutrum. Nunc volutpat ligula et
-                scelerisque faucibus. Integer bibendum nunc vitae magna interdum, at finibus neque semper. Etiam at urna eget orci
-                pharetra placerat eget eget orci. Duis ligula nibh, luctus eu volutpat at, interdum eget sapien. Pellentesque faucibus
-                sollicitudin ultrices. Morbi neque mi, dapibus ac mi id, volutpat ullamcorper tellus. Etiam libero augue, bibendum ac
-                aliquet quis, placerat accumsan metus. Fusce auctor elit ut tortor elementum, nec dictum tortor laoreet.</p>
-                <p>Etiam tincidunt dolor eu mauris sagittis, in ultricies dui congue. Sed sollicitudin, tortor nec placerat venenatis,
-                turpis nisi egestas velit, non tincidunt velit risus nec mi. Nullam maximus eu augue eu mattis. Nunc dignissim, risus
-                nec posuere iaculis, nisl sem viverra mi, nec tempus lectus mauris quis est. Cras porttitor sapien non ex gravida, a
-                venenatis dolor consequat. Phasellus in euismod lorem, eu ornare nunc. Etiam porta turpis vitae mi volutpat faucibus.
-                Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Suspendisse est diam,
-                gravida in eleifend nec, eleifend et purus. Nam vulputate magna quis faucibus pellentesque.</p>
-                <p>Integer tortor velit, elementum non felis ut, aliquet porttitor neque. Proin nec egestas massa. Integer nisi ipsum,
-                hendrerit vitae tempor id, dignissim a mauris. Vestibulum tincidunt sodales lectus ac bibendum. Sed nec felis
-                vestibulum, laoreet nisl sed, vestibulum turpis. Etiam accumsan at elit et gravida. Duis a felis id metus aliquet
-                scelerisque convallis vel sem. Pellentesque sit amet ligula a massa dictum hendrerit. Fusce vel ex rutrum, mattis nisl
-                et, maximus odio. Interdum et malesuada fames ac ante ipsum primis in faucibus. Morbi eu tristique enim, eu tincidunt
-                mi. Phasellus mollis congue erat, sit amet placerat diam tincidunt imperdiet.</p>
             </div>
         </div>
     </div>

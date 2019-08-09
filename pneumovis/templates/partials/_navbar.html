@@ -1,14 +1,15 @@
 {% load static %}
 <nav class="navbar navbar-expand-lg navbar-dark bg-primary sticky-top">
     <div class="container"> <!-- this makes the branding go back to the home page -->
-        <!-- <a class="navbar-brand" href="{% url 'index'%}"> 
-            <img src="{% static 'img/microscope.png' %}" class="logo" alt="">
-        </a> -->
+        <a class="navbar-brand" href="{% url 'index'%}"style="width: 2%; "> 
+            <img src="{% static 'img/microscope.png' %}" class="logo" alt="" style="height:100%; width:100%;">
+            <a href="{%url 'index'%} " style="padding-right:30px; color:white;">PneumoVis</a>
+        </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-            <ul class="navbar-nav">
+            <ul class="navbar-nav" style="width: 100%;">
                 <li
                     
                     {% if '/' == request.path %}
@@ -19,16 +20,12 @@
                 >
                 <!-- this if else is what highlights navbar items -->
                     <!-- <a class="nav-link" href="{% url 'index' %}">Home</a> -->
-                    <a href="{%url 'index'%}" class="nav-link" style="width:25% !important">HOME</a>
+                    <a href="{%url 'index'%}" class="nav-link" style="width:100% !important">HOME</a>
                 </li>
-                <li {% if 'about' in request.path %}
-                    class="nav-item active mr-3"
-                    {% else %}
-                    class="nav-item mr-3"
-                    {% endif %}
+                <li {% if 'about' in request.path %} class="nav-item active mr-3" {% else %} class="nav-item mr-3" {% endif %}
                 >
                     <!-- <a class="nav-link" href="{% url 'about' %}">About</a> -->
-                    <a href="{% url 'about' %}" class="nav-link" style="width:25% !important">ABOUT</a>
+                    <a href="{% url 'about' %}" class="nav-link" style="width:100% !important">ABOUT</a>
                 </li>
                 <li {% if 'listings' in request.path %}
                     class="nav-item active mr-3"
@@ -36,6 +33,7 @@
                     class="nav-item mr-3"
                     {% endif %}
                 >
+                <a href="{%url 'index'%}" class="nav-link" style="width:100% !important">Another link?</a>
                 </li>
             </ul>
 
@@ -43,7 +41,7 @@
                 {%if user.is_authenticated%}
                 <!-- logout and dashboard links -->
                     <li class="nav-item mr-3">
-                        <a href="javascript:{document.getElementById('logout').submit()}" class="nav-link">
+                        <a href="javascript:{document.getElementById('logout').submit()}" class="nav-link" style="width:100px;">
                             <i class="fas fa-sign-out-alt">Logout</i>
                         </a>
                         <form action="{%url 'logout'%}" method="POST" id="logout">
@@ -60,8 +58,8 @@
                         {% endif %}
                     >
                         <!-- replace links with logout and dashboard -->
-                        <a class="nav-link" href="{% url 'register'%}">
-                            <i class="fas fa-user-plus"></i> Register</a>
+                        <!-- <a class="nav-link" href="{% url 'register'%}">
+                            <i class="fas fa-user-plus"></i> Register</a> -->
                     </li>
                     <li
                     {% if 'login' in request.path %}
@@ -71,10 +69,8 @@
                         {% endif %}
                     >
                     <!-- these conditionals are to highlight if on that page -->
-                        <a class="nav-link" href="{% url 'login'%}">
-                            <i class="fas fa-sign-in-alt"></i>
-
-                            Login</a>
+                        <a class="nav-link" href="{% url 'login'%}" style="width:100px;">
+                            <i class="fas fa-sign-in-alt"></i>Login</a>
                     </li>
                 {%endif%}
             </ul>
