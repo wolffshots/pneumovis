@@ -110,6 +110,7 @@ footer#main-footer {
 #showcase {
     /* background: hsla(0, 0%, 95%, 1); */
     background: url(../images/loading_1_2.gif) no-repeat top center;
+    background-size: 100%;
     -webkit-background-size: 1400px;
     /* background-size: 200%; */
     position: relative;
@@ -137,6 +138,10 @@ footer#main-footer {
 } */
 .mr-3{
   width: 100% !important;
+}
+
+.card-body {
+    padding: 0;
 }
 
   
