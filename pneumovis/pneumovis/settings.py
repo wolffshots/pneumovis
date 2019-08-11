@@ -36,6 +36,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 INSTALLED_APPS = [
     'pages.apps.PagesConfig',  # found in pages/apps.py
+    'swabs.apps.SwabsConfig',
     'django_plotly_dash.apps.DjangoPlotlyDashConfig',
     'django.contrib.humanize',
     'django.contrib.admin',
