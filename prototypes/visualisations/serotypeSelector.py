@@ -37,7 +37,8 @@ data = [dict(
   type = 'bar',
   x = subject,
   y = score,
-  text="""<a href="https://google.com/">{}</a>""".format("More Info"),
+  text="""<a href="https://jadonwolffs.github.io/html-prototypes/strain.html">{}</a>""".format(
+      "More Info"),
   textposition='auto',
   textcolor="white",
   marker=dict(
