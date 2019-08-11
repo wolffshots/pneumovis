@@ -6,3 +6,5 @@ psycopg2-binary==2.7.5
 pytz==2019.1
 sqlparse==0.3.0
 django-plotly-dash==1.0.1
+pandas==0.25.0
+plotly==4.1.0
