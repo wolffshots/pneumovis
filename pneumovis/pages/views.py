@@ -132,3 +132,6 @@ def logout(request):
         auth.logout(request)
         messages.success(request, 'Successfully logged out')
         return redirect('index')
+
+def ip(request):
+    return render(request, 'pages/index-proto.html')

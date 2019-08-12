@@ -10,4 +10,5 @@ urlpatterns = [
     # path('test', views.dep, name='search'),
     path('dep', views.dep, name='register'),
     path('login', views.login, name='login'),
+    path('ip/', views.ip, name='ip'),
 ]
