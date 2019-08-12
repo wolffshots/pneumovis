@@ -4,10 +4,11 @@ Capstone Pneumococal Infection Visualisation Project - [PneumoVis](https://githu
 Click [here](http://165.73.96.80) to check out the live site
 
 ## Installation
-1.  Clone the repo and navigate into it
-    *   via HTTPS:  `https://github.com/jadonwolffs/csc3003s-capstone.git`
-    *   via SSH:    `git@github.com:jadonwolffs/csc3003s-capstone.git`
-    and then `cd csc3003s-capstone`
+1.  Clone the repo
+    1.  Clone:
+        *   via HTTPS:  `https://github.com/jadonwolffs/csc3003s-capstone.git`
+        *   via SSH:    `git@github.com:jadonwolffs/csc3003s-capstone.git`
+    2.  Navigate in with: `cd csc3003s-capstone`
 2.  Create a new Python virtual environment
     *   `python -m venv nameofvenv` - will create a virtual environment named `nameofvenv`
 3.  Activate the virtual environment 
