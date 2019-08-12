@@ -12,9 +12,9 @@ Click [here](http://bit.ly/csc3003s-capstone) to check out the live site
     *   On Windows:     `psql -U postgres`
     *   On Linux/UNIX:  `sudo -u postgres psql`
 2.  Create database
-`CREATE DATABASE dbname;` - replace dbname with the name of the DB you want to create, take note of it because you'll need it for the server settings.
+    `CREATE DATABASE dbname;` - replace dbname with the name of the DB you want to create, take note of it because you'll need it for the server settings.
 3.  Create a user to manage the individual database (other than postgres)
-`CREATE USER dbadmin WITH PASSWORD 'password';` - replace dbadmin and password with values of your choice, take note of them because you'll need them for the server settings.
+    `CREATE USER dbadmin WITH PASSWORD 'password';` - replace dbadmin and password with values of your choice, take note of them because you'll need them for the server settings.
 4.  Alter the settings of the new user to ensure that they are Django compatible
     ```sql
     ALTER ROLE dbadmin SET client_encoding TO 'utf8';
@@ -23,7 +23,7 @@ Click [here](http://bit.ly/csc3003s-capstone) to check out the live site
     ```
     Note: replace dbadmin with whichever user you created in step 3.
 5.  Grant full privileges to the user on the db
-`GRANT ALL PRIVILEGES ON DATABASE dbname TO dbadmin;`
+    `GRANT ALL PRIVILEGES ON DATABASE dbname TO dbadmin;`
     Note: replace dbadmin with whichever user you created in step 3. and dbname with the name of the database you created in step 2.
 6.  Exit postgres using `\q` or inspect the current structure using `\l`
 
@@ -34,12 +34,12 @@ Click [here](http://bit.ly/csc3003s-capstone) to check out the live site
         *   via SSH:    `git@github.com:jadonwolffs/csc3003s-capstone.git`
     2.  Navigate in with: `cd csc3003s-capstone`
 2.  Create a new Python virtual environment
-    *   `python -m venv nameofvenv` - will create a virtual environment named `nameofvenv`
+    `python -m venv nameofvenv` - will create a virtual environment named `nameofvenv`
 3.  Activate the virtual environment 
     *   Linux and MacOS: `source nameofvenv/bin/activate`
     *   Windows: `.\nameofvenv\Scripts\activate`
 4.  Navigate into the `pneumovis` directory
-    *   `cd pneumovis`
+    `cd pneumovis`
 5.  Create a file called `local_settings.py` and fill it as follows:
     ```python
     # Secret key
@@ -67,11 +67,15 @@ Click [here](http://bit.ly/csc3003s-capstone) to check out the live site
     ```
     Be sure to replace the database settings with the ones you made on postgres when setting that up.
 6.  Install the requirements
-    *   `pip install -r requirements.txt`
+    `pip install -r requirements.txt`
 7.  Run the Django migrations
-    *   `python manage.py migrate`
-8.  Run the server
-    *   `python manage.py runserver`
+    `python manage.py migrate`
+8.  Create a superuser to access the admin area with
+    `python manage.py createsuperuser` and follow the onscreen prompts
+9.  Collect the static files into the root so that Django can find and serve them
+    `python manage.py collectstatic`
+10.  Run the server
+    `python manage.py runserver`
 
 ## Docs
 
