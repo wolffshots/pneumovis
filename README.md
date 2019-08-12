@@ -4,6 +4,30 @@ Capstone Pneumococal Infection Visualisation Project - [PneumoVis](https://githu
 Click [here](http://bit.ly/csc3003s-capstone) to check out the live site
 
 ## Installation
+### Pre-requisites
+*   [Python (version 3+) and pip](https://www.python.org/)
+*   [PostgreSQL](https://www.postgresql.org/)
+### Database setup
+1.  Login to PostgreSQL
+    *   On Windows:     `psql -U postgres`
+    *   On Linux/UNIX:  `sudo -u postgres psql`
+2.  Create database
+`CREATE DATABASE dbname;` - replace dbname with the name of the DB you want to create, take note of it because you'll need it for the server settings.
+3.  Create a user to manage the individual database (other than postgres)
+`CREATE USER dbadmin WITH PASSWORD 'password';` - replace dbadmin and password with values of your choice, take note of them because you'll need them for the server settings.
+4.  Alter the settings of the new user to ensure that they are Django compatible
+    ```sql
+    ALTER ROLE dbadmin SET client_encoding TO 'utf8';
+    ALTER ROLE dbadmin SET default_transaction_isolation TO 'read committed';
+    ALTER ROLE dbadmin SET timezone TO 'UTC';
+    ```
+    Note: replace dbadmin with whichever user you created in step 3.
+5.  Grant full privileges to the user on the db
+`GRANT ALL PRIVILEGES ON DATABASE dbname TO dbadmin;`
+    Note: replace dbadmin with whichever user you created in step 3. and dbname with the name of the database you created in step 2.
+6.  Exit postgres using `\q` or inspect the current structure using `\l`
+
+### Server setup
 1.  Clone the repo
     1.  Clone:
         *   via HTTPS:  `https://github.com/jadonwolffs/csc3003s-capstone.git`
@@ -41,6 +65,7 @@ Click [here](http://bit.ly/csc3003s-capstone) to check out the live site
     EMAIL_HOST_PASSWORD = ''
     EMAIL_USE_TLS = True
     ```
+    Be sure to replace the database settings with the ones you made on postgres when setting that up.
 6.  Install the requirements
     *   `pip install -r requirements.txt`
 7.  Run the Django migrations
