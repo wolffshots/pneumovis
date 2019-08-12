@@ -95,15 +95,18 @@ Click [here](http://bit.ly/csc3003s-capstone) to check out the live site
 
 ## Requirements
 * [csvkit](https://github.com/wireservice/csvkit) (not included in requirements.txt, has to be set up manually)
-* Django==2.2.4
-* gunicorn==19.9.0
-* Pillow==5.2.0
-* psycopg2==2.7.5
-* psycopg2-binary==2.7.5
-* pytz==2019.1
-* sqlparse==0.3.0
-* django-plotly-dash==1.0.1
-
+```js
+Django==2.2.4
+gunicorn==19.9.0
+Pillow==5.2.0
+psycopg2==2.7.5
+psycopg2-binary==2.7.5
+pytz==2019.1
+sqlparse==0.3.0
+django-plotly-dash==1.0.1
+pandas==0.25.0
+plotly==4.1.0
+```
 ## Things to inspire
 * [Information is Beautiful](https://informationisbeautiful.net/)
 
