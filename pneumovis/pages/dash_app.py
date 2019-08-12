@@ -219,7 +219,6 @@ for month in months:
             dataset_by_month["ModeSerotype"] == serotype]
 
         data_dict = {
-            'animate': True,
             "x": list(dataset_by_month_and_area["SmokingExposure"]),
             "y": list(dataset_by_month_and_area["HIVExposure"]),
             "mode": "markers",
@@ -263,10 +262,8 @@ app.layout = html.Div(children=[
 
         dcc.Graph(
             id='example-graph2',
-            figure={
-                'data': fig_dict2["data"],#go.Layout(title='Order Status by Customer', barmode='stack')
-                'layout':fig_dict2["layout"],
-            })
+            figure=fig_dict2
+        )
 ])
 
 
