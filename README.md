@@ -17,28 +17,28 @@ Click [here](http://165.73.96.80) to check out the live site
     *   `cd pneumovis`
 5.  Create a file called `local_settings.py` and fill it as follows:
     ```python
-        # Secret key
-        SECRET_KEY = 'some secret key'
-        # Debug
-        DEBUG = True #or False for deployments
-        # Databases
-        DATABASES = {
-            'default': {
-                'ENGINE': 'django.db.backends.postgresql',
-                'NAME': '',         # the name of the database
-                'USER': '',         # name of the user with access to the db
-                'PASSWORD': '',     # password of that user
-                'HOST': 'localhost' # address of the host
-            }
+    # Secret key
+    SECRET_KEY = 'some secret key'
+    # Debug
+    DEBUG = True #or False for deployments
+    # Databases
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.postgresql',
+            'NAME': '',         # the name of the database
+            'USER': '',         # name of the user with access to the db
+            'PASSWORD': '',     # password of that user
+            'HOST': 'localhost' # address of the host
         }
-        # Hosts
-        ALLOWED_HOSTS = ['*']
-        # Email - currently not used
-        EMAIL_HOST = 'smtp.gmail.com'
-        EMAIL_PORT = 587
-        EMAIL_HOST_USER = ''
-        EMAIL_HOST_PASSWORD = ''
-        EMAIL_USE_TLS = True
+    }
+    # Hosts
+    ALLOWED_HOSTS = ['*']
+    # Email - currently not used
+    EMAIL_HOST = 'smtp.gmail.com'
+    EMAIL_PORT = 587
+    EMAIL_HOST_USER = ''
+    EMAIL_HOST_PASSWORD = ''
+    EMAIL_USE_TLS = True
     ```
 6.  Install the requirements
     *   `pip install -r requirements.txt`
