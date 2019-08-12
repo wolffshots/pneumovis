@@ -1,7 +1,7 @@
 # PneumoVis
 Capstone Pneumococal Infection Visualisation Project - [PneumoVis](https://github.com/jadonwolffs/csc3003s-capstone)
 ## Implementation and releases
-Click [here](http://165.73.96.80) to check out the live site
+Click [here](http://bit.ly/csc3003s-capstone) to check out the live site
 
 ## Installation
 1.  Clone the repo
