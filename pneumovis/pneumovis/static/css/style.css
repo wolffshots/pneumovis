@@ -116,7 +116,7 @@ footer#main-footer {
     position: relative;
     min-height: -webkit-fill-available;
     color: #fff;
-    padding-top: 6rem;
+    padding-top:0.3rem;
 }
 .bg-primary {
     background-color: #03020a !important;
