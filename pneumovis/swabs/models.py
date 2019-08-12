@@ -6,17 +6,22 @@ from datetime import datetime
 
 class Swab(models.Model):
     """
-    Test docstring
+    The swab class represents the entries in the DB
     """
     # id =
     # Particcipant_ID = participent model #models.CharField(max_length=300)
     # Particcipant_ID	
-    # Barcode	Week	
+    Barcode	= "test"
+    # Week	
     # npa_a4_growth	
     # datecollection	
     # Presence_of_Pneumococcus	
-    # dob	sex	HIVexposed	site	
-    # BCG_given_birth	BCG_date_birth
+    # dob	
+    # sex	
+    # HIVexposed	
+    # site	
+    # BCG_given_birth	
+    # BCG_date_birth
     # DTaP_given_610wk	
     # DTaP_date_610wk	
     # PCV_given_610wk	
@@ -70,4 +75,5 @@ class Swab(models.Model):
     # hire_date = models.DateTimeField(default=datetime.now, blank=True)
 
     def __str__(self):  # this is the primary field that is displayed similar to a toString
-        return self.patient
+        """ Returns the barcode value for the current swap """
+        return self.Barcode
