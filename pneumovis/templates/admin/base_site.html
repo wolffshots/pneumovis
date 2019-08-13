@@ -1,6 +1,7 @@
 {% extends 'admin/base.html' %}
 {% load static %}
 {%block title%}PneumoVis | Admin page{%endblock%}
+
 <!-- extends the admin base page and loads our static assets to be used -->
 
 {% block branding %}
@@ -12,4 +13,5 @@
 
 {%block extrastyle%}
 <link rel="stylesheet" href="{% static 'css/admin.css'%}">
+<link rel="shortcut icon" type="image/ico" href="{% static 'favicon.ico' %}" />
 {%endblock%}
