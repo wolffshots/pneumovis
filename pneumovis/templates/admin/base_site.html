@@ -1,11 +1,12 @@
 {% extends 'admin/base.html' %}
 {% load static %}
+{%block title%}PneumoVis | Admin page{%endblock%}
 <!-- extends the admin base page and loads our static assets to be used -->
 
 {% block branding %}
     <h1 id="head">
         <!-- BT Logo and name -->
-        <img src="{%static 'img/microscope.png'%}" alt="BT Real Estate" height="100" width="100">
+        <img src="{%static 'img/microscope.png'%}" alt="PneumoVis" height="60" width="60">
     </h1>
 {% endblock %}
 
