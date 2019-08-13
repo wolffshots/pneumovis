@@ -1,4 +1,5 @@
 /csvkit/
+/deploy.sh
 # Compiled class file
 *.class
 
