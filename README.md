@@ -1,3 +1,4 @@
+[![Build Status](https://travis-ci.com/jadonwolffs/csc3003s-capstone.svg?token=42WKBBESQyTJCATo8mTj&branch=master)](https://travis-ci.com/jadonwolffs/csc3003s-capstone)
 # PneumoVis
 Capstone Pneumococal Infection Visualisation Project - [PneumoVis](https://github.com/jadonwolffs/csc3003s-capstone)
 ## Implementation and releases
