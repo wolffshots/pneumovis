@@ -235,3 +235,4 @@ tags
 
 # pydoc
 /*.html
+/*.code-workspace
