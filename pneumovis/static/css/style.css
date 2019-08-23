@@ -97,7 +97,7 @@ img {
 
 
 /* Jadon */
-body, h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif}
+body, h1,h2,h3,h4,h5,h6,ul,li,p,div,a,span,i,section,nav,ol {font-family: "Roboto", sans-serif}
 
 footer#main-footer {
     padding-top: 10px;
