@@ -8,13 +8,12 @@ from .models import Swab
 def index(request):
     swabs = Swab.objects.order_by('-Particcipant_ID')
     # select distinct
+    count = len(swabs)
     paginator = Paginator(swabs, 24)
     end = paginator.count
     page = request.GET.get('page')
     paged_swabs = paginator.get_page(page)
-    ints = {1, 2, 3, 4, 5, 6, 7, 8, 9}
-    left_pages = {4, 3, 2, 1}
-    right_pages = {1, 2, 3, 4}
+    # ints = {1, 2, 3, 4, 5, 6, 7, 8, 9}
     end = round(end/24)
 
     try:
@@ -35,9 +34,7 @@ def index(request):
 
     context = {
         'swabs': paged_swabs,
-        'ints': ints,
-        'left_pages': left_pages,
-        'right_pages': right_pages,
+        'count': count,
         'end': end,
         'page_range': page_range,
     }
