@@ -46,7 +46,8 @@
                                 <img src="{%static 'img/buds.png'%}" alt="Cotton-bud" style="height:auto;width:18px;">
                                 Swab
                                 <a href="{{swab.Barcode}}" style="display: contents;padding:5px;">#{{swab.Barcode}}</a>
-                                - {{swab.Particcipant_ID}}
+                                - <a href="/participants/{{swab.Particcipant_ID}}"
+                                    style="display: contents;padding:5px;">#{{swab.Particcipant_ID}}</a>
                             </div>
 
                         </li>

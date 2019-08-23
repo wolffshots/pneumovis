@@ -9,7 +9,7 @@
         <div class="row text-center">
             <div class="col-md-12">
                 <h1 class="display-4">Browse the {{count}} participants currenlty recorded</h1>
-                <p class="lead">Clicking on a barcode will take you to the details of that participant (and patient)</p>
+                <p class="lead">Clicking on a participant ID will take you to the details of that participant</p>
             </div>
         </div>
     </div>
@@ -36,22 +36,18 @@
         <div class="row">
             {% if participants %}
             {% for participant in participants %}
-            <!-- Listing 1 -->
             <div class="col-md-6 col-lg-4 mb-4">
                 <div class="card participant-preview text-center" style="padding:5px;">
                     <p class="text-center">
-
                         <li style="display:contents">
                             <div>
-                                <img src="{%static 'img/buds.png'%}" alt="Cotton-bud" style="height:auto;width:18px;">
+                                <!-- <img src="{%static 'img/buds.png'%}" alt="Cotton-bud" style="height:auto;width:18px;"> -->
                                 Participant
                                 <a href="{{participant.Particcipant_ID}}"
                                     style="display: contents;padding:5px;">#{{participant.Particcipant_ID}}</a>
                                 <!-- - {{participant.Particcipant_ID}} -->
                             </div>
-
                         </li>
-
                     </p>
                 </div>
             </div>

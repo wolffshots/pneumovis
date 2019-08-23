@@ -41,6 +41,12 @@
                 <div class="row mb-5 fields">
                     <div class="col-md-6">
                         <ul class="list-group list-group-flush">
+                            <li class="list-group-item text-secondary" style="color:purple !important">
+                                <i class=""></i>
+                                <span class="">
+                                    <h3>Swabs taken from the participant</h3>
+                                </span>
+                            </li>
                             {% for swab in swabs %}
                             <li class="list-group-item text-secondary" style="color:purple !important">
                                 <i class="fas fa-id-card"></i> Swab barcode:
@@ -61,6 +67,12 @@
                                 </span>
                             </li>
                             {% endfor %} -->
+                            <li class="list-group-item text-secondary" style="color:purple !important">
+                                <i class=""></i>
+                                <span class="">
+                                    <h3>Details of the participant:</h3>
+                                </span>
+                            </li>
                             <li class="list-group-item text-secondary" style="color:purple !important">
                                 <i class="fas fa-id-card"></i> Participant ID:
                                 <span class="float-right">{{participant.Particcipant_ID}}</span>
