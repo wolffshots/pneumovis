@@ -1,0 +1,202 @@
+{% extends 'base.html' %}
+{% load humanize %}
+<!-- Dynamic page title -->
+{%block title%}| Swab #{{swab.Barcode}}{%endblock%}
+{%block content%}
+<!-- Title -->
+<section id="showcase-inner" class="py-5 text-white">
+    <div class="container">
+        <div class="row text-center">
+            <div class="col-md-12">
+                <h1 class="display-4">Swab #{{swab.Barcode}}</h1>
+                <p class="lead">
+                    <i class="fas fa-map-marker"></i> {{listing.site}}</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Breadcrumb -->
+<section id="bc" class="mt-3">
+    <div class="container">
+        <nav>
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item">
+                    <a href="{%url 'index'%}">Home</a>
+                </li>
+                <li class="breadcrumb-item">
+                    <a href="{%url 'swabs'%}">Swabs</a>
+                </li>
+                <li class="breadcrumb-item active">{{swab.Barcode}}</li>
+            </ol>
+        </nav>
+    </div>
+</section>
+<!-- Swab -->
+<section id="swab" class="py-4">
+    <div class="container">
+        <a href="{%url 'swabs'%}" class="btn btn-light mb-4">Back To Swabs</a>
+        <div class="row">
+            <div class="col-md-9">
+                <!-- Fields -->
+                <!-- <div class="col-md-6">
+                    <ul class="list-group list-group-flush">
+
+                    </ul>
+                </div>
+                <div class="col-md-6">
+                    <ul class="list-group list-group-flush">
+
+                    </ul>
+                </div> -->
+                <div class="row mb-5 fields">
+
+                    <!-- <div class=""> -->
+                    <div class="col-md-6">
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item text-secondary" style="color:purple !important">
+                                <i class="fas fa-id-card"></i> Participant ID:
+                                <span class="float-right">{{swab.Particcipant_ID}}</span>
+                            </li>
+                            <li class="list-group-item text-secondary" style="color:purple !important">
+                                <i class="fas fa-barcode"></i> Barcode:
+                                <span class="float-right">{{swab.Barcode}}</span>
+                            </li>
+                            <li class="list-group-item text-secondary" style="color:purple !important">
+                                <i class="fas fa-tree"></i> NPA A4 Growth:
+                                <span class="float-right">{{swab.npa_a4_growth}}</span>
+                            </li>
+                            <li class="list-group-item text-secondary" style="color:purple !important">
+                                <i class="fas fa-check-square"></i> Presence of Pneumococcus:
+                                <span class="float-right">{{swab.Presence_of_Pneumococcus}}</span>
+                            </li>
+                            <!-- <li class="list-group-item text-secondary">
+                                <i class=""></i> Presence of Pneumococcus:
+                                <span class="float-right">{{swab.Presence_of_Pneumococcus}}</span>
+                            </li> -->
+                            <li class="list-group-item text-secondary" style="color:purple !important">
+                                <i class="fas fa-venus-mars"></i> Sex:
+                                <span class="float-right">{{swab.sex}}</span>
+                            </li>
+                            <li class="list-group-item text-secondary" style="color:purple !important">
+                                <i class="fas fa-clock"></i> Week:
+                                <span class="float-right">{{swab.Week}}</span>
+                            </li>
+                            <li class="list-group-item text-secondary" style="color:purple !important">
+                                <i class="fas fa-calendar"></i> Date of birth:
+                                <span class="float-right">{{swab.dob}}</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col-md-6">
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item text-secondary" style="color:purple !important">
+                                <i class="fas fa-check-square"></i> HIV exposure:
+                                <span class="float-right">{{swab.HIVexposed}}</span>
+                            </li>
+                            <li class="list-group-item text-secondary" style="color:purple !important">
+                                <i class="fas fa-location-arrow"></i> Swabbing site:
+                                <span class="float-right">{{swab.site}}</span>
+                            </li>
+
+                            <li class="list-group-item text-secondary" style="color:purple !important">
+                                <i class="fas fa-times-circle"></i> Disease:
+                                <span class="float-right">{{swab.Disease}}</span>
+                            </li>
+                            <li class="list-group-item text-secondary" style="color:purple !important">
+                                <i class="fas fa-tag"></i> Serotype autocolour:
+                                <span class="float-right">{{swab.Serotype_autocolour}}</span>
+                            </li>
+                            <li class="list-group-item text-secondary" style="color:purple !important">
+                                <i class="fas fa-tag"></i> Vaccine status autocolour:
+                                <span class="float-right">{{swab.vaccine_status_autocolour}}</span>
+                            </li>
+                            <li class="list-group-item text-secondary" style="color:purple !important">
+                                <i class="fas fa-th-list"></i> Sequence Type:
+                                <span class="float-right">{{swab.Sequence_Type}}</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <!-- </div> -->
+                </div>
+                <div class="row mb-5 fields">
+
+                    <!-- <div class=""> -->
+
+                    <div class="col-md-6">
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item text-secondary" style="color:purple !important">
+                                <i class="fas fa-check-square"></i> BCG given:
+                                <span class="float-right">{{swab.BCG_given_birth}}</span>
+                            </li>
+                            <li class="list-group-item text-secondary" style="color:purple !important">
+                                <i class="fas fa-check-square"></i> DTaP 610 week given:
+                                <span class="float-right">{{swab.DTaP_given_610wk}}</span>
+                            </li>
+                            <li class="list-group-item text-secondary" style="color:purple !important">
+                                <i class="fas fa-check-square"></i> DTaP 10 week given:
+                                <span class="float-right">{{swab.DTaP_given_10wk}}</span>
+                            </li>
+                            <li class="list-group-item text-secondary" style="color:purple !important">
+                                <i class="fas fa-check-square"></i> DTaP 10 week given:
+                                <span class="float-right">{{swab.DTaP_given_10wk}}</span>
+                            </li>
+                            <li class="list-group-item text-secondary" style="color:purple !important">
+                                <i class="fas fa-check-square"></i> DTaP 14wk given:
+                                <span class="float-right">{{swab.DTaP_given_14wk}}</span>
+                            </li>
+                            <li class="list-group-item text-secondary" style="color:purple !important">
+                                <i class="fas fa-check-square"></i> PCV 14wk given:
+                                <span class="float-right">{{swab.PCV_given_14wk}}</span>
+                            </li>
+                            <li class="list-group-item text-secondary" style="color:purple !important">
+                                <i class="fas fa-check-square"></i> PCV 9m given:
+                                <span class="float-right">{{swab.PCV_given_9m}}</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col-md-6">
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item text-secondary" style="color:purple !important">
+                                <i class="fas fa-calendar"></i> BCG given date:
+                                <span class="float-right">{{swab.BCG_date_birth}}</span>
+                            </li>
+                            <li class="list-group-item text-secondary" style="color:purple !important">
+                                <i class="fas fa-calendar"></i> DTaP 610 week date:
+                                <span class="float-right">{{swab.DTaP_date_610wk}}</span>
+                            </li>
+                            <li class="list-group-item text-secondary" style="color:purple !important">
+                                <i class="fas fa-calendar"></i> PCV 610 week date:
+                                <span class="float-right">{{swab.PCV_date_610wk}}</span>
+                            </li>
+                            <li class="list-group-item text-secondary" style="color:purple !important">
+                                <i class="fas fa-calendar"></i> DTaP 10 week date:
+                                <span class="float-right">{{swab.DTaP_date_10wk}}</span>
+                            </li>
+                            <li class="list-group-item text-secondary" style="color:purple !important">
+                                <i class="fas fa-calendar"></i> DTaP 14 week date:
+                                <span class="float-right">{{swab.DTaP_date_14wk}}</span>
+                            </li>
+                            <li class="list-group-item text-secondary" style="color:purple !important">
+                                <i class="fas fa-calendar"></i> PCV 14 week date:
+                                <span class="float-right">{{swab.PCV_date_14wk}}</span>
+                            </li>
+                            <li class="list-group-item text-secondary" style="color:purple !important">
+                                <i class="fas fa-calendar"></i> PCV 9 month date:
+                                <span class="float-right">{{swab.PCV_date_9m}}</span>
+                            </li>
+
+                        </ul>
+                    </div>
+                    <!-- </div> -->
+                </div>
+
+            </div>
+            <div class="col-md-3">
+                <button class="btn-primary btn-block btn-lg" data-toggle="modal"
+                    data-target="#inquiryModal">Placeholder</button>
+            </div>
+        </div>
+    </div>
+</section>
+{%endblock%}
