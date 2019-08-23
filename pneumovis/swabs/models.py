@@ -45,6 +45,7 @@ class Swab(models.Model):
     vaccine_status_autocolour = models.CharField(
         max_length=5, blank=True, null=True)
     Sequence_Type = models.CharField(max_length=10, blank=True, null=True)
+    # days = Week./7
 
     # photo = models.ImageField(upload_to='photos/%Y/%m/%d') # - can have this for serotypes
     # desc = models.TextField(blank=True, null=True)
