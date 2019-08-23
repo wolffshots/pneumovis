@@ -1,5 +1,6 @@
 {% extends 'base.html' %}
 {% load humanize %}
+{% load static %}
 <!-- Dynamic page title -->
 {%block title%}| Swabs page{%endblock%}
 {%block content%}
@@ -7,8 +8,8 @@
     <div class="container">
         <div class="row text-center">
             <div class="col-md-12">
-                <h1 class="display-4">Browse Our Properties</h1>
-                <p class="lead">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sunt, pariatur!</p>
+                <h1 class="display-4">Browse the {{count}} swabs currenlty recorded</h1>
+                <p class="lead">Clicking on a barcode will take you to the details of that swab (and patient)</p>
             </div>
         </div>
     </div>
@@ -37,12 +38,19 @@
             {% for swab in swabs %}
             <!-- Listing 1 -->
             <div class="col-md-6 col-lg-4 mb-4">
-                <div class="card swab-preview">
-                    <p>
-                        <li>
-                            <a href="{{ swab.Barcode }}">{{swab.Barcode}}</a>
+                <div class="card swab-preview text-center" style="padding:5px;">
+                    <p class="text-center">
+
+                        <li style="display:contents">
+                            <div>
+                                <img src="{%static 'img/buds.png'%}" alt="Cotton-bud" style="height:auto;width:18px;">
+                                Swab
+                                <a href="{{swab.Barcode}}" style="display: contents;padding:5px;">#{{swab.Barcode}}</a>
+                                - {{swab.Particcipant_ID}}
+                            </div>
 
                         </li>
+
                     </p>
                 </div>
             </div>
