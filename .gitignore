@@ -28,7 +28,7 @@ docs/projectChoice-*.xls
 *~
 data/~*
 
-
+data/firstfive.csv
 
 # Created by https://www.gitignore.io/api/vim,macos,django
 # Edit at https://www.gitignore.io/?templates=vim,macos,django
