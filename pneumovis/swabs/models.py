@@ -1,3 +1,7 @@
+"""
+The model of the swabs recorded at clinics
+"""
+
 from django.db import models
 from datetime import datetime
 
@@ -8,72 +12,47 @@ class Swab(models.Model):
     """
     The swab class represents the entries in the DB
     """
-    # id =
-    # Particcipant_ID = participent model #models.CharField(max_length=300)
-    # Particcipant_ID	
-    Barcode	= "test"
-    # Week	
-    # npa_a4_growth	
-    # datecollection	
-    # Presence_of_Pneumococcus	
-    # dob	
-    # sex	
-    # HIVexposed	
-    # site	
-    # BCG_given_birth	
-    # BCG_date_birth
-    # DTaP_given_610wk	
-    # DTaP_date_610wk	
-    # PCV_given_610wk	
-    # PCV_date_610wk	
-    # DTaP_given_10wk	
-    # DTaP_date_10wk	
-    # DTaP_given_14wk	
-    # DTaP_date_14wk	
-    # PCV_given_14wk	
-    # PCV_date_14wk	
-    # PCV_given_9m	
-    # PCV_date_9m	
-    # Disease
-    # Serotype__autocolour	
-    # vaccine_status__autocolour	
-    # Sequence_Type
-    # Particcipant_ID	
-    # Barcode	
-    # Week	
-    # npa_a4_growth	
-    # datecollection	
-    # Presence_of_Pneumococcus	
-    # dob	
-    # sex	
-    # HIVexposed	
-    # site	
-    # BCG_given_birth	
-    # BCG_date_birth	
-    # DTaP_given_610wk	
-    # DTaP_date_610wk	
-    # PCV_given_610wk	
-    # PCV_date_610wk	
-    # DTaP_given_10wk	
-    # DTaP_date_10wk	
-    # DTaP_given_14wk	
-    # DTaP_date_14wk	
-    # PCV_given_14wk	
-    # PCV_date_14wk	
-    # PCV_given_9m	
-    # PCV_date_9m	
-    # Disease	
-    # Serotype__autocolour	
-    # vaccine_status__autocolour	
-    # Sequence_Type
+    Particcipant_ID = models.CharField(max_length=10)
+    Barcode = models.CharField(max_length=20, primary_key=True)
+    Week = models.IntegerField()
+    npa_a4_growth = models.CharField(
+        max_length=10, blank=True, null=True)  # Growth or No Growth
+    datecollection = models.DateField()
+    Presence_of_Pneumococcus = models.BooleanField(
+        default=False, blank=True, null=True)
+    dob = models.DateField()
+    sex = models.CharField(max_length=6)
+    HIVexposed = models.BooleanField(blank=True, null=True)
+    site = models.CharField(max_length=100)
+    BCG_given_birth = models.BooleanField(default=False, blank=True, null=True)
+    BCG_date_birth = models.DateField(blank=True, null=True)
+    DTaP_given_610wk = models.BooleanField(
+        default=False, blank=True, null=True)
+    DTaP_date_610wk = models.DateField(blank=True, null=True)
+    PCV_given_610wk = models.BooleanField(default=False, blank=True, null=True)
+    PCV_date_610wk = models.DateField(blank=True, null=True)
+    DTaP_given_10wk = models.BooleanField(default=False, blank=True, null=True)
+    DTaP_date_10wk = models.DateField(blank=True, null=True)
+    DTaP_given_14wk = models.BooleanField(default=False, blank=True, null=True)
+    DTaP_date_14wk = models.DateField(blank=True, null=True)
+    PCV_given_14wk = models.BooleanField(default=False, blank=True, null=True)
+    PCV_date_14wk = models.DateField(blank=True, null=True)
+    PCV_given_9m = models.BooleanField(default=False, blank=True, null=True)
+    PCV_date_9m = models.DateField(blank=True, null=True)
+    Disease = models.BooleanField(default=False, blank=True, null=True)
+    Serotype_autocolour = models.CharField(
+        max_length=15, blank=True, null=True)
+    vaccine_status_autocolour = models.CharField(
+        max_length=5, blank=True, null=True)
+    Sequence_Type = models.CharField(max_length=10, blank=True, null=True)
 
-    # photo = models.ImageField(upload_to='photos/%Y/%m/%d')
-    # desc = models.TextField(blank=True)
+    # photo = models.ImageField(upload_to='photos/%Y/%m/%d') # - can have this for serotypes
+    # desc = models.TextField(blank=True, null=True)
     # phone = models.CharField(max_length=20)
     # email = models.CharField(max_length=100)
     # mvp = models.BooleanField(default=False)
-    # hire_date = models.DateTimeField(default=datetime.now, blank=True)
+    # hire_date = models.DateTimeField(default=datetime.now, blank=True, null=True)
 
     def __str__(self):  # this is the primary field that is displayed similar to a toString
-        """ Returns the barcode value for the current swap """
-        return self.Barcode
+        """ Returns the barcode value for the current swap as that is the unique value for each swab """
+        return str(self.Barcode)
