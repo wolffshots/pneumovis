@@ -1,7 +1,8 @@
 {% load static %}
 <nav class="navbar navbar-expand-lg navbar-dark bg-primary sticky-top">
-    <div class="container"> <!-- this makes the branding go back to the home page -->
-        <a class="navbar-brand" href="{% url 'index'%}"style="width: 2%; "> 
+    <div class="container">
+        <!-- this makes the branding go back to the home page -->
+        <a class="navbar-brand" href="{% url 'index'%}" style="width: 2%; ">
             <img src="{% static 'img/microscope.png' %}" class="logo" alt="" style="height:100%; width:100%;">
             <a href="{%url 'index'%} " style="padding-right:30px; color:white;">PneumoVis</a>
         </a>
@@ -10,68 +11,50 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
             <ul class="navbar-nav" style="width: 100%;">
-                <li
-                    
-                    {% if '/' == request.path %}
-                    class="nav-item active mr-3"
-                    {% else %}
-                    class="nav-item mr-3"
-                    {% endif %}
-                >
-                <!-- this if else is what highlights navbar items -->
+                <li {% if '/' == request.path %} class="nav-item active mr-3" {% else %} class="nav-item mr-3"
+                    {% endif %}>
+                    <!-- this if else is what highlights navbar items -->
                     <!-- <a class="nav-link" href="{% url 'index' %}">Home</a> -->
                     <a href="{%url 'index'%}" class="nav-link" style="width:100% !important">HOME</a>
                 </li>
-                <li {% if 'about' in request.path %} class="nav-item active mr-3" {% else %} class="nav-item mr-3" {% endif %}
-                >
+                <li {% if 'about' in request.path %} class="nav-item active mr-3" {% else %} class="nav-item mr-3"
+                    {% endif %}>
                     <!-- <a class="nav-link" href="{% url 'about' %}">About</a> -->
                     <a href="{% url 'about' %}" class="nav-link" style="width:100% !important">ABOUT</a>
                 </li>
-                <li {% if 'listings' in request.path %}
-                    class="nav-item active mr-3"
-                    {% else %}
-                    class="nav-item mr-3"
-                    {% endif %}
-                >
-                <!-- <a href="{%url 'index'%}" class="nav-link" style="width:100% !important">Another link?</a> -->
+                <li {% if 'browse' in request.path %} class="nav-item active mr-3" {% else %} class="nav-item mr-3"
+                    {% endif %}>
+                    <a href="/browse" class="nav-link" style="width:100% !important">BROWSE</a>
+
                 </li>
             </ul>
 
             <ul class="navbar-nav ml-auto">
                 {%if user.is_authenticated%}
                 <!-- logout and dashboard links -->
-                    <li class="nav-item mr-3">
-                        <a href="javascript:{document.getElementById('logout').submit()}" class="nav-link" style="width:100px;">
-                            <i class="fas fa-sign-out-alt">Logout</i>
-                        </a>
-                        <form action="{%url 'logout'%}" method="POST" id="logout">
-                            {% csrf_token %}
-                            <input type="hidden">
-                        </form>
-                    </li>
+                <li class="nav-item mr-3">
+                    <a href="javascript:{document.getElementById('logout').submit()}" class="nav-link"
+                        style="width:100px;">
+                        <i class="fas fa-sign-out-alt">Logout</i>
+                    </a>
+                    <form action="{%url 'logout'%}" method="POST" id="logout">
+                        {% csrf_token %}
+                        <input type="hidden">
+                    </form>
+                </li>
                 {%else%}
-                    <li
-                    {% if 'register' in request.path %}
-                        class="nav-item active mr-3"
-                        {% else %}
-                        class="nav-item mr-3"
-                        {% endif %}
-                    >
-                        <!-- replace links with logout and dashboard -->
-                        <!-- <a class="nav-link" href="{% url 'register'%}">
+                <li {% if 'register' in request.path %} class="nav-item active mr-3" {% else %} class="nav-item mr-3"
+                    {% endif %}>
+                    <!-- replace links with logout and dashboard -->
+                    <!-- <a class="nav-link" href="{% url 'register'%}">
                             <i class="fas fa-user-plus"></i> Register</a> -->
-                    </li>
-                    <li
-                    {% if 'login' in request.path %}
-                        class="nav-item active mr-3"
-                        {% else %}
-                        class="nav-item mr-3"
-                        {% endif %}
-                    >
+                </li>
+                <li {% if 'login' in request.path %} class="nav-item active mr-3" {% else %} class="nav-item mr-3"
+                    {% endif %}>
                     <!-- these conditionals are to highlight if on that page -->
-                        <a class="nav-link" href="{% url 'login'%}" style="width:100px;">
-                            <i class="fas fa-sign-in-alt"></i>Login</a>
-                    </li>
+                    <a class="nav-link" href="{% url 'login'%}" style="width:100px;">
+                        <i class="fas fa-sign-in-alt"></i>Login</a>
+                </li>
                 {%endif%}
             </ul>
         </div>
