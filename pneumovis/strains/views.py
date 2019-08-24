@@ -13,6 +13,7 @@ def index(request):
 
 
 def strain(request, Serotype_autocolour):
+    # uppercase the serotype
     global strains
     swabs = Swab.objects.order_by(
         '-Serotype_autocolour').filter(Serotype_autocolour=Serotype_autocolour)
