@@ -4,22 +4,53 @@
 {%block title%}| Browse strains{%endblock%}
 
 {%block content%}
-
-<div class="content" style="padding: bottom 16px;">
-    {%for strain in strains%}
-    <div style="padding:8px">
-        <div class="card" id="card">
-            <img src="cocci.jpg" alt="" style="width:50%">
-            <div class="container" style="text-align:center">
-                <h1 style="text-align:center">{{strain.Serotype_autocolour}}</h1>
-                <!-- {{strain.dcount}} -->
-                <a href="{{strain.Serotype_autocolour}}" style="text-align:center" class="w3-bar-item w3-button">More
-                    information</a>
+<!-- Title -->
+<section id="showcase-inner" class="py-5 text-white">
+    <div class="container">
+        <div class="row text-center">
+            <div class="col-md-12">
+                <h1 class="display-4">Recorded strains</h1>
+                <p class="lead">
+                    <!-- <i class="fas fa-map-marker"></i> {{listing.site}}</p> -->
             </div>
         </div>
     </div>
-    {%endfor%}
-</div>
+</section>
+<!-- Breadcrumb -->
+<section id="bc" class="mt-3">
+    <div class="container">
+        <nav>
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item">
+                    <a href="{%url 'index'%}">Home</a>
+                </li>
+                <li class="breadcrumb-item active">Strains
+                </li>
+            </ol>
+        </nav>
+    </div>
+</section>
+<section id="participant" class="py-4">
+    <div class="container">
+        <a href="{%url 'participants'%}" class="btn btn-light mb-4">Back To Participants</a>
+        <div class="content" style="padding: bottom 16px;">
+            {%for strain in strains%}
+            <div style="padding:8px">
+                <div class="card" id="card">
+                    <img src="cocci.jpg" alt="" style="width:50%">
+                    <div class="container" style="text-align:center">
+                        <h1 style="text-align:center">{{strain.Serotype_autocolour}}</h1>
+                        <!-- {{strain.dcount}} -->
+                        <a href="{{strain.Serotype_autocolour}}" style="text-align:center"
+                            class="w3-bar-item w3-button">More
+                            information</a>
+                    </div>
+                </div>
+            </div>
+            {%endfor%}
+        </div>
+    </div>
+</section>
 </body>
 
 </html>

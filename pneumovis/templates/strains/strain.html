@@ -16,13 +16,36 @@
         </div>
     </div>
 </section>
-<div class="card" id="card">
-    <img src="cocci.jpg" alt="" style="width:75%">
+<!-- Breadcrumb -->
+<section id="bc" class="mt-3">
     <div class="container">
-        <h1 style="text-align:center">{{strain.Serotype_autocolour}}</h1>
+        <nav>
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item">
+                    <a href="{%url 'index'%}">Home</a>
+                </li>
+                <li class="breadcrumb-item">
+                    <a href="{%url 'strains'%}">Strains</a>
+                </li>
+                <li class="breadcrumb-item active">{{strain.Serotype_autocolour }}</li>
+            </ol>
+        </nav>
     </div>
-    <p align="center"> blahhhh blahhh blahhhhhh</p>
-</div>
+</section>
+<section id="participant" class="py-4">
+    <div class="container">
+        <a href="{%url 'participants'%}" class="btn btn-light mb-4">Back To Participants</a>
+        <div class="card" id="card">
+            <img src="cocci.jpg" alt="" style="width:75%">
+            <div class="container">
+                <h1 style="text-align:center">{{strain.Serotype_autocolour}}</h1>
+            </div>
+            <p align="center"> blahhhh blahhh blahhhhhh
+            </p>
+            <p align="center">This strain appears in {{strain.dcount}} swabs</p>
+        </div>
+    </div>
+</section>
 
 
 
