@@ -1,2 +1,29 @@
-<h1>Strain</h1>
-{{strain.dcount}}
+{% extends 'base.html' %}
+{% load humanize %}
+<!-- Dynamic page title -->
+{%block title%}| Strain {{strain.Serotype_autocolour}}{%endblock%}
+
+
+{%block content%}
+<section id="showcase-inner" class="py-5 text-white">
+    <div class="container">
+        <div class="row text-center">
+            <div class="col-md-12">
+                <h1 class="display-4">Strain: {{strain.Serotype_autocolour}}</h1>
+                <p class="lead">
+                    <!-- <i class="fas fa-map-marker"></i> {{listing.site}}</p> -->
+            </div>
+        </div>
+    </div>
+</section>
+<div class="card" id="card">
+    <img src="cocci.jpg" alt="" style="width:75%">
+    <div class="container">
+        <h1 style="text-align:center">{{strain.Serotype_autocolour}}</h1>
+    </div>
+    <p align="center"> blahhhh blahhh blahhhhhh</p>
+</div>
+
+
+
+{%endblock%}

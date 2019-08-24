@@ -3,17 +3,7 @@
 <!-- Dynamic page title -->
 {%block title%}| Participant #{{participant.Particcipant_ID}}{%endblock%}
 
-
 {%block content%}
-<!-- Navbar on small screens (Hidden on medium and large screens) -->
-<!-- <div class="w3-top" id="myNavbar">
-    <div class="w3-bar w3-black w3-opacity-on w3-hover-opacity-on w3-center w3-small">
-        <a href="index.html" class="w3-bar-item w3-button" style="width:25% !important">HOME</a>
-        <a href="Login.html" class="w3-bar-item w3-button" style="width:25% !important">LOGIN</a>
-        <a href="About.html" class="w3-bar-item w3-button" style="width:25% !important">ABOUT</a>
-        <a href="Statistics.html" class="w3-bar-item w3-button" style="width:25% !important">STATISTICS</a>
-    </div>
-</div> -->
 
 <div class="content" style="padding: bottom 16px;">
     {%for strain in strains%}
@@ -22,8 +12,8 @@
             <img src="cocci.jpg" alt="" style="width:50%">
             <div class="container" style="text-align:center">
                 <h1 style="text-align:center">{{strain.Serotype_autocolour}}</h1>
-                {{strain.dcount}}
-                <a href="individualStrain.html" style="text-align:center" class="w3-bar-item w3-button">More
+                <!-- {{strain.dcount}} -->
+                <a href="{{strain.Serotype_autocolour}}" style="text-align:center" class="w3-bar-item w3-button">More
                     information</a>
             </div>
         </div>
