@@ -48,6 +48,7 @@ def index(request):
 
 
 def participant(request, Particcipant_ID):
+    # implement custom 404 page
     global participants
     swabs = Swab.objects.order_by(
         '-Particcipant_ID').filter(Particcipant_ID=Particcipant_ID)
@@ -57,6 +58,7 @@ def participant(request, Particcipant_ID):
         if(part['Particcipant_ID'] == Particcipant_ID):
             participant = part
             break
+        # return 404
     context = {
         'swabs': swabs,
         'participant': participant

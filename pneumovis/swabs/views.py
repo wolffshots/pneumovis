@@ -42,7 +42,7 @@ def index(request):
 
 
 def swab(request, Barcode):
-    # print(Barcode)
+    # implement custom 404 page
     swab = get_object_or_404(Swab, pk=Barcode)
     context = {
         'swab': swab

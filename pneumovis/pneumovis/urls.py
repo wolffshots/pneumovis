@@ -25,5 +25,6 @@ urlpatterns = [
     path('', include('pages.urls')),
     path('swabs/', include('swabs.urls')),
     path('participants/', include('participants.urls')),
+    path('strains/', include('strains.urls')),
     path('django_plotly_dash/', include('django_plotly_dash.urls')),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)  # this allows the urls to register the media files

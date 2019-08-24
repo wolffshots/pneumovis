@@ -36,9 +36,10 @@ DEBUG = False
 # Application definition
 
 INSTALLED_APPS = [
-    'participants.apps.ParticipantsConfig',
-    'pages.apps.PagesConfig',  # found in pages/apps.py
+    'pages.apps.PagesConfig',
     'swabs.apps.SwabsConfig',
+    'participants.apps.ParticipantsConfig',
+    'strains.apps.StrainsConfig',
     'django_plotly_dash.apps.DjangoPlotlyDashConfig',
     'django.contrib.humanize',
     'django.contrib.admin',
