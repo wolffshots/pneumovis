@@ -1,10 +1,17 @@
 # #these two lines and the part of the program that distinguishes it as a django-ised version of plotly
+import time
+from plotly.tools import FigureFactory as FF
+from plotly.graph_objs import *
+from plotly import graph_objs as go
+import pandas as pd
+import plotly.io as pio
+import dash_html_components as html
+import dash_core_components as dcc
 from django_plotly_dash import DjangoDash
-app = DjangoDash('SimpleExample') # name can be changed but must then also be changed in the templates where it is called
+# name can be changed but must then also be changed in the templates where it is called
+app = DjangoDash('SimpleExample')
 
 # import dash
-import dash_core_components as dcc
-import dash_html_components as html
 # import plotly.graph_objs as go
 # import pandas as pd
 
@@ -33,12 +40,6 @@ import dash_html_components as html
 #             go.Layout(title='Order Status by Customer', barmode='stack')
 #         })
 # ])
-import plotly.io as pio
-import pandas as pd
-from plotly import graph_objs as go
-from plotly.graph_objs import *
-from plotly.tools import FigureFactory as FF
-import time
 df = pd.DataFrame(pd.read_csv('swabs2.csv'))
 
 # code below to order serotypes by group (number) - currently letters are still in wrong order, do additional sort
@@ -54,7 +55,8 @@ data = [dict(
     type='bar',
     x=subject,
     y=score,
-    text="""<a href="https://jadonwolffs.github.io/html-prototypes/strain.html">{}</a>""".format(
+    # TODO add specific strain here
+    text="""<a href="/strains">{}</a>""".format(
         "More Info"),
     textposition='auto',
     textcolor="white",
@@ -111,7 +113,7 @@ url = "bubble.csv"
 dataset = pd.read_csv(url)
 
 months = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10",
-         "11","12"]
+          "11", "12"]
 
 # make list of ModeSerotypes
 serotypes = []
@@ -126,8 +128,10 @@ fig_dict2 = {
 }
 
 # fill in most of layout
-fig_dict2["layout"]["xaxis"] = {"range": [0, 100], "title": "Patients Exposed to HIV (%)"}
-fig_dict2["layout"]["yaxis"] = {"title": "Patients Exposed to Smoking (%)", "range": [0, 100]}
+fig_dict2["layout"]["xaxis"] = {
+    "range": [0, 100], "title": "Patients Exposed to HIV (%)"}
+fig_dict2["layout"]["yaxis"] = {
+    "title": "Patients Exposed to Smoking (%)", "range": [0, 100]}
 fig_dict2["layout"]["hovermode"] = "closest"
 fig_dict2["layout"]["sliders"] = {
     "args": [
@@ -141,7 +145,7 @@ fig_dict2["layout"]["sliders"] = {
     "values": months,
     "visible": True
 }
-fig_dict2["layout"]["title"]="Effect of Smoking and HIV Exposure on Serotype Incidence in Clinic Areas"
+fig_dict2["layout"]["title"] = "Effect of Smoking and HIV Exposure on Serotype Incidence in Clinic Areas"
 fig_dict2["layout"]["updatemenus"] = [
     {
         "buttons": [
@@ -170,7 +174,7 @@ fig_dict2["layout"]["updatemenus"] = [
         "yanchor": "top"
     }
 ]
-# ensure slider has correct values 
+# ensure slider has correct values
 sliders_dict = {
     "active": 0,
     "yanchor": "top",
@@ -257,15 +261,15 @@ app.layout = html.Div(children=[
         id='example-graph',
         figure={
             'data': data,
-            'layout':layout#go.Layout(title='Order Status by Customer', barmode='stack')
+            # go.Layout(title='Order Status by Customer', barmode='stack')
+            'layout': layout
         }),
 
-        dcc.Graph(
-            id='example-graph2',
-            figure=fig_dict2
-        )
+    dcc.Graph(
+        id='example-graph2',
+        figure=fig_dict2
+    )
 ])
 
 
-
-#fig.show()
+# fig.show()
