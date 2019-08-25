@@ -5,12 +5,13 @@
 <!-- extends the admin base page and loads our static assets to be used -->
 
 {% block branding %}
-    <h1 id="head">
-        <img src="{%static 'img/microscope.png'%}" alt="PneumoVis" height="60" width="60">
-    </h1>
+<h1 id="head">
+    <img src="{%static 'img/microscope.png'%}" alt="PneumoVis" height="60" width="60">
+</h1>
+<a href="{% url 'upload'%}">Upload a file of swabs</a>
 {% endblock %}
 
 {%block extrastyle%}
-<link rel="stylesheet" href="{% static 'css/admin.css'%}">
+<link rel=" stylesheet" href="{% static 'css/admin.css'%}">
 <link rel="shortcut icon" type="image/ico" href="{% static 'favicon.ico' %}" />
 {%endblock%}
