@@ -55,3 +55,13 @@ def ip(request):
 
 def browse(request):
     return render(request, 'pages/browse.html')
+
+
+def upload(request):
+        # TODO check for authentication!
+    return render(request, 'pages/upload.html')
+
+
+def contact(request):
+        # TODO add the Dr and our details
+    return render(request, 'pages/contact.html')
