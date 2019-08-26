@@ -7,6 +7,8 @@ from django.db.models import Count
 # Create your views here.
 participants = Swab.objects.order_by('Particcipant_ID').values('Particcipant_ID').annotate(
     dcount=Count('Particcipant_ID'))
+# hivs = Swab.objects.order_by('Particcipant_ID').values(
+#     'Particcipant_ID').annotate(dcount=Count('HIVexposed'))
 
 
 def index(request):

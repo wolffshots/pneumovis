@@ -14,6 +14,8 @@ class Swab(models.Model):
     """
     Particcipant_ID = models.CharField(max_length=10)
     Barcode = models.CharField(max_length=20, primary_key=True)
+    geo_lat = models.FloatField()
+    geo_long = models.FloatField()
     Week = models.IntegerField()
     npa_a4_growth = models.CharField(
         max_length=10, blank=True, null=True)  # Growth or No Growth
@@ -45,14 +47,31 @@ class Swab(models.Model):
     vaccine_status_autocolour = models.CharField(
         max_length=5, blank=True, null=True)
     Sequence_Type = models.CharField(max_length=10, blank=True, null=True)
-    # days = Week./7
+    education = models.CharField(max_length=20, blank=True, null=True)
+    HHdsize = models.IntegerField(blank=True, null=True)
+    HomeType = models.CharField(max_length=28, blank=True, null=True)
+    Paraffin_stove = models.BooleanField(blank=True, null=True)
+    Coal_stove = models.BooleanField(blank=True, null=True)
+    BenzeneCat = models.CharField(max_length=10, blank=True, null=True)
+    TolueneCat = models.CharField(max_length=10, blank=True, null=True)
+    SO2Cat = models.CharField(max_length=10, blank=True, null=True)
+    NO2Cat = models.CharField(max_length=10, blank=True, null=True)
+    CO_Strict = models.CharField(max_length=21, blank=True, null=True)
+    CO_Broad = models.CharField(max_length=10, blank=True, null=True)
+    SO2Cat_Post = models.CharField(max_length=10, blank=True, null=True)
+    NO2Cat_Post = models.CharField(max_length=10, blank=True, null=True)
+    BenzeneCat_post = models.CharField(max_length=10, blank=True, null=True)
+    TolueneCat_post = models.CharField(max_length=10, blank=True, null=True)
+    CO_Strict_post = models.CharField(max_length=21, blank=True, null=True)
+    CO_Broad_post = models.CharField(max_length=10, blank=True, null=True)
+    weight_birth = models.FloatField()
+    mother_smoke_anytime = models.BooleanField(blank=True, null=True)
+    total_smokers_anytime = models.CharField(
+        max_length=10, blank=True, null=True)
+    delivery_method = models.CharField(max_length=10, blank=True, null=True)
+    antibio_use_1yr = models.BooleanField(blank=True, null=True)
 
     # photo = models.ImageField(upload_to='photos/%Y/%m/%d') # - can have this for serotypes
-    # desc = models.TextField(blank=True, null=True)
-    # phone = models.CharField(max_length=20)
-    # email = models.CharField(max_length=100)
-    # mvp = models.BooleanField(default=False)
-    # hire_date = models.DateTimeField(default=datetime.now, blank=True, null=True)
 
     def __str__(self):  # this is the primary field that is displayed similar to a toString
         """ Returns the barcode value for the current swap as that is the unique value for each swab """

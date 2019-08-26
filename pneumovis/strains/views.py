@@ -20,6 +20,7 @@ def strain(request, Serotype_autocolour):
         '-Serotype_autocolour').filter(Serotype_autocolour=Serotype_autocolour)
     strains = Swab.objects.order_by('Serotype_autocolour').values('Serotype_autocolour').annotate(
         dcount=Count('Serotype_autocolour'))
+
     for stra in strains:
         if(stra['Serotype_autocolour'] == Serotype_autocolour):
             strain = stra

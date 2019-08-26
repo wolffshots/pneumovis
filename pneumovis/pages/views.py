@@ -5,7 +5,8 @@ from django.contrib import messages, auth
 from django.contrib.auth.models import User
 
 from .dash_app import *
-# from django import forms
+
+from .files import *
 
 from django.conf import settings
 from django.core.files.storage import FileSystemStorage
@@ -65,33 +66,22 @@ def upload(request):
 
         if request.user.is_authenticated:
             user_id = request.user.id
-        #     print(request)
             uploaded_file = request.FILES['file_upload']
 
             fs = FileSystemStorage()
-            # rename using date convention
+            # TODO rename using date convention
             filename = fs.save(uploaded_file.name, uploaded_file)
-            print("Captured name: ", filename)
             uploaded_file_url = fs.url(filename)
-            print("Uploaded to: ", uploaded_file_url)
             delimiter = request.POST['delimiter']
-            print(delimiter)
-            messages.success(request, 'Your inquiry has been sent.')
-
-            return render(request, 'pages/upload.html', {'uploaded_file_url': uploaded_file_url})
+            result = process_csv(uploaded_file_url, delimiter)
+            messages.info(request, 'Successfully made ' +
+                          str(result['s'])+' new entries and failed to make '+str(result['f'])+' entries')
+            context = {'uploaded_file_url': uploaded_file_url}
+            return render(request, 'pages/upload.html', context)
         else:
             messages.error(request, 'You have to be logged in to add swabs')
         return redirect('upload')
-    #     if has_contacted:
-    #         messages.error(
-    #             request, 'You have already inquired about this property')
-    #         return redirect('/listings/'+listing_id)
 
-    # else:
-    #     contact = Contact(listing=listing, listing_id=listing_id, name=name,
-        #       email=email, phone=phone, message=message, user_id=user_id)
-        # send_mail('Subject here - Inquiry','Here is the message. - Specifics','from@example.com', [realtor_email], fail_silently=False,)
-    #     contact.save()
     else:
         return render(request, 'pages/upload.html')
 
