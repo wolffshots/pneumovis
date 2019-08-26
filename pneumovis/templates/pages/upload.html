@@ -2,12 +2,92 @@
 
 {% load humanize %}
 {% load static %}
-{% load plotly_dash %}
 <!-- Dynamic page title -->
 {%block title%}| Index page{%endblock%}
+<!--    1. take form input (and authentication status) from user and capture uploaded file to media 
+        2. process file using given form data and use add method to add swab by swab - progress bar maybe?
+        3. render success or failure page -->
 
 {% block content %}
-<section id="showcase-no-gif">
-
+<!-- <section id="showcase-no-gif"> -->
+<section id="upload" class=" py-5" style="height:100%">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 mx-auto">
+                <div class="card">
+                    <div class="card-header bg-primary text-white">
+                        <h4>
+                            <i class="fas fa-user-plus"></i> Upload</h4>
+                    </div>
+                    <div class="card-body">
+                        <!-- Alerts -->
+                        <!-- {%include 'partials/_alerts.html'%} -->
+                        <form action="{%url 'upload'%}" method="POST" style="padding:10px;"
+                            enctype="multipart/form-data">
+                            <!-- important for security -->
+                            {% csrf_token %}
+                            <div class="form-group">
+                                <label for="file_upload">Select a swab file</label>
+                                <input type="file" name="file_upload" class="form-control" required
+                                    style="height:100%;">
+                            </div>
+                            <!-- <div class="form-group">
+                                <label for="delimiter">Delimiter</label>
+                                <input type="text" name="delimiter" class="form-control" required>
+                            </div> -->
+                            <div class="form-group">
+                                <label for="delimiter">Delimiter</label>
+                                <select name="delimiter" class="form-control" style="width:100%">
+                                    <option value="comma">comma - ,</option>
+                                    <option value="semi_colon">semicolon - ;</option>
+                                    <option value="space">space - </option>
+                                    <option value="other">other</option>
+                                </select>
+                            </div>
+                            <!-- <div class="form-group">
+                                <label for="last_name">Last Name</label>
+                                <input type="text" name="last_name" class="form-control" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="username">Username</label>
+                                <input type="text" name="username" class="form-control" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Email</label>
+                                <input type="email" name="email" class="form-control" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="password2">Password</label>
+                                <input type="password" name="password" class="form-control" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="password">Confirm Password</label>
+                                <input type="password" name="password2" class="form-control" required>
+                            </div> -->
+                            <input type="submit" value="Upload file" class="btn btn-secondary btn-block">
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </section>
+<section id="upload_instructions" class=" py-5" style="height:100%">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 mx-auto">
+                <div class="card">
+                    <div class="card-header bg-primary text-white">
+                        <h4>
+                            <i class="fas fa-user-plus"></i> Help with uploading</h4>
+                    </div>
+                    <!-- this should auto collapse -->
+                    <h5>Steps on uploading should go here</h5>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+</section>
+<!-- </section> -->
 {% endblock %}
