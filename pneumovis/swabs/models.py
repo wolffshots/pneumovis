@@ -14,8 +14,10 @@ class Swab(models.Model):
     """
     Particcipant_ID = models.CharField(max_length=10)
     Barcode = models.CharField(max_length=20, primary_key=True)
-    geo_lat = models.FloatField()
-    geo_long = models.FloatField()
+    geo_lat = models.CharField(
+        max_length=20, null=True, blank=True)
+    geo_long = models.CharField(
+        max_length=20, null=True, blank=True)
     Week = models.IntegerField()
     npa_a4_growth = models.CharField(
         max_length=10, blank=True, null=True)  # Growth or No Growth
@@ -48,7 +50,7 @@ class Swab(models.Model):
         max_length=5, blank=True, null=True)
     Sequence_Type = models.CharField(max_length=10, blank=True, null=True)
     education = models.CharField(max_length=20, blank=True, null=True)
-    HHdsize = models.IntegerField(blank=True, null=True)
+    HHdsize = models.FloatField(blank=True, null=True)
     HomeType = models.CharField(max_length=28, blank=True, null=True)
     Paraffin_stove = models.BooleanField(blank=True, null=True)
     Coal_stove = models.BooleanField(blank=True, null=True)
@@ -64,7 +66,7 @@ class Swab(models.Model):
     TolueneCat_post = models.CharField(max_length=10, blank=True, null=True)
     CO_Strict_post = models.CharField(max_length=21, blank=True, null=True)
     CO_Broad_post = models.CharField(max_length=10, blank=True, null=True)
-    weight_birth = models.FloatField()
+    weight_birth = models.FloatField(default=-1, null=True, blank=True)
     mother_smoke_anytime = models.BooleanField(blank=True, null=True)
     total_smokers_anytime = models.CharField(
         max_length=10, blank=True, null=True)
