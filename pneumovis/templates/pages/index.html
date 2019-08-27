@@ -8,34 +8,14 @@
 
 {% block content %}
 <section id="showcase">
-                    <div class="card" style="color:black;opacity:0.99;">
-                        <div class="card-header"style="color:black;">Card header</div>
-                        
-                        <div class="card-body">
-                            <h5 class="card-title"style="color:black;">Card title</h5>
-                            <h6 class="text-secondary">Big graph</h6>
-                            {% plotly_app name="SimpleExample" ratio=1 %}
-                        </div>
-                        <!-- <div class="card-footer"style="color:black;">
-                            <div class="col-sm-12 d-flex pb-3">
-                            <div class="card">
-                                <div class="card-header" style="color:black;">Small graph 1 header</div>
-                                {% plotly_app name="SimpleExample" use_frameborder="0" ratio=1%}
-                            </div>
-                            <div class="card">
-                                <div class="card-header" style="color:black;">Small graph 2 header</div>
-                                
-                                {% plotly_app name="SimpleExample" ratio=1%}
-                            </div>
-                            <div class="card">
-                                <div class="card-header" style="color:black;">Small graph 3 header</div>
-                                
-                                {% plotly_app name="SimpleExample" ratio=1%}
-                                
-                            </div>
-                            </div>
-                        </div> -->
-                    </div>
-    </section>
+    <div class="card" style="color:black;opacity:0.99;">
+        <div style="height:500px">
+            {% plotly_app name="SimpleExample" ratio=1 %}
+        </div>
+        <div style="height:500px">
+            {% plotly_app name="SimpleExample2" ratio=1 %}
+        </div>
+    </div>
+</section>
 
 {% endblock%}
