@@ -122,3 +122,4 @@ plotly==4.1.0
     * [ ] process files
     * [ ] create swabs
 * [ ] redesign admin
+* [ ] night mode
