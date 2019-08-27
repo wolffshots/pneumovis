@@ -111,3 +111,14 @@ plotly==4.1.0
 ## Things to inspire
 * [Information is Beautiful](https://informationisbeautiful.net/)
 
+## TODO
+
+### Jadon
+* [ ] contacts page
+    * [ ] details of Dr Dube
+    * [ ] details of students
+* [ ] uploads
+    * [ ] form input
+    * [ ] process files
+    * [ ] create swabs
+* [ ] redesign admin
