@@ -20,10 +20,10 @@ class Swab(models.Model):
         max_length=20, null=True, blank=True)
     Week = models.IntegerField()
     npa_a4_growth = models.CharField(
-        max_length=10, blank=True, null=True)  # Growth or No Growth
+        max_length=10, blank=True, null=True)
     datecollection = models.DateField()
     Presence_of_Pneumococcus = models.BooleanField(
-        default=False, blank=True,null=True)
+        default=False,blank=True,null=True)
     dob = models.DateField()
     sex = models.CharField(max_length=6)
     HIVexposed = models.BooleanField(default=False, blank=True, null=True)
