@@ -114,12 +114,12 @@ plotly==4.1.0
 ## TODO
 
 ### Jadon
-* [ ] contacts page
-    * [ ] details of Dr Dube
-    * [ ] details of students
-* [ ] uploads
-    * [ ] form input
-    * [ ] process files
-    * [ ] create swabs
-* [ ] redesign admin
+* [x] contacts page
+    * [x] details of Dr Dube
+    * [x] details of students
+* [x] uploads
+    * [x] form input
+    * [x] process files
+    * [x] create swabs
+* [x] redesign admin
 * [ ] night mode
