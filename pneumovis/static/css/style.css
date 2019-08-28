@@ -1,3 +1,5 @@
+/* Custom style sheet for PneumoVis */
+
 .btn-secondary {
   color: #fff !important; }
 
@@ -99,6 +101,14 @@ img {
 /* Jadon */
 body, h1,h2,h3,h4,h5,h6,ul,li,p,div,a,span,i,section,nav,ol {font-family: "Roboto", sans-serif}
 
+.breadcrumb{line-height: normal;}
+
+
+.card{font-family: "Roboto", sans-serif}
+.card-body{font-family: "Roboto", sans-serif}
+.card-header{font-family: "Roboto", sans-serif}
+/* .fas{font-family: "Roboto", sans-serif} */
+
 footer#main-footer {
     padding-top: 10px;
     padding-bottom: 0px;
@@ -108,15 +118,16 @@ footer#main-footer {
 }
 
 #showcase {
-    /* background: hsla(0, 0%, 95%, 1); */
-    /* background: url(../images/loading_1_2.gif) no-repeat top center; */
+  /* background: url(../images/loading_1_2.gif) no-repeat top center; */
+    background: hsla(0, 0%, 95%, 1);
+    
     background-size: 100%;
     -webkit-background-size: 1400px;
     /* background-size: 200%; */
     position: relative;
     min-height: -webkit-fill-available;
     color: #fff;
-    padding-top: 6rem;
+    padding-top: 0.1rem;
 }
 .bg-primary {
     background-color: #03020a !important;

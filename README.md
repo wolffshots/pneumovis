@@ -96,7 +96,7 @@ Click [here](http://bit.ly/csc3003s-capstone) to check out the live site
 
 ## Requirements
 * [csvkit](https://github.com/wireservice/csvkit) (not included in requirements.txt, has to be set up manually)
-```js
+```python
 Django==2.2.4
 gunicorn==19.9.0
 Pillow==5.2.0

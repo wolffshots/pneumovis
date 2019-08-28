@@ -11,30 +11,30 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
             <ul class="navbar-nav" style="width: 100%;">
-                <li {% if '/' == request.path %} class="nav-item active mr-3" {% else %} class="nav-item mr-3"
-                    {% endif %}>
-                    <!-- this if else is what highlights navbar items -->
-                    <!-- <a class="nav-link" href="{% url 'index' %}">Home</a> -->
-                    <a href="{%url 'index'%}" class="nav-link" style="width:100% !important">HOME</a>
+                <li class="nav-item mr-3">
+                    <a href="{%url 'index'%}" 
+                    {% if '/' == request.path %} class="nav-link active" {% else %} class="nav-link" {% endif %}
+                    style="width:100% !important;line-height:64px;">HOME</a>
                 </li>
-                <li {% if 'about' in request.path %} class="nav-item active mr-3" {% else %} class="nav-item mr-3"
-                    {% endif %}>
-                    <!-- <a class="nav-link" href="{% url 'about' %}">About</a> -->
-                    <a href="{% url 'about' %}" class="nav-link" style="width:100% !important">ABOUT</a>
+                <li class="nav-item mr-3">
+                    <a href="{% url 'about' %}"
+                    {% if 'about' in request.path %} class="nav-link active" {% else %} class="nav-link" {% endif %}
+                    style="width:100% !important;line-height:64px;">ABOUT</a>
                 </li>
-                <li {% if 'browse' in request.path %} class="nav-item active mr-3" {% else %} class="nav-item mr-3"
-                    {% endif %}>
-                    <a href="/browse" class="nav-link" style="width:100% !important">BROWSE</a>
+                <li class="nav-item mr-3">
+                    <a href="{% url 'browse' %}" 
+                    {% if 'browse' in request.path %} class="nav-link active" {% else %} class="nav-link" {% endif %}
+                    style="width:100% !important;line-height:64px;">BROWSE</a>
 
                 </li>
             </ul>
 
-            <ul class="navbar-nav ml-auto">
+            <ul class="navbar-nav ml-auto" style="width: 338px;">
                 {%if user.is_authenticated%}
                 <!-- logout and dashboard links -->
                 <li class="nav-item mr-3">
                     <a href="javascript:{document.getElementById('logout').submit()}" class="nav-link"
-                        style="width:100px;">
+                    style="width:100% !important;line-height:64px;">
                         <i class="fas fa-sign-out-alt"> </i> Logout
                     </a>
                     <form action="{%url 'logout'%}" method="POST" id="logout">
@@ -42,20 +42,23 @@
                         <input type="hidden">
                     </form>
                 </li>
-                <li class="nav-item mr-3">
-                    <a href="/admin" class="nav-link" style="width:100px;">
+                <li class="nav-item mr-3"
+                style="width:100% !important;line-height:64px;">
+                    <a href="/admin" class="nav-link" >
                         <i class="fas fa-user-secret"> </i> Admin
                     </a>
                 </li>
                 {%else%}
                 <li {% if 'login' in request.path %} class="nav-item active mr-3" {% else %} class="nav-item mr-3"
-                    {% endif %}>
+                    {% endif %}
+                    >
                     <!-- these conditionals are to highlight if on that page -->
-                    <a class="nav-link" href="{% url 'login'%}" style="width:100px;">
+                    <a class="nav-link" href="{% url 'login'%}" >
                         <i class="fas fa-sign-in-alt"> </i> Login</a>
                 </li>
-                <li class="nav-item mr-3">
-                    <a href="{% url 'contact' %}" class="nav-link" style="width:100px;">
+                <li class="nav-item mr-3"
+                >
+                    <a href="{% url 'contact' %}" class="nav-link" >
                         <i class="fas fa-envelope-open"> </i> Contact
                     </a>
                 </li>

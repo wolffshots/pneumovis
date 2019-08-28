@@ -2,24 +2,9 @@
 <!DOCTYPE html> 
 <link rel="shortcut icon" type="image/ico" href="{% static 'favicon.ico' %}" />
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-
-    <title>PneumoVis {% block title %}{%endblock%}</title>
-
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="{% static 'css/all.css' %}">
-    <!-- Bootstrap -->
-    <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}">
-    <!-- Lightbox -->
-    <link rel="stylesheet" href="{% static 'css/lightbox.min.css' %}">
-    <!-- Custom -->
-    <link rel="stylesheet" href="{% static 'css/style.css' %}">
-</head>
+    <!-- Head -->
+    {% include 'partials/_head.html' %}
 <body>
-    
     <!-- Top bar -->
     {% include 'partials/_topbar.html' %}
     <!-- Nav bar -->
@@ -28,11 +13,7 @@
     {% block content %} {% endblock %}
     <!-- Footer -->
     {% include 'partials/_footer.html' %}
-    <script src="{% static 'js/jquery-3.3.1.min.js' %}"></script>
-    <script src="{% static 'js/bootstrap.bundle.min.js' %}"></script>
-    <script src="{% static 'js/lightbox.min.js' %}"></script>
-    <script src="{% static 'js/main.js' %}"></script>
+    <!-- Scripts -->
+    {% include 'partials/_scripts.html' %}
 </body>
 </html>
-
-<!-- this file represents the base stuff that other pages will inherit from -->
