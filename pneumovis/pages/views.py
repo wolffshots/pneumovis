@@ -72,8 +72,14 @@ def upload(request):
             # TODO rename using date convention
             filename = fs.save(uploaded_file.name, uploaded_file)
             uploaded_file_url = fs.url(filename)
+            print("POST request comes to: ",request.POST)
             delimiter = request.POST['delimiter']
-            result = process_csv(uploaded_file_url, delimiter)
+            try:
+                header_value=request.POST['header']
+                header = True
+            except:
+                header = False
+            result = process_csv(uploaded_file_url,header, delimiter)
             messages.info(request, 'Successfully made ' +
                           str(result['s'])+' new entries and failed to make '+str(result['f'])+' entries')
             context = {'uploaded_file_url': uploaded_file_url}
