@@ -10,9 +10,15 @@ def process_csv(filename,header,delimiter):
     print("Using delimiter: ", delimiter)
     provided_file = open(filename, "r")
     # lines = provided_file.read()
+    if delimiter == 'comma':
+        delimiter=','
+    elif delimiter == 'space':
+        delimiter=' '
+    elif delimiter == 'semicolon':
+        delimiter=';'
     for line in provided_file: 
         if(not header):
-            line_list = [part.strip() for part in line.split(',')]
+            line_list = [part.strip() for part in line.split(delimiter)]
             add_swab_line(line_list)
         else:
             header = False
