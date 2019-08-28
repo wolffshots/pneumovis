@@ -23,27 +23,27 @@ class Swab(models.Model):
         max_length=10, blank=True, null=True)  # Growth or No Growth
     datecollection = models.DateField()
     Presence_of_Pneumococcus = models.BooleanField(
-        default=False, blank=True)
+        default=False, blank=True,null=True)
     dob = models.DateField()
     sex = models.CharField(max_length=6)
-    HIVexposed = models.BooleanField(default=False,blank=True)
+    HIVexposed = models.BooleanField(default=False, blank=True, null=True)
     site = models.CharField(max_length=100)
-    BCG_given_birth = models.BooleanField(default=False,blank=True)
+    BCG_given_birth = models.BooleanField(default=False, blank=True, null=True)
     BCG_date_birth = models.DateField(blank=True, null=True)
     DTaP_given_610wk = models.BooleanField(
         default=False, blank=True, null=True)
     DTaP_date_610wk = models.DateField(blank=True, null=True)
-    PCV_given_610wk = models.BooleanField(default=False,blank=True)
+    PCV_given_610wk = models.BooleanField(default=False, blank=True, null=True)
     PCV_date_610wk = models.DateField(blank=True, null=True)
-    DTaP_given_10wk = models.BooleanField(default=False,blank=True)
+    DTaP_given_10wk = models.BooleanField(default=False, blank=True, null=True)
     DTaP_date_10wk = models.DateField(blank=True, null=True)
-    DTaP_given_14wk = models.BooleanField(default=False,blank=True)
+    DTaP_given_14wk = models.BooleanField(default=False, blank=True, null=True)
     DTaP_date_14wk = models.DateField(blank=True, null=True)
-    PCV_given_14wk = models.BooleanField(default=False,blank=True)
+    PCV_given_14wk = models.BooleanField(default=False, blank=True, null=True)
     PCV_date_14wk = models.DateField(blank=True, null=True)
-    PCV_given_9m = models.BooleanField(default=False,blank=True)
+    PCV_given_9m = models.BooleanField(default=False, blank=True, null=True)
     PCV_date_9m = models.DateField(blank=True, null=True)
-    Disease = models.BooleanField(default=False,blank=True)
+    Disease = models.BooleanField(default=False, blank=True, null=True)
     Serotype_autocolour = models.CharField(
         max_length=15, blank=True, null=True)
     vaccine_status_autocolour = models.CharField(
@@ -67,11 +67,11 @@ class Swab(models.Model):
     CO_Strict_post = models.CharField(max_length=21, blank=True, null=True)
     CO_Broad_post = models.CharField(max_length=10, blank=True, null=True)
     weight_birth = models.FloatField(default=-1, null=True, blank=True)
-    mother_smoke_anytime = models.BooleanField(default=False,blank=True)
+    mother_smoke_anytime = models.BooleanField(default=False, blank=True, null=True)
     total_smokers_anytime = models.CharField(
         max_length=10, blank=True, null=True)
     delivery_method = models.CharField(max_length=10, blank=True, null=True)
-    antibio_use_1yr = models.BooleanField(default=False,blank=True)
+    antibio_use_1yr = models.BooleanField(default=False, blank=True, null=True)
 
     # photo = models.ImageField(upload_to='photos/%Y/%m/%d') # - can have this for serotypes
 
