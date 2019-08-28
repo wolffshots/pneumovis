@@ -114,6 +114,7 @@ plotly==4.1.0
 ## TODO
 
 ### Jadon
+#### Misc
 * [x] contacts page
     * [x] details of Dr Dube
     * [x] details of students
@@ -123,3 +124,8 @@ plotly==4.1.0
     * [x] create swabs
 * [x] redesign admin
 * [ ] night mode
+#### Final report
+* [ ] use cases
+    * [ ] add data use case
+    * [ ] explore use case
+* [ ] testing testing testing
