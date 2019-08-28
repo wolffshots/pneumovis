@@ -151,3 +151,7 @@ footer#main-footer {
 .card-body {
     padding: 0;
 }
+
+.indicator {
+  height: 4px !important;
+}

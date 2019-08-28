@@ -6,5 +6,59 @@
 {%block title%}| Contact page{%endblock%}
 
 {% block content %}
+<!-- <head>
+        
+</head> -->
+<section id="showcase-inner" class="py-5 text-white">
+        <div class="container">
+            <div class="row text-center">
+                <div class="col-md-12">
+                    <h1 class="display-4">Contacts:</h1>
+                    <p class="lead">
+                        <!-- <i class="fas fa-map-marker"></i> {{listing.site}} -->
+                        </p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Breadcrumb -->
+    <section id="bc" class="mt-3">
+        <div class="container">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item">
+                        <a href="{%url 'index'%}">Home</a>
+                    </li>
+                    <li class="breadcrumb-item active">
+                        <a href="{%url 'strains'%}">Contacts</a>
+                    </li>
+                </ol>
+        </div>
+    </section>
+    <section id="contact" class="py-4">
+        <div class="container">
+            <a href="{%url 'index'%}" class="btn btn-light mb-4">Back home</a>
+                    <div class="card purple">
+                            <div class="card-content white-text">
+                              <p>I am a very simple card. I am good at containing small bits of information. I am convenient because I require little markup to use effectively.</p>
+                            </div>
+                            <div class="card-tabs">
+                              <ul class="tabs tabs-fixed-width tabs-transparent">
+                                <li class="tab"><a href="#jadon" class="active">Jadon</a></li>
+                                <li class="tab"><a href="#aaisha" class="">Aa'isha</a></li>
+                                <li class="tab"><a href="#kiara" class="">Kiara</a></li>
+                              <!-- <li class="indicator" style="left: 0px; right: 129px;"></li></ul> -->
+                            </div>
+                            <div class="card-content blue lighten-5">
+                              <div id="jadon" style="display: block;" class="active">Jadon</div>
+                              <div id="aaisha" style="display: none;" class="">Aa'isha</div>
+                              <div id="kiara" style="display: none;" class="">Kiara</div>
+                            </div>
+                          </div>
+        </div>
+        
+    </section>
+    <body>
 
+      
+    </body>
 {% endblock%}
