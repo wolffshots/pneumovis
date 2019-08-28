@@ -159,7 +159,7 @@ STATICFILES_DIRS = [  # paths to other static resources
 # Media folder settings
 # This points the media folder to be in the root of the project
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
-MEDIA_URL = '/media/'
+MEDIA_URL = 'media/'
 
 # Messages
 MESSAGE_TAGS = {
