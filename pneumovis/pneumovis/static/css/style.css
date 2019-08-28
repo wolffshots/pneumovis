@@ -158,3 +158,8 @@ footer#main-footer {
 
 .bot-crop { max-height: 440px; overflow: hidden; object-fit: cover;}
 .bot-crop img { max-height: initial; }
+
+.checkcheck{
+  position: relative !important;
+  opacity: 50 !important;
+}
