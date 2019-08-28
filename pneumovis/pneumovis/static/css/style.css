@@ -163,3 +163,54 @@ footer#main-footer {
   position: relative !important;
   opacity: 50 !important;
 }
+
+.btn-secondary {
+  background-color: #673AB7;
+  border-color: #9C27B0;
+}
+.btn-secondary:hover {
+  background-color: rgb(135, 75, 238);
+  border-color: #9C27B0;/*rgb(212, 57, 240);*/
+}
+
+.card .card-action a:not(.btn):not(.btn-large):not(.btn-small):not(.btn-large):not(.btn-floating) {
+  color: rgb(135, 75, 238);
+  margin-right: 24px;
+  -webkit-transition: color .3s ease;
+  transition: color .3s ease;
+  text-transform: uppercase;
+}
+.card .card-action a:not(.btn):not(.btn-large):not(.btn-small):not(.btn-large):not(.btn-floating):hover {
+  color: rgb(195, 45, 221);
+}
+
+.tabs .tab a:hover, .tabs .tab a.active {
+  background-color: transparent;
+  color: rgb(135, 75, 238);
+}
+
+.tabs .indicator {
+  position: absolute;
+  bottom: 0;
+  height: 2px;
+  background-color: rgb(135, 75, 238);
+  will-change: left, right;
+}
+
+.tabs .tab a {
+  color: rgb(135, 75, 238);
+  display: block;
+  width: 100%;
+  height: 100%;
+  padding: 0 24px;
+  font-size: 14px;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  -webkit-transition: color .28s ease, background-color .28s ease;
+  transition: color .28s ease, background-color .28s ease;
+}
+
+.tabs .tab a:hover, .tabs .tab a.active {
+  background-color: transparent;
+  color: rgb(135, 75, 238);
+}

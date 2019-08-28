@@ -151,3 +151,24 @@ footer#main-footer {
 .card-body {
     padding: 0;
 }
+
+.indicator {
+  height: 4px !important;
+}
+
+.bot-crop { max-height: 440px; overflow: hidden; object-fit: cover;}
+.bot-crop img { max-height: initial; }
+
+.checkcheck{
+  position: relative !important;
+  opacity: 50 !important;
+}
+
+.btn-secondary {
+  background-color: #673AB7;
+  border-color: #9C27B0;
+}
+.btn-secondary:hover {
+  background-color: rgb(135, 75, 238);
+  border-color: #9C27B0;/*rgb(212, 57, 240);*/
+}
