@@ -13,9 +13,10 @@
 <section id="upload" class=" py-5" style="height:100%">
     <div class="container">
         <div class="row">
-            <div class="col-md-6 mx-auto">
-                <div class="card">
-                    <div class="card-header bg-primary text-white">
+            <div class="col-md-8 mx-auto">
+                <div class="card grey lighten-5">
+                    <br>
+                    <div class="card-title text-center">
                         <h4>
                             <i class="fas fa-user-plus"></i> Upload</h4>
                     </div>
@@ -45,7 +46,7 @@
                                     <option value="comma">comma - ,</option>
                                     <option value="semi_colon">semicolon - ;</option>
                                     <option value="space">space - </option>
-                                    <option value="other">other</option>
+                                    <!-- <option value="other">other</option> -->
                                 </select>
                             </div>
                             <input type="submit" value="Upload file" class="btn btn-secondary btn-block">
@@ -55,22 +56,90 @@
             </div>
         </div>
     </div>
+    <div class="container">
+            <div class="row">
+                <div class="col-md-8 mx-auto">
+                        <div class="card grey lighten-5">
+
+                                <div class="card-content">
+                                  <p>I am a very simple card. I am good at containing small bits of information. I am convenient because I require little markup to use effectively.</p>
+                                </div>
+                                <div class="card-tabs">
+                                  <ul class="tabs tabs-fixed-width grey lighten-5">
+                                    <li class="tab"><a class="active" href="#one">1: Required data format</a></li>
+                                    <li class="tab"><a class="" href="#two">2: The upload process</a></li>
+                                    <!-- <li class="tab"><a class="" href="#three">3: Confirmation</a></li> -->
+                                  </ul>
+                                </div>
+                                <div class="card-content grey lighten-4">
+                                  <div id="one">
+                                      <p>
+                                          The file format needs to be some form of text-based file (like a CSV file) with each entry on a line and seperated by one of the supported delimiters
+                                      </p>
+                                      <br>
+                                      <p>
+                                          If you have an Excel-based formatted file then either use Excel or an alternative to export the data to a CSV or use <a href="https://github.com/wireservice/csvkit">csvkit</a> to convert it from command line
+                                      </p>
+                                      <br>
+                                      <p>
+                                      Before starting you should ensure that the data matches the tempate at the link below
+                                      </p>
+                                      <br>
+                                    <div class="card-action text-purple">
+                                        <!-- <a target="_blank" rel="noopener noreferrer" href="{%static 'templates/data_template.txt' %}">Data template</a> -->
+                                        <a href="#" onClick="DataTemplate=window.open('{%static 'templates/data_template.txt' %}','Data Template',width=300,height=300); return false;">Data template</a>
+                                        <a target="_blank" rel="noopener noreferrer" href="https://github.com/wireservice/csvkit">CSVKIT</a>
+                                        
+                                    </div>
+                                  </div>
+                                  <div id="two">
+                                      <p>
+                                          <h5>A. File:</h5>
+                                          Click choose file and navigate to the file you want to upload.
+                                          <br>
+                                          Note: there may be issues when trying to upload files larger than 20MB
+                                      </p>
+                                      <br>
+                                      <p>
+                                            <h5>B. Header:</h5>
+                                            If your file has a line at the top with titles for the columns then this is referred to as the header and this line will need to be ignored when importing the data.
+                                            <br>
+                                            If this line is present in your file then ensure that the checkbox is ticked off (it is by default)
+                                        </p>
+                                      <br>
+                                      <p>
+                                            <h5>C. Delimiter:</h5>
+                                            The delimiter is the character that goes between fields in each entry in the file. Normal CSV files use either a comma or semicolon.
+                                            <br>
+                                            Select the appropriate delimiter for your file from the list
+                                            <br>
+                                            If your delimiter is not in the list you can either contact one of the team to have it added or you can use a text editor to 'find and replace' to replace yor delimiter with a supported one
+                                        </p>
+                                        <br>
+                                        <p>
+                                            <h5>D. Upload:</h5>
+                                            The final step for you is to click on the Upload button which will transfer the file and begin processing through it.
+                                            <br>
+                                            Please be very patient as it can take a few minutes to process and clean up large portions of data so if it seems like it is loading for a long time it is probably still busy
+                                        </p>
+                                        <br>
+                                        <p>
+                                            <h5>E. Confirmation:</h5>
+                                            The last thing that will happen is a message will be displayed at the top of the screen detailing the number of entries that were successfully added and the number that failed to be added
+                                        </p>
+                                    </div>
+                                  <!-- <div id="three">
+                                      Test 3
+                                    </div> -->
+                                </div>
+                              </div>
+                </div>
+            </div>            
+        </div>
+       
 </section>
 <section id="upload_instructions" class=" py-5" style="height:100%">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-6 mx-auto">
-                <div class="card">
-                    <div class="card-header bg-primary text-white">
-                        <h4>
-                            <i class="fas fa-user-plus"></i> Help with uploading</h4>
-                    </div>
-                    <!-- this should auto collapse -->
-                    <h5>Steps on uploading should go here</h5>
-                </div>
-            </div>
-        </div>
-    </div>
+    
 </section>
 </section>
 <!-- </section> -->
