@@ -81,11 +81,7 @@ layout_map = dict(
     ),
     uirevision="constant"
 )
-def SetColor(serotype):
-    if("1" in serotype):
-        return "green"
-    else:
-        return "yellow"
+
     
 # generate map with markers and more info on hover
 def gen_map(map_data):
@@ -108,7 +104,7 @@ def gen_map(map_data):
                 "marker": {
                     "size": 6,
                     "opacity": 0.7,
-                    "color":list(map(SetColor("name"),"lat")),
+                    "color":list(range(len(map_data.index))),
                     "colorscale":"Viridis"
                 }
         }],
