@@ -11,6 +11,10 @@ from .files import *
 from django.conf import settings
 from django.core.files.storage import FileSystemStorage
 
+# import multiprocessing as mp
+# pool = mp.Pool(mp.cpu_count())
+import subprocess
+
 
 def index(request):
     return render(request, 'pages/index.html')
@@ -26,7 +30,9 @@ def dashboard(request):
 
 def dep(request):
     messages.error(request, 'Not yet implemented')
-    return redirect('index')
+    return redirect('index') 
+    return redirect('about') 
+    
 
 
 def login(request):
@@ -79,11 +85,20 @@ def upload(request):
                 header = True
             except:
                 header = False
-            result = process_csv(uploaded_file_url,header, delimiter)
-            messages.info(request, 'Successfully made ' +
-                          str(result['s'])+' new entries and failed to make '+str(result['f'])+' entries')
-            context = {'uploaded_file_url': uploaded_file_url}
-            return render(request, 'pages/upload.html', context)
+            # Spawn Subprocess
+            import threading
+            t = threading.Thread(target=process_csv, args=(uploaded_file_url,header, delimiter), kwargs={})
+            t.setDaemon(True)
+            t.start()
+            # p=subprocess.Popen(['/bin/cp',f , '/home/dutzy/Desktop'])
+            
+            # result = process_csv(uploaded_file_url,header, delimiter)
+            # result = [pool.apply(process_csv, args=(uploaded_file_url,header,delimiter))]
+            # results = [pool.apply(howmany_within_range, args=(row, 4, 8)) for row in data]
+            # messages.info(request, 'Successfully made ' +
+            #               str(result['s'])+' new entries and failed to make '+str(result['f'])+' entries')
+            # context = {'uploaded_file_url': uploaded_file_url}
+            return render(request, 'pages/upload.html')
         else:
             messages.error(request, 'You have to be logged in to add swabs')
         return redirect('upload')

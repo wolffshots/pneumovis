@@ -26,7 +26,10 @@ def process_csv(filename,header,delimiter):
               'f': failures}
 
     provided_file.close() 
-    return result
+    messages.info(request, 'Successfully made ' + str(result['s'])+' new entries and failed to make '+str(result['f'])+' entries')
+    context = {'uploaded_file_url': uploaded_file_url}
+    # return result
+    return render(request, 'pages/upload.html',context)
 
 def test():
     return True
