@@ -29,7 +29,7 @@
                 </li>
             </ul>
 
-            <ul class="navbar-nav ml-auto" style="width: 338px;">
+            <ul class="navbar-nav ml-auto" style="width: 390px;">
                 {%if user.is_authenticated%}
                 <!-- logout and dashboard links -->
                 <li class="nav-item mr-3">
@@ -58,8 +58,6 @@
                 {%else%}
                 <li {% if 'login' in request.path %} class="nav-item active mr-3" {% else %} class="nav-item mr-3"
                     {% endif %}
-                    >
-                    <!-- these conditionals are to highlight if on that page -->
                     <a class="nav-link" href="{% url 'login'%}" >
                         <i class="fas fa-sign-in-alt"> </i> Login</a>
                 </li>
