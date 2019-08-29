@@ -6,4 +6,5 @@
 # sys.path.insert(1, 'pages/dash_apps_dir')
 from pages.dash_app_dir import incidence
 from pages.dash_app_dir import bubbles
+from pages.dash_app_dir import map
 print("Imported Dash apps")

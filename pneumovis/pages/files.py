@@ -3,7 +3,7 @@ successes = 0
 failures = 0
 delimiter = ''
 
-def process_csv(filename,header,delimiter):
+def process_csv(filename,header,d):
     global failures
     global successes
     global delimiter
