@@ -1,13 +1,16 @@
 from swabs.models import Swab
 successes = 0
 failures = 0
+delimiter = ''
 
 def process_csv(filename,header,delimiter):
     global failures
     global successes
+    global delimiter
     print("Processing file: ", filename)
     print("Header status: ", header)
     print("Using delimiter: ", delimiter)
+    delimiter = delimiter
     provided_file = open(filename, "r")
     # lines = provided_file.read()
     if delimiter == 'comma':
@@ -39,6 +42,7 @@ Presence_of_Pneumococcus,dob,sex,HIVexposed,site,BCG_given_birth,BCG_date_birth,
         # do some checks
     global failures
     global successes
+    global delimiter
     try:
         swab = Swab(    Particcipant_ID=Particcipant_ID,
                         Barcode=Barcode,
@@ -79,6 +83,7 @@ Presence_of_Pneumococcus,dob,sex,HIVexposed,site,BCG_given_birth,BCG_date_birth,
 def add_swab_line(line_list):
     global failures
     global successes
+    global delimiter
     try:
         for i in range(len(line_list)):
             # Dates 9: 6 8 13 15 17 19 21 23 25 
@@ -86,6 +91,7 @@ def add_swab_line(line_list):
             dates=[6,8,13,15,17,19,21,23,25]
             booleans=[7,10,12,14,16,18,20,22,24,26,33,34,48,51]
             ints =[4,]
+            doubles=[47,]
             if i in dates:
                 if line_list[i]=='':
                     line_list[i]=None
@@ -95,6 +101,10 @@ def add_swab_line(line_list):
             elif i in ints:
                 if '.0' in line_list[i]:
                     line_list[i]=line_list[i][:-2]
+            elif i in doubles:                    
+                if ',' in line_list[i]:
+                    split_list=ine_list[i].split(",")
+                    '.'.join(split_list)
             elif line_list[i]=='':
                     line_list[i]=None
         swab = Swab(Particcipant_ID=line_list[0],

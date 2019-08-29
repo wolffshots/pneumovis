@@ -5,8 +5,6 @@ The model of the swabs recorded at clinics
 from django.db import models
 from datetime import datetime
 
-# Create your models here.
-
 
 class Swab(models.Model):
     """
