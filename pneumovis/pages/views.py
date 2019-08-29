@@ -86,6 +86,7 @@ def upload(request):
             except:
                 header = False
             # Spawn Subprocess
+            # Check if user has made request recently and if so block it for a couple minutes to allow processes to finish
             import threading
             t = threading.Thread(target=process_csv, args=(uploaded_file_url,header, delimiter), kwargs={})
             t.setDaemon(True)

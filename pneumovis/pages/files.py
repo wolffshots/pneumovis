@@ -85,12 +85,16 @@ def add_swab_line(line_list):
             # Booleans 14: 7 10 12 14 16 18 20 22 24 26 33 34 48 51
             dates=[6,8,13,15,17,19,21,23,25]
             booleans=[7,10,12,14,16,18,20,22,24,26,33,34,48,51]
+            ints =[4,]
             if i in dates:
                 if line_list[i]=='':
                     line_list[i]=None
             elif i in booleans:
                 if line_list[i]=='':
                     line_list[i]=False
+            elif i in ints:
+                if '.0' in line_list[i]:
+                    line_list[i]=line_list[i][:-2]
             elif line_list[i]=='':
                     line_list[i]=None
         swab = Swab(Particcipant_ID=line_list[0],
