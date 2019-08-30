@@ -8,13 +8,21 @@
 
 {% block content %}
 <section id="showcase">
+    <head>
+            
+    </head>
     <div style="padding: 10px;">
-        <div class="card" style="color:black;opacity:0.99;">
-            <div style="height:500px">
-                {% plotly_app name="SimpleExample" ratio=1 %}
+        <div class="" style="color:black;opacity:0.99;">
+            <div style="height:520px" class=" card
+            {%plotly_class name='SimpleExample' postfix='A'%}
+            ">
+                    {% plotly_app name="SimpleExample" ratio=0.46 %}
             </div>
-            <div style="height:500px">
-                {% plotly_app name="SimpleExample2" ratio=1 %}
+            <div style="height:520px" class=" card
+            {%plotly_class name='SimpleExample2' postfix='A'%}
+            ">
+                    {% plotly_app name="SimpleExample2" ratio=0.46 %} 
+                    
             </div>
         </div>
     </div>
