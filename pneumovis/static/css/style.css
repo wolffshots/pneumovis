@@ -112,7 +112,8 @@ img {
 
 
 /* Jadon */
-body, h1,h2,h3,h4,h5,h6,ul,li,p,div,a,span,i,section,nav,ol {font-family: "Roboto", sans-serif}
+body, h1,h2,h3,h4,h5,h6,ul,li,p,div,a,span,section,nav,ol {font-family: "Roboto", sans-serif !important}
+/* i {font-family:-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji" !important;} */
 
 .breadcrumb{line-height: normal;}
 
@@ -263,6 +264,20 @@ footer#main-footer {
   border-color: var(--awesome_grey);
 }
 
-.nav ul li.active {
-  background-color: rgba(0,0,0,0) !important;
+nav ul li.active {
+  background-color: rgba(0,0,0,0.0) !important;
+}
+
+.purple {
+  background-color: var(--awesome2) !important;
+}
+
+body {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
+
+main {
+  flex: 1 0 auto;
 }
