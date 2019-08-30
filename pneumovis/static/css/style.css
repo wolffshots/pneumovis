@@ -1,12 +1,12 @@
 /* Custom style sheet for PneumoVis */
 /* 28104E • 6237A0 • 9754CB • DEACF5 */
 :root {
-  --awesome1: #28104E !important;
-  --awesome2: #6237A0 !important;
-  --awesome3: #9754CB !important;
-  --awesome4: #DEACF5 !important;
-  --awesome_white: #fff !important;
-  --awesome_black: rgb(0, 0, 0) !important;
+  --awesome4: #28104E !important;
+  --awesome3: #6237A0 !important;
+  --awesome2: #9754CB !important;
+  --awesome1: #DEACF5 !important;
+  --awesome_black: #fff !important;
+  --awesome_white: rgb(0, 0, 0) !important;
   --awesome_kinda_black: #03020a !important;
   --awesome_kinda_white: hsla(0, 0%, 95%, 1) !important;
   --awesome_grey: rgb(192, 192, 192) !important;

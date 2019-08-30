@@ -1,5 +1,5 @@
 {% load static %}
-<nav class="navbar navbar-expand-lg navbar-dark bg-primary sticky-top">
+<nav class="navbar navbar-expand-lg sticky-top" style="background-color:var(--bb) !important;">
     <div class="container">
         <!-- this makes the branding go back to the home page -->
         <a class="navbar-brand" href="{% url 'index'%}" style="width: 2%; ">
@@ -14,17 +14,17 @@
                 <li class="nav-item mr-3">
                     <a href="{%url 'index'%}" 
                     {% if '/' == request.path %} class="nav-link active" {% else %} class="nav-link" {% endif %}
-                    style="width:100% !important;line-height:64px;">HOME</a>
+                    style="width:100% !important;line-height:64px;color:var(--aa);">HOME</a>
                 </li>
                 <li class="nav-item mr-3">
                     <a href="{% url 'about' %}"
                     {% if 'about' in request.path %} class="nav-link active" {% else %} class="nav-link" {% endif %}
-                    style="width:100% !important;line-height:64px;">ABOUT</a>
+                    style="width:100% !important;line-height:64px;color:var(--aa);">ABOUT</a>
                 </li>
                 <li class="nav-item mr-3">
                     <a href="{% url 'browse' %}" 
                     {% if 'browse' in request.path %} class="nav-link active" {% else %} class="nav-link" {% endif %}
-                    style="width:100% !important;line-height:64px;">BROWSE</a>
+                    style="width:100% !important;line-height:64px;color:var(--aa);">BROWSE</a>
 
                 </li>
             </ul>
@@ -34,7 +34,7 @@
                 <!-- logout and dashboard links -->
                 <li class="nav-item mr-3">
                     <a href="javascript:{document.getElementById('logout').submit()}" class="nav-link"
-                    style="width:100% !important;line-height:64px;">
+                    style="width:100% !important;line-height:64px;color:var(--aa);">
                         <i class="fas fa-sign-out-alt"> </i> Logout
                     </a>
                     <form action="{%url 'logout'%}" method="POST" id="logout">
@@ -44,9 +44,9 @@
                 </li>
 
                 <li class="nav-item mr-3"
-                style="width:100% !important;line-height:64px;">
+                style="width:100% !important;line-height:64px;color:">
                 {% if 'admin' in request.path %} 
-                    <a href="{% url 'upload'%}" class="nav-link" >
+                    <a href="{% url 'upload'%}" class="nav-link" style="color:var(--aa) !important;">
                         <i class="fas fa-upload"> </i> Upload
                     </a>
                 {% else %} 
@@ -58,12 +58,12 @@
                 {%else%}
                 <li {% if 'login' in request.path %} class="nav-item active mr-3" {% else %} class="nav-item mr-3"
                     {% endif %}>
-                    <a class="nav-link" href="{% url 'login'%}" >
+                    <a style="color:var(--aa);" class="nav-link" href="{% url 'login'%}" >
                         <i class="fas fa-sign-in-alt"> </i> Login</a>
                 </li>
                 <li class="nav-item mr-3"
                 >
-                    <a href="{% url 'contact' %}" class="nav-link" >
+                    <a style="color:var(--aa);" href="{% url 'contact' %}" class="nav-link" >
                         <i class="fas fa-envelope-open"> </i> Contact
                     </a>
                 </li>

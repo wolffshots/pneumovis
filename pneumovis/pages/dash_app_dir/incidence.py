@@ -20,12 +20,16 @@ df.sort_values(['indexNumber'], ascending=[True], inplace=True)
 subject = df['Serotype']
 score = list(range(len(subject)))
 
+strain = subject.replace("/", "_")
+strain = subject.replace("(", "-")
+strain = subject.replace(")", "z")
+
 data = [dict(
     type='bar',
     x=subject,
     y=score,
-    # TODO add specific strain here
-    text="""<a href="/strains">{}</a>""".format(
+    
+    text= "<a href=\"/strains/"+subject+ "\">{}</a>".format(
         "More Info"),
     textposition='auto',
     textcolor="white",
