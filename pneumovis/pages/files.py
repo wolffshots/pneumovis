@@ -3,14 +3,14 @@ successes = 0
 failures = 0
 delimiter = ''
 
-def process_csv(filename,header,delimiter):
+def process_csv(filename,header,delim):
     global failures
     global successes
     global delimiter
     print("Processing file: ", filename)
     print("Header status: ", header)
-    print("Using delimiter: ", delimiter)
-    delimiter = delimiter
+    print("Using delimiter: ", delim)
+    delimiter = delim
     provided_file = open(filename, "r")
     # lines = provided_file.read()
     if delimiter == 'comma':
