@@ -120,7 +120,7 @@ def updateMap(serotypeVals):
 
     if len(serotypeVals)==0:
         print("no tags selected")
-        temp_df=map_data.loc[map_data['serotype']=="blank"] 
+        temp_df=map_data.loc[map_data['serotype']==" "] 
 
     else:
         temp_df=map_data.loc[map_data['serotype'].isin(serotypeVals)]    
