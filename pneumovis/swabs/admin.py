@@ -5,7 +5,7 @@ from .models import Swab
 
 
 class SwabAdmin(admin.ModelAdmin):
-    list_display = ('Barcode', 'Particcipant_ID', 'datecollection', 'site')
+    list_display = ('Barcode', 'Particcipant_ID', 'datecollection', 'Week', 'site')
     list_display_links = ('Barcode',)
     search_fields = ('Particcipant_ID', 'Barcode')
     list_per_page = 30
