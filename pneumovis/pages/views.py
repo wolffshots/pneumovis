@@ -4,6 +4,10 @@ from django.shortcuts import render, redirect
 from django.contrib import messages, auth
 from django.contrib.auth.models import User
 
+from swabs.models import Swab
+from django.db.models import Count
+
+
 from .dash_apps import *
 
 from .files import *
@@ -62,7 +66,15 @@ def ip(request):
 
 
 def browse(request):
-    return render(request, 'pages/browse.html')
+    num_swabs = len(Swab.objects.all())
+    num_participants = len(Swab.objects.order_by('Particcipant_ID').values('Particcipant_ID').annotate(dcount=Count('Particcipant_ID')))
+    num_strains = len(Swab.objects.order_by('Serotype_autocolour').values('Serotype_autocolour').annotate(dcount=Count('Serotype_autocolour')))
+    context={
+    'num_swabs':num_swabs,
+    'num_participants':num_participants,
+    'num_strains':num_strains,
+    }
+    return render(request, 'pages/browse.html',context)
 
 
 def upload(request):
