@@ -27,7 +27,9 @@ def sorted_nicely( l ):
 
 
 newSerotypeList=sorted_nicely(list(map_data["serotype"]))
-print(newSerotypeList)
+map_data['serotype'] = pd.Categorical(map_data['serotype'], list(dict.fromkeys(newSerotypeList).keys()))
+map_data=map_data.sort_values(by="serotype")
+
 
 
 
@@ -82,10 +84,9 @@ layout_map = dict(
     uirevision="constant"
 )
 
-    
+numColours=len(map_data.index)
 # generate map with markers and more info on hover
 def gen_map(map_data):
-
     if map_data.empty:
         return {
         "data": [],
@@ -104,12 +105,15 @@ def gen_map(map_data):
                 "marker": {
                     "size": 6,
                     "opacity": 0.7,
-                    "color":list(range(len(map_data.index))),
+                    "cmax":numColours,
+                    "cmin":0,
+                    "color":list(range(numColours)),
                     "colorscale":"Viridis"
                 }
         }],
         "layout": layout_map
     }
+
 
 # callback to update map based on serotype tags selected
 
