@@ -164,7 +164,7 @@ def incidence_load():
         width=2,
         color='black'),
         size=16,
-        cmax=numColours+500,
+        cmax=numColours,
         cmin=0,
         color=list(range(numColours)),
         colorbar=dict(
