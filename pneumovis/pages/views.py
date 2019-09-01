@@ -98,9 +98,9 @@ def upload(request):
             # Spawn Subprocess
             # Check if user has made request recently and if so block it for a couple minutes to allow processes to finish
             import threading
-            t = threading.Thread(target=process_csv, args=(uploaded_file_url,header, delimiter), kwargs={})
-            t.setDaemon(True)
-            t.start()
+            upload_thread = threading.Thread(target=process_csv, args=(uploaded_file_url,header, delimiter), kwargs={})
+            upload_thread.setDaemon(True)
+            upload_thread.start()
             # p=subprocess.Popen(['/bin/cp',f , '/home/dutzy/Desktop'])
             
             # result = process_csv(uploaded_file_url,header, delimiter)
