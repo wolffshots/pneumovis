@@ -89,6 +89,13 @@ Click [here](http://bit.ly/csc3003s-capstone) to check out the live site
 *   [Django cheatsheet gist](https://gist.github.com/bradtraversy/0df61e9b306db3d61eb24793b6b7132d)
 *   [Django deployment gist](https://gist.github.com/bradtraversy/cfa565b879ff1458dba08f423cb01d71)
 
+## Testing
+For testing it is imperative that you give the dbadmin user permissions on the DB
+```sql
+ALTER USER dbadmin CREATEDB;
+```
+
+
 ## Credits
 * [A'aisha Dout](https://github.com/adout1902)
 * [Kiara Beilinsohn](https://github.com/kiaraBeilinsohn)
