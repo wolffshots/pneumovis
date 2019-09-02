@@ -44,9 +44,9 @@
                 </li>
 
                 <li class="nav-item mr-3"
-                style="width:100% !important;line-height:64px;color:">
+                style="width:100% !important;line-height:64px;color:var(--bb);">
                 {% if 'admin' in request.path %} 
-                    <a href="{% url 'upload'%}" class="nav-link" style="color:var(--aa) !important;">
+                    <a href="{% url 'upload'%}" class="nav-link" style="color:var(--aa);">
                         <i class="fas fa-upload"> </i> Upload
                     </a>
                 {% else %} 
