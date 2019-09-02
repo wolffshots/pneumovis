@@ -94,7 +94,7 @@ def patient_load():
               }),
 
       ],
-      style={'padding-bottom': '45%', 'height': 0},
+      style={'padding-bottom': '0%', 'height': 0},
   )
 
 # patient_load()
