@@ -25,11 +25,9 @@ class SwabTestCase(TestCase):
         """Swabs are created successfully"""
         global example_line
         # Create swab
-        
         add_swab_line(example_line)
         # Pull swab from DB and compare
         swabs=Swab.objects.order_by('-Particcipant_ID').filter(Particcipant_ID=example_line[0])
-        # print("Swabs matching ",example_line[0]," ",swabs[0].get_Particcipant_ID())
         for swab in swabs:
             self.assertEqual(swab.get_Particcipant_ID(), 'PT0')
             self.assertEqual(swab.get_Barcode(), '0')
@@ -37,6 +35,7 @@ class SwabTestCase(TestCase):
     def test_delete(self):
         """Swabs are deleted correctly"""
         global example_line
+        add_swab_line(example_line)
         # Delete swab
         Swab.objects.order_by('-Particcipant_ID').filter(Particcipant_ID=example_line[0]).delete()
         # Check DB for swab
