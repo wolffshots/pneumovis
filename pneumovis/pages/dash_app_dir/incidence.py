@@ -12,7 +12,7 @@ from django_plotly_dash import DjangoDash
 from dash.dependencies import Input, Output
 import re
 
-app = DjangoDash('SimpleExample')
+app = DjangoDash('incidence')
 
 def incidence_load():
     df = pd.DataFrame(pd.read_csv('swabs2.csv'))
@@ -94,7 +94,7 @@ def incidence_load():
             html.H1(children=''),
             # html.Div(children=''''''),
             dcc.Graph(
-                id='example-graph',
+                id='incidence-graph',
                 figure={
                     'data': data,
                     'layout': layout
@@ -102,6 +102,7 @@ def incidence_load():
 
         ],
         style={'padding-bottom': '0%', 'height': 0},
+        className='incidence graph',
     )
 
 import threading

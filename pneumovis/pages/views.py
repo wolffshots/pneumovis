@@ -12,6 +12,8 @@ from .dash_apps import *
 
 from .files import *
 
+from .tasks import *
+
 from django.conf import settings
 from django.core.files.storage import FileSystemStorage
 
@@ -119,5 +121,4 @@ def upload(request):
 
 
 def contact(request):
-    # TODO add the Dr and our details
     return render(request, 'pages/contact.html')

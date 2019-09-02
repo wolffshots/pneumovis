@@ -13,7 +13,7 @@ from dash.dependencies import Input, Output
 import re
 import collections
 
-app = DjangoDash('SimpleExample3')
+app = DjangoDash('map')
 def map_load():
     #map API key
     mapbox_access_token = "pk.eyJ1IjoiYWRvdXQxOTAyIiwiYSI6ImNqeXR1MXBwazA3OWMzbnJyZTk0eDVwNXgifQ.TEDKQZdJPxMTgK6dKGMvgA"
@@ -45,8 +45,6 @@ def map_load():
                 dcc.Graph(id='map-graph',
                             style={'margin-top': '20'}
                         )
-
-
     ])
 
     layout_map = dict(

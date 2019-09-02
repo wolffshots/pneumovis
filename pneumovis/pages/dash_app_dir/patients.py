@@ -18,7 +18,7 @@ import dash_core_components as dcc
 # will upload dataset with full dates soon. If you need help with filtering dataframes or whatever check the other visualisations 
 # minor things: more space between patients, order patients numerically 
 
-app = DjangoDash('SimpleExample4')
+app = DjangoDash('patients')
 
 def patient_load():
   df = pd.DataFrame(pd.read_csv('patientData.csv'))
@@ -87,7 +87,7 @@ def patient_load():
           html.H1(children=''),
           # html.Div(children=''''''),
           dcc.Graph(
-              id='example-graph',
+              id='patients-graph',
               figure={
                   'data': data,
                   'layout': layout
@@ -95,6 +95,7 @@ def patient_load():
 
       ],
       style={'padding-bottom': '0%', 'height': 0},
+      className='patients graph'
   )
 
 # patient_load()

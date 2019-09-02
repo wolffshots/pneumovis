@@ -12,7 +12,7 @@ from django_plotly_dash import DjangoDash
 from dash.dependencies import Input, Output
 import re
 # name can be changed but must then also be changed in the templates where it is called
-app = DjangoDash('SimpleExample2')
+app = DjangoDash('bubbles')
 
 
 # x axis variable options - if time, add CO2 exposure, stove type etc
