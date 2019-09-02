@@ -13,6 +13,12 @@
   --adg:rgb(92, 92, 92) !important;
 }
 
+/* reset */
+*{
+  margin:0;
+  padding:0;
+  padding-bottom:0;
+}
 
 .btn-secondary {
   color: var(--aa) !important; }
