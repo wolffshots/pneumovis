@@ -131,6 +131,7 @@ plotly==4.1.0
     * [x] create swabs
 * [x] redesign admin
 * [ ] night mode
+* [x] fix csv pathing
 #### Final report
 * [ ] use cases
     * [ ] add data use case
