@@ -4,7 +4,8 @@ python:
 env:
   - DJANGO=1.8 DB=postgres
 before_install:
-  - export DJANGO_SETTINGS_MODULE=pneumovis.settings.local
+  - cd pneumovis
+  - export DJANGO_SETTINGS_MODULE=pneumovis.settings
 install:
   - pip install -r requirements.txt
 before-script:
