@@ -307,3 +307,7 @@ html, body {
 .breadcrumb:last-child {
   color: var(--bb);
 }
+
+.w3-button{
+  color:var(--aa) !important;
+}
