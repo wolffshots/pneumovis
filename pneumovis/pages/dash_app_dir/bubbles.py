@@ -37,7 +37,6 @@ app.layout = html.Div(children=[
 
 ])
 
-# Bubble Chart
 
 
 # get data for the bubble charts
@@ -128,6 +127,8 @@ def makeFigure(xVar):
     # make data
     year = 2012
     dfVar=xVar.lower()+"exposed"
+    colours =  ["#ADCF3D", '#483D7A', '#287E8D', '#447877', '#AFCA3E', '#208D66', '#366B80']
+    i=0
     for serotype in serotypes:
         dataset_by_year = dataset[dataset["year"] == year]
         dataset_by_year_and_area = dataset_by_year[
@@ -141,16 +142,21 @@ def makeFigure(xVar):
             "marker": {
                 "sizemode": "area",
                 "sizeref": 0.05,
+                 "color":colours[i],
                 "size": list(dataset_by_year_and_area["population"])
+              
             },
             "name": "Mode Serotype in Area: "+serotype
         }
         fig_dict2["data"].append(data_dict)
+        i+=1
 
     # make frames, each corresponds to a year
     for year in years:
         
         frame = {"data": [], "name": str(year)}
+        colours =  ["#ADCF3D", '#483D7A', '#287E8D', '#447877', '#AFCA3E', '#208D66', '#366B80']
+        i=0
         for serotype in serotypes:
             dataset_by_year = dataset[dataset["year"] == int(year)]
             dataset_by_year_and_area = dataset_by_year[
@@ -164,12 +170,13 @@ def makeFigure(xVar):
                 "marker": {
                     "sizemode": "area",
                     "sizeref": 0.05,
-                    
+                    "color":colours[i],
                     "size": list(dataset_by_year_and_area["population"])
                 },
                 "name": "Mode Serotype in Area: "+serotype
             }
             frame["data"].append(data_dict)
+            i+=1
 
         fig_dict2["frames"].append(frame)
         slider_step = {"args": [
