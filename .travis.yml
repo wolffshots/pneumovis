@@ -15,5 +15,4 @@ before-script:
 services:
   - postgresql
 script:
-  - cd pneumovis
   - python3 manage.py test
