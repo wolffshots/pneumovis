@@ -107,18 +107,19 @@ WSGI_APPLICATION = 'pneumovis.wsgi.application'
 #         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
 #     }
 # }
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'default',  # the name of the database
-        'USER': 'postgres',
-        'PASSWORD': 'default',  # nb use secure
-        'HOST': 'localhost',
-        'TEST': {
-            'NAME': 'test_swabs',
-        },
+if 'TRAVIS' in os.environ:
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.postgresql',
+            'NAME': 'default',  # the name of the database
+            'USER': 'postgres',
+            'PASSWORD': 'default',  # nb use secure
+            'HOST': 'localhost',
+            'TEST': {
+                'NAME': 'test_swabs',
+            },
+        }
     }
-}
 # Moved to local settings for security
 
 
