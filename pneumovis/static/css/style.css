@@ -1,23 +1,31 @@
 /* Custom style sheet for PneumoVis */
 /* 28104E • 6237A0 • 9754CB • DEACF5 */
 :root {
-  --awesome4: #28104E !important;
-  --awesome3: #6237A0 !important;
-  --awesome2: #9754CB !important;
-  --awesome1: #DEACF5 !important;
-  --awesome_black: #fff !important;
-  --awesome_white: rgb(0, 0, 0) !important;
-  --awesome_kinda_black: #03020a !important;
-  --awesome_kinda_white: hsla(0, 0%, 95%, 1) !important;
-  --awesome_grey: rgb(192, 192, 192) !important;
+  --awesome1: #28104E !important;
+  --awesome2: #6237A0 !important;
+  --awesome3: #9754CB !important;
+  --awesome4: #DEACF5 !important;
+  --aa: #fff !important;
+  --bb: rgb(0, 0, 0) !important;
+  --akb: #27272796 !important;
+  --akw: hsla(0, 0%, 95%, 1) !important;
+  --ag: rgb(219, 219, 219) !important;
+  --adg:rgb(92, 92, 92) !important;
 }
 
+/* reset */
+*{
+  margin:0;
+  padding:0;
+  padding-bottom:0;
+}
 
 .btn-secondary {
-  color: var(--awesome_white) !important; }
+  color: var(--aa) !important; }
 
-img {
-  width: 100%; }
+/* img {
+  width: 100%; 
+} */
 
 .logo {
   width: 80px; }
@@ -33,7 +41,7 @@ img {
   /* background: url(../img/showcase.jpg) no-repeat top center fixed/cover; */
   position: relative;
   min-height: 650px;
-  color: var(--awesome_white);
+  color: var(--aa);
   padding-top: 6rem; }
   #showcase .home-search {
     min-height: 400px;
@@ -115,7 +123,10 @@ img {
 body, h1,h2,h3,h4,h5,h6,ul,li,p,div,a,span,section,nav,ol {font-family: "Roboto", sans-serif !important}
 /* i {font-family:-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji" !important;} */
 
-.breadcrumb{line-height: normal;}
+.breadcrumb{
+  line-height: normal;
+  background-color: var(--ag);
+}
 
 
 .card{font-family: "Roboto", sans-serif}
@@ -133,30 +144,30 @@ footer#main-footer {
 
 #showcase {
   /* background: url(../images/loading_1_2.gif) no-repeat top center; */
-    background: var(--awesome_kinda_white);
+    background: var(--akw);
     
     background-size: 100%;
     -webkit-background-size: 1400px;
     /* background-size: 200%; */
     position: relative;
     min-height: -webkit-fill-available;
-    color: var(--awesome_white);
+    color: var(--aa);
     padding-top: 0.1rem;
 }
 .bg-primary {
-    background-color: var(--awesome_kinda_black) !important;
+    background-color: var(--akb) !important;
 }
 .nav-item:hover{
-  background-color: var(--awesome_white) !important;
+  background-color: var(--aa) !important;
 }
 .nav-item{
   width: 50%;
   height: 100%;
-  color: var(--awesome_black);
+  color: var(--bb);
   text-align: center !important;
 }
 .nav-link:hover{
-    color: var(--awesome_black) !important;
+    color: var(--bb) !important;
   }
 .mr-3{
   width: 100% !important;
@@ -231,7 +242,7 @@ footer#main-footer {
 
 .page-footer {
   padding-top: 20px;
-  color: var(--awesome_white);
+  color: var(--aa);
   background-color: var(--awesome1);
 }
 
@@ -240,7 +251,7 @@ footer#main-footer {
 }
 .btn, .btn-large, .btn-small {
   text-decoration: none;
-  color: var(--awesome_kinda_white);
+  color: var(--akw);
   background-color: var(--awesome3);
   text-align: center;
   letter-spacing: .5px;
@@ -254,14 +265,14 @@ footer#main-footer {
 }
 
 .btn-light {
-  color: var(--awesome_kinda_black);
-  background-color: var(--awesome_kinda_white);
-  border-color: var(--awesome_kinda_white);
+  color: var(--akb);
+  background-color: var(--akw);
+  border-color: var(--akw);
 }
 .btn-light:hover {
-  color: var(--awesome_kinda_black);
-  background-color: var(--awesome_grey);
-  border-color: var(--awesome_grey);
+  color: var(--akb);
+  background-color: var(--ag);
+  border-color: var(--ag);
 }
 
 nav ul li.active {
@@ -280,4 +291,19 @@ body {
 
 main {
   flex: 1 0 auto;
+}
+
+/* .wrapper{
+  min-height: 100%;
+  margin-bottom: -221px;
+}
+
+
+html, body {
+  height: 100%;
+  margin: 0;
+} */
+
+.breadcrumb:last-child {
+  color: var(--bb);
 }
