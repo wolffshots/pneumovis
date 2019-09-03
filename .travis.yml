@@ -4,12 +4,12 @@ python:
 env:
   - DJANGO=1.8 DB=postgres
 before_install:
-  - cd pneumovis
   - export DJANGO_SETTINGS_MODULE=pneumovis.settings.local
 install:
   - pip install -r requirements.txt
 before-script:
-  - cp config/database.yml.travis config/database.yml
+  - cd pneumovis
+  - cp ../config/database.yml.travis ../config/database.yml
   - psql -c 'create database default;' -U postgres
 services:
   - postgresql
