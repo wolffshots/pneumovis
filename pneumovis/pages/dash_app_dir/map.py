@@ -17,7 +17,7 @@ app = DjangoDash('map')
 def map_load():
     #map API key
     mapbox_access_token = "pk.eyJ1IjoiYWRvdXQxOTAyIiwiYSI6ImNqeXR1MXBwazA3OWMzbnJyZTk0eDVwNXgifQ.TEDKQZdJPxMTgK6dKGMvgA"
-    map_data = pd.read_csv("mapSwabs.csv")
+    map_data = pd.read_csv('static/data/mapSwabs.csv')
 
     #use sorting function by () to sort serotypes into correct "groups" based on numeric part of name, and then further into correct place in group based on suffix letter
     def sorted_nicely( l ): 
@@ -119,10 +119,11 @@ def map_load():
         else:
             temp_df=map_data.loc[map_data['serotype'].isin(serotypeVals)]    
         return gen_map(temp_df)
+    print("Finished loading map")
 
 import threading
 map_thread = threading.Thread(target=map_load, args=(), kwargs={})
 map_thread.setDaemon(True)
 map_thread.start()
 
-print("Loaded map")
+# print("Loaded map")

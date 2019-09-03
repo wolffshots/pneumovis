@@ -21,9 +21,9 @@ import dash_core_components as dcc
 app = DjangoDash('patients')
 
 def patient_load():
-  df = pd.DataFrame(pd.read_csv('patientData.csv'))
+  df = pd.DataFrame(pd.read_csv(('static/data/patientData.csv')))
   # another dataframe to keep patient IDs without unicode symbols
-  df2 = pd.DataFrame(pd.read_csv('patientData.csv'))
+  df2 = pd.DataFrame(pd.read_csv(('static/data/patientData.csv')))
   # print("start looping")
   length_df = len(df)
   for i in range(length_df):
@@ -97,6 +97,7 @@ def patient_load():
       style={'padding-bottom': '0%', 'height': 0},
       className='patients graph'
   )
+  print("Finished loading patients")
 
 # patient_load()
 
@@ -105,4 +106,4 @@ patient_thread = threading.Thread(target=patient_load, args=(), kwargs={})
 patient_thread.setDaemon(True)
 patient_thread.start()
 
-print("Loaded patients")
+# print("Loaded patients")

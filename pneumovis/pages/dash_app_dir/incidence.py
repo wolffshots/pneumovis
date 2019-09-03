@@ -15,7 +15,7 @@ import re
 app = DjangoDash('incidence')
 
 def incidence_load():
-    df = pd.DataFrame(pd.read_csv('swabs2.csv'))
+    df = pd.DataFrame(pd.read_csv('static/data/swabs2.csv'))
     df.set_index('serotype', inplace=True)
     #use sorting function by () to sort serotypes into correct "groups" based on numeric part of name, and then further into correct place in group based on suffix letter
     def sorted_nicely( l ): 
@@ -43,8 +43,7 @@ def incidence_load():
     x = df.index,
     y = df['count'],
     # still need to work out where to pull the index of the specific strain
-    text= "<a href=\"/strains/"+df.index[0]+ "\">{}</a>".format(
-            "More Info"),
+    # text= "<a href=\"/strains/"+df.index[0]+ "\">{}</a>".format("More Info"),
     textposition='auto',
     textcolor="white",
     marker=dict(
@@ -104,10 +103,11 @@ def incidence_load():
         style={'padding-bottom': '0%', 'height': 0},
         className='incidence graph',
     )
+    print("Finished loading incidence")
 
 import threading
 incidence_thread = threading.Thread(target=incidence_load, args=(), kwargs={})
 incidence_thread.setDaemon(True)
 incidence_thread.start()
 
-print("Loaded incidence")
+# print("Loaded incidence")
