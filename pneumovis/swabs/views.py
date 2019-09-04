@@ -42,8 +42,16 @@ def index(request):
 
 def swab(request, Barcode):
     # implement custom 404 page
-    swab = get_object_or_404(Swab, pk=Barcode)
-    context = {
-        'swab': swab
-    }
+    # swab = get_object_or_404(Swab, pk=Barcode)
+    try:
+        swab = Swab.objects.get(pk=Barcode)
+        context = {
+            'swab': swab
+        }
+    except Swab.DoesNotExist:
+        context={
+            'not_found': 'swabs'
+        }
+        return render(request,'pages/404.html', context)
+    
     return render(request, 'swabs/swab.html', context)

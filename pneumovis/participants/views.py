@@ -1,4 +1,5 @@
 from django.shortcuts import render, get_object_or_404
+from django.http import HttpResponse, HttpResponseNotFound
 from swabs.models import Swab
 from django.core.paginator import EmptyPage, PageNotAnInteger, Paginator
 from django.shortcuts import render
@@ -57,11 +58,17 @@ def participant(request, Particcipant_ID):
         '-Particcipant_ID').filter(Particcipant_ID=Particcipant_ID)
     participants = Swab.objects.order_by('Particcipant_ID').values('Particcipant_ID').annotate(
         dcount=Count('Particcipant_ID'))
+    participant = None
     for part in participants:
         if(part['Particcipant_ID'] == Particcipant_ID):
             participant = part
             break
         # return 404
+    if(participant==None):
+        context={
+            'not_found': 'participants'
+        }
+        return render(request,'pages/404.html', context)
     context = {
         'swabs': swabs,
         'participant': participant

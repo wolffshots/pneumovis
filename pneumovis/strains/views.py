@@ -14,18 +14,6 @@ def index(request):
 
 
 def strain(request, Serotype_autocolour):
-    # uppercase the serotype
-    # replace certain characters for '(' and '/'
-    # equate / for _
-    # equate () for -+ 
-    # Serotype_autocolour = Serotype_autocolour.split('_')
-    # Serotype_autocolour = '/'.join(Serotype_autocolour)
-
-    # Serotype_autocolour = Serotype_autocolour.split('-')
-    # Serotype_autocolour = '('.join(Serotype_autocolour)
-
-    # Serotype_autocolour = Serotype_autocolour.split('+')
-    # Serotype_autocolour = ')'.join(Serotype_autocolour)
 
     Serotype_autocolour = Serotype_autocolour.replace("_", "/")
     Serotype_autocolour = Serotype_autocolour.replace("-", "(")
@@ -43,7 +31,16 @@ def strain(request, Serotype_autocolour):
             strain = stra
             mess = "This serotype combination appears in "+str(stra['dcount']) +" swabs"
             break
-        # return 404
+    # if(strain==None):
+    #     context={
+    #         'not_found': 'strain',
+    #         'swabs': swabs,
+    #         'Serotype_autocolour':Serotype_autocolour,
+    #         'mess':mess,
+    #         'strain': strain,
+    #         'strains': strains,
+    #     }
+    #     return render(request,'pages/404.html', context)
     context = {
         'swabs': swabs,
         'Serotype_autocolour':Serotype_autocolour,
