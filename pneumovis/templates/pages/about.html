@@ -10,7 +10,9 @@
         <div class="row text-center">
             <div class="col-md-12">
                 <h1 class="display-4">About</h1>
-                <p class="lead">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sunt, pariatur!</p>
+                <p class="lead">
+                    About the research and the researcher
+                </p>
             </div>
         </div>
     </div>
@@ -36,13 +38,15 @@
         <div class="row">
             <div class="col-md-6" style="color: var(--bb);">
                 <h2>About the research</h2>
-                <p class="lead">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sunt, pariatur!</p>
-                <!-- <img src="{% static 'img/about.jpg'%}" alt=""> -->
-                <p class="mt-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis esse officia
-                    repudiandae ad saepe ex, amet
-                    neque quod accusamus rem quia magnam magni dolorum facilis ullam minima perferendis? Exercitationem
-                    at quaerat
-                    commodi id libero eveniet harum perferendis laborum molestias quia.</p>
+                <p class="lead">
+                    
+                </p>
+                <p class="mt-4">
+                        Streptococcus pneumoniae(the pneumococcus) is the leading bacterial cause of respiratory diseases including ear, nose, throat and lung infections. This bacterium is particularly problematic in children and the elderly. Dr Dube is collecting data on specific strains of pneumococcus infecting a cohort of young children in the Cape Town at different stages of their life. In this project, you will develop software to support this research, enabling researchers to load new data, store data and visualize this multi-dimensional data set. The visualization should enable an overview of the data, as well as focus on specific subsets and filtering.
+                </p>
+                <p style="font-size:0.7rem" class="text-right">
+                    From the CSC3003S Capstone document
+                </p>
             </div>
             <div class="col s12 m6">
                     <div class="card purple darken-1">
@@ -51,7 +55,10 @@
                         <span class="card-title">About the researcher</span>
                         <h6 class="text-secondary">Dr Felix Dube</h6>
                         <p>Felix Dube is a medical microbiologist with broader research interests in the microbial dysbiosis associated with infectious diseases. The current focus is on Streptococcus pneumoniae (the ‘pneumococcus’), a bacterium that is a major bacterial cause of diseases including pneumonia and meningitis worldwide. By applying high-throughput genome sequencing techniques, this work provides further insights into the pneumococcal pathobiome, especially changes in pneumococcal sero-epidemiology, pathogenesis through statistical and computational approaches to unravel genotype-phenotype associations. This work is interfaced with an in-depth characterization of the nasopharyngeal resistome in children colonized by pneumococci.  A recent but rapidly expanding component of our research group is around the evolution of the microbiome at different body sites in African children and the relationship between the microbiome and child health, with a specific focus on respiratory and skin infections and on antimicrobial resistance.</p>
-                      </div>
+                        <p style="font-size:0.7rem" class="text-right">
+                                From his IDM UCT profile (linked below)
+                            </p>
+                    </div>
                       <div class="card-action light-purple" style="width:100%">
                         <a class="btn mb-3 text-center" href="mailto:sizwe.dube@uct.ac.za" style="width:26%;">Email</a>
                         <a class="btn mb-3 text-center" href="http://www.idm.uct.ac.za/Felix_Dube" style="width:36%;">View on IDM UCT</a>
@@ -64,42 +71,5 @@
                 </div>
     </div>
 </section>
-
-<!-- Work -->
-<!-- <section id="work" class="bg-dark text-white text-center">
-    <h2 class="display-4">Providing relevant data visualisations online</h2>
-    <h4>Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem velit aperiam, unde aliquid at similique!</h4>
-    <hr>
-    
-</section> -->
-
-<!-- Team -->
-<!-- <section id="team" class="py-5">
-    <div class="container">
-        <h2 class="text-center">Our Team</h2>
-        <div class="row text-center">
-            {% if realtors %}
-                {%for realtor in realtors%}
-                    <div class="col-md-4">
-                    
-                        <img src="{{realtor.photo.url}}" alt="" class="rounded-circle mb-3">
-                        <h4>Realtor name</h4>
-                        <p class="text-success">
-                            <i class="fas fa-award text-success mb-3"></i> Realtor</p>
-                        <hr>
-                        <p>
-                            <i class="fas fa-phone"></i> Realtor phone</p>
-                        <p>
-                            <i class="fas fa-envelope-open"></i> Realtor email</p>
-                    </div>
-                {%endfor%}
-            {%else%}
-            <col-md-12>
-                <p>No realtors available</p>
-            </col-md-12>
-            {% endif %}
-        </div>
-    </div>
-</section> -->
 
 {% endblock%}
