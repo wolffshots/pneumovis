@@ -52,6 +52,6 @@ def swab(request, Barcode):
         context={
             'not_found': 'swabs'
         }
-        return render(request,'pages/404.html', context)
+        return render(request,'404.html', context)
     
     return render(request, 'swabs/swab.html', context)

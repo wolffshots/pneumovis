@@ -68,7 +68,7 @@ def participant(request, Particcipant_ID):
         context={
             'not_found': 'participants'
         }
-        return render(request,'pages/404.html', context)
+        return render(request,'404.html', context)
     context = {
         'swabs': swabs,
         'participant': participant
