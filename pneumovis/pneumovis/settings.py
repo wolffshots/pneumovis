@@ -113,7 +113,7 @@ if 'TRAVIS' in os.environ:
             'ENGINE': 'django.db.backends.postgresql',
             'NAME': 'default',  # the name of the database
             'USER': 'postgres',
-            'PASSWORD': 'default',  # nb use secure
+            # 'PASSWORD': 'default',  # nb use secure
             'HOST': 'localhost',
             'TEST': {
                 'NAME': 'test_swabs',
