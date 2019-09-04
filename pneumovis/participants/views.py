@@ -66,7 +66,7 @@ def participant(request, Particcipant_ID):
         # return 404
     if(participant==None):
         context={
-            'not_found': 'participants'
+            'not_found': 'participant'
         }
         return render(request,'404.html', context)
     context = {

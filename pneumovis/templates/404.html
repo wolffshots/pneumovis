@@ -10,7 +10,11 @@
         <div class="row text-center">
             <div class="col-md-12">
                 <h1 class="display-4">404</h1>
+                {% if not_found %}
+                <p class="lead">Unfortunately that {{not_found}} couldn't be found. Please contact an administrator if you believe this is a problem.</p>
+                {%else%}
                 <p class="lead">Unfortunately that page couldn't be found. Please contact an administrator if you believe this is a problem.</p>
+                {%endif%}
             </div>
         </div>
     </div>
@@ -22,18 +26,22 @@
     <div class="container">
             <ol class="breadcrumb">
                 <li class="breadcrumb-item">
-                    <!-- we can use index here because we named it that in urls.py -->
-                    {% if 'participant' in not_found %}
-                    <a href="{% url 'participants'%}">
-                        <i class="fas fa-home"></i> Participants</a>
-                    {%endif%}
-                    {% if 'swab' in not_found %}
-                    <a href="{% url 'swabs'%}">
-                        <i class="fas fa-home"></i> Swabs</a>
-                    {%endif%}
-                    {% if 'strain'  in not_found %}
-                    <a href="{% url 'strain'%}">
-                        <i class="fas fa-home"></i> Strains</a>
+                    {% if not_found %}
+                        {% if 'participant' in not_found %}
+                        <a href="{% url 'participants'%}">
+                            <i class="fas fa-home"></i> Participants</a>
+                        {%endif%}
+                        {% if 'swab' in not_found %}
+                        <a href="{% url 'swabs'%}">
+                            <i class="fas fa-home"></i> Swabs</a>
+                        {%endif%}
+                        {% if 'strain'  in not_found %}
+                        <a href="{% url 'strain'%}">
+                            <i class="fas fa-home"></i> Strains</a>
+                        {%endif%}
+                    {%else%}
+                        <a href="{% url 'index'%}">
+                            <i class="fas fa-home"></i> Home</a>
                     {%endif%}
                 </li>
                 <li class="breadcrumb-item active"> 404</li>

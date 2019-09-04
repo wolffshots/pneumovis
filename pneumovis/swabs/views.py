@@ -50,7 +50,7 @@ def swab(request, Barcode):
         }
     except Swab.DoesNotExist:
         context={
-            'not_found': 'swabs'
+            'not_found': 'swab'
         }
         return render(request,'404.html', context)
     
