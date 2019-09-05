@@ -118,7 +118,7 @@ app.layout = html.Div(
             }),
 
     ],
-    style={'padding-bottom': '45%', 'height': 0},
+    style={'padding-bottom': '0%', 'height': 0},
 )
 
 

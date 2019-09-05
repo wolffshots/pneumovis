@@ -6,4 +6,5 @@ from pages.dash_app_dir import incidence
 from pages.dash_app_dir import bubbles
 from pages.dash_app_dir import map
 from pages.dash_app_dir import patients
+# from pages.dash_app_dir import patientGraph
 print("Imported Dash apps")

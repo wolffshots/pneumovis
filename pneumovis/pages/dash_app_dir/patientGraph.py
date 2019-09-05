@@ -1,3 +1,7 @@
+""""
+Simplified patients graph
+"""
+
 from plotly.graph_objs import *
 import plotly.io as pio
 import pandas as pd
@@ -6,6 +10,7 @@ from plotly.graph_objs import *
 import time
 import re
 import datetime
+from django_plotly_dash import DjangoDash
 
 # General notes: I've only checked a few points to see if this works. One issue is that dots in the same year for the same patient overlap each othe
 # this can be solved by offsetting them slightly or a better way would be for the Y axis to show the full date rather than just the year
@@ -13,9 +18,9 @@ import datetime
 # will upload dataset with full dates soon. If you need help with filtering dataframes or whatever check the other visualisations 
 # minor things: more space between patients, order patients numerically 
 
-
-df = pd.DataFrame(pd.read_csv('patientData.csv'))
-df2 = pd.DataFrame(pd.read_csv('patientData.csv'))
+app = DjangoDash('patients_simple')
+df = pd.DataFrame(pd.read_csv('static/data/patientData.csv'))
+df2 = pd.DataFrame(pd.read_csv('static/data/patientData.csv'))
 
 for i in range(len(df)):
   if (df.loc[i, "HIVexposed"]==True):
