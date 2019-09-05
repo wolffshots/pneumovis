@@ -1,3 +1,7 @@
+"""
+The bubble chart that displays the areas and relation of HIV/smoking to % pneumoccocus
+"""
+
 print("Loading bubbles")
 # #these two lines and the part of the program that distinguishes it as a django-ised version of plotly
 import time
@@ -17,8 +21,6 @@ app = DjangoDash('bubbles')
 def bubbles_load():
     # x axis variable options - if time, add CO2 exposure, stove type etc
     available_xVars=["Patients Exposed to HIV (%)","Patients Exposed to Smoking (%)"]
-
-
 
     # define app html layout
     app.layout = html.Div(children=[

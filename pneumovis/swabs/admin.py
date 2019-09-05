@@ -1,3 +1,6 @@
+"""
+Model registration for the admin site of the Swab model
+"""
 from django.contrib import admin
 
 # Register your models here.

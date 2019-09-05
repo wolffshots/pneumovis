@@ -1,3 +1,6 @@
+"""
+The chart showing the origin of swab samples and their serotype
+"""
 print("Loading map")
 
 import time

@@ -1,3 +1,7 @@
+"""
+Routing handler methods for the swabs subsite
+"""
+
 from django.shortcuts import render, get_object_or_404
 from django.core.paginator import EmptyPage, PageNotAnInteger, Paginator
 
@@ -5,6 +9,9 @@ from .models import Swab
 
 
 def index(request):
+    """
+    Renders a page of all of the current swabs paginated
+    """
     swabs = Swab.objects.order_by('-Particcipant_ID')
     # select distinct
     count = len(swabs)
@@ -41,8 +48,9 @@ def index(request):
 
 
 def swab(request, Barcode):
-    # implement custom 404 page
-    # swab = get_object_or_404(Swab, pk=Barcode)
+    """
+    Function to lookup and render a specific swab
+    """
     try:
         swab = Swab.objects.get(pk=Barcode)
         context = {

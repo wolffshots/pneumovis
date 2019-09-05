@@ -1,24 +1,20 @@
+"""
+The file that processes user actions and page routes for most basic pages
+"""
 from django.http import HttpResponse
 from django.shortcuts import render, redirect
-
 from django.contrib import messages, auth
 from django.contrib.auth.models import User
-
-from swabs.models import Swab
-from django.db.models import Count
-
-
-from .dash_apps import *
-
-from .files import *
-
-from .tasks import *
-
 from django.conf import settings
 from django.core.files.storage import FileSystemStorage
+from django.db.models import Count
+
+from swabs.models import Swab
+from .dash_apps import *
+from .files import *
+from .tasks import *
 
 from datetime import datetime
-
 
 def index(request):
     return render(request, 'pages/index.html')

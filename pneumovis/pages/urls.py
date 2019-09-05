@@ -1,3 +1,6 @@
+"""
+The url routing for most basic pages of the site
+"""
 from django.urls import path
 from . import views
 

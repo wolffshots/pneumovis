@@ -1,3 +1,7 @@
+"""
+Runs tests to ensure that the model for swabs works with participants, is created, read and deleted correctly
+"""
+
 from django.test import TestCase
 from swabs.models import Swab
 from pages.files import add_swab_line

@@ -1,9 +1,7 @@
-# #these two lines and the part of the program that distinguishes it as a django-ised version of plotly
-
-
+"""
+This is essentially a directory of the apps that django-plotly-dash should be able to see. This is imported into the main views.py thereby running it and it imports the specific charts, running them in parallel.
+"""
 # Importing from the app definitions
-# import sys
-# sys.path.insert(1, 'pages/dash_apps_dir')
 from pages.dash_app_dir import incidence
 from pages.dash_app_dir import bubbles
 from pages.dash_app_dir import map

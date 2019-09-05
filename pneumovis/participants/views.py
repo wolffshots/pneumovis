@@ -1,3 +1,7 @@
+"""
+The views handlers for navigating to pages and interacting with pages in the /participants subroute
+"""
+
 from django.shortcuts import render, get_object_or_404
 from django.http import HttpResponse, HttpResponseNotFound
 from swabs.models import Swab
@@ -5,12 +9,10 @@ from django.core.paginator import EmptyPage, PageNotAnInteger, Paginator
 from django.shortcuts import render
 from django.db.models import Count
 
-# Create your views here.
 participants = Swab.objects.order_by('Particcipant_ID').values('Particcipant_ID').annotate(
     dcount=Count('Particcipant_ID'))
 hivs = Swab.objects.order_by('Particcipant_ID').values(
     'Particcipant_ID').annotate(dcount=Count('HIVexposed'))
-# print(hivs)
 
 
 def index(request):
@@ -18,7 +20,6 @@ def index(request):
     participants = Swab.objects.order_by('Particcipant_ID').values('Particcipant_ID').annotate(
         dcount=Count('Particcipant_ID'))
 
-    # print(participants)
     count = len(participants)
     paginator = Paginator(participants, 24)
     end = paginator.count

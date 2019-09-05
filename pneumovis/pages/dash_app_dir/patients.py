@@ -1,3 +1,6 @@
+"""
+The chart showing the details of the participants in the study
+"""
 print("Loading patients") 
 
 from plotly.graph_objs import *

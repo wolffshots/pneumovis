@@ -1,3 +1,6 @@
+"""
+The chart showing the incidences of each serotype
+"""
 print("Loading incidence")
 
 import time

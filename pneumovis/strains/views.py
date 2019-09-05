@@ -1,3 +1,6 @@
+"""
+Routing handler methods for the strains subsite
+"""
 from django.shortcuts import render
 from swabs.models import Swab
 from django.db.models import Count

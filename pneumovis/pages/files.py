@@ -1,3 +1,6 @@
+"""
+A helper file to process files (especially the csv file for upload). This process happens in parallel.
+"""
 from swabs.models import Swab
 from django.http import HttpResponse
 from django.shortcuts import render, redirect
