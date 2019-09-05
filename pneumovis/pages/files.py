@@ -17,11 +17,7 @@ successes = 0
 failures = 0
 delimiter = ''
 
-<<<<<<< HEAD
-def process_csv(filename,header,d):
-=======
 def process_csv(filename,header,delim):
->>>>>>> 4c30aa1ff8914ccd784cef1fa1f9ff014cb47837
     global failures
     global successes
     global delimiter
