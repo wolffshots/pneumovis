@@ -10,6 +10,7 @@ import dash_core_components as dcc
 from django_plotly_dash import DjangoDash
 from dash.dependencies import Input, Output
 import re
+
 # name can be changed but must then also be changed in the templates where it is called
 app = DjangoDash('SimpleExample2')
 
@@ -54,6 +55,10 @@ for serotype in dataset["ModeSerotype"]:
 # template of dict to return
 
 def makeFigure(xVar):
+
+    if not xVar in ["HIV","Smoking"]:
+        raise Exception("Invalid x axis variable")
+
     fig_dict2 = {
     "data": [],
     "layout": {},
@@ -192,7 +197,6 @@ def makeFigure(xVar):
 
     fig_dict2["layout"]["sliders"] = [sliders_dict]
     return (fig_dict2)   
-        
 
 
 # make figures - one per x variable

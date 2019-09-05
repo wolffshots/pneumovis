@@ -46,6 +46,11 @@ for i in range(len(df)):
 
 
 def gen_graph(dfName):
+
+  if df.empty:
+    raise Exception("Empty dataframe")
+
+
   trace1 = {
     "mode": "markers", 
     "type": "scatter", 

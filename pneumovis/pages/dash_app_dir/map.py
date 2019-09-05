@@ -87,11 +87,17 @@ layout_map = dict(
 numColours=len(map_data.index)
 # generate map with markers and more info on hover
 def gen_map(map_data):
+    # if map_data.empty:
+    #     return {
+    #     "data": [],
+    #     "layout": layout_map
+    # }
+    # dummy entry to avoid this case
+
     if map_data.empty:
-        return {
-        "data": [],
-        "layout": layout_map
-    }
+        raise Exception("Empty dataframe")
+
+
     return {
         "data": [{
                 "type": "scattermapbox",
