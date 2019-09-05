@@ -19,26 +19,26 @@
             <div style="height: 635px;" class=" card
             {%plotly_class name='map' postfix='A'%}
             ">
-            <i title="hover text" class="fas fa-info-circle text-right" style="margin:5px;"> Help</i>
+            <i title="Map shows locations of participants and in the trial and the pneumococcus serotypes they were colonized by." class="fas fa-info-circle text-right" style="margin:5px;"> Help</i>
                 {% plotly_app name="map" ratio=0.4 %}
             </div>
             <div style="height:520px" class=" card
             {%plotly_class name='incidence' postfix='A'%}
             ">
-            <i title="hover text" class="fas fa-info-circle text-right" style="margin:5px;"> Help</i>
+            <i title="Graph shows incidences of serotype presence in swabs collected during the trial." class="fas fa-info-circle text-right" style="margin:5px;"> Help</i>
                     {% plotly_app name="incidence" ratio=0.46 %}
-            </div>
-            <div style="height:560px" class=" card
-            {%plotly_class name='patients' postfix='A'%}
-            ">
-            <i title="hover text" class="fas fa-info-circle text-right" style="margin:5px;"> Help</i>
-                {% plotly_app name="patients" ratio=0.46 %}
             </div>
             <div style="height:540px" class=" card
             {%plotly_class name='bubbles' postfix='A'%}
             ">
-            <i title="hover text" class="fas fa-info-circle text-right" style="margin:5px;"> Help</i>
+            <i title="Graph shows relationship between smoking and HIV exposure and serotype colonisation incidence. Bubbles represent clinic areas rather than precise participant locations (see map above). Size of bubbles give a sense of the number of participant swabs collected in a particular year." class="fas fa-info-circle text-right" style="margin:5px;"> Help</i>
                     {% plotly_app name="bubbles" ratio=0.4 %} 
+            </div>
+            <div style="height:560px" class=" card
+            {%plotly_class name='patients' postfix='A'%}
+            ">
+            <i title="Graph shows timelines of participants in the trial, with vaccination and serotype colonization dates. Symbols represent sex, smoking exposure (&#128684) vaccination status (&#128137) and HIV status (&#127895) of participant." class="fas fa-info-circle text-right" style="margin:5px;"> Help</i>
+                {% plotly_app name="patients" ratio=0.46 %}
             </div>
         </div>
     </div>
