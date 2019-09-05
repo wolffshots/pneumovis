@@ -1,95 +1,23 @@
 {% load static %}
-<!-- <nav class="navbar navbar-expand-lg sticky-top" style="background-color:var(--bb) !important;"> -->
-    <!-- <div class="container"> -->
-        <!-- this makes the branding go back to the home page -->
-        <!-- <a class="navbar-brand" href="{% url 'index'%}" style="width: 2%; ">
-            <img src="{% static 'img/microscope.png' %}" class="logo" alt="" style="height:100%; width:100%;">
-            <a href="{%url 'index'%} " style="padding-right:30px; color:white;">PneumoVis</a>
-        </a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-            <ul class="navbar-nav" style="width: 100%;">
-                <li class="nav-item mr-3">
-                    <a href="{%url 'index'%}" 
-                    {% if '/' == request.path %} class="nav-link active" {% else %} class="nav-link" {% endif %}
-                    style="width:100% !important;line-height:64px;color:var(--aa);">HOME</a>
-                </li>
-                <li class="nav-item mr-3">
-                    <a href="{% url 'about' %}"
-                    {% if 'about' in request.path %} class="nav-link active" {% else %} class="nav-link" {% endif %}
-                    style="width:100% !important;line-height:64px;color:var(--aa);">ABOUT</a>
-                </li>
-                <li class="nav-item mr-3">
-                    <a href="{% url 'browse' %}" 
-                    {% if 'browse' in request.path %} class="nav-link active" {% else %} class="nav-link" {% endif %}
-                    style="width:100% !important;line-height:64px;color:var(--aa);">BROWSE</a>
-
-                </li>
-            </ul>
-
-            <ul class="navbar-nav ml-auto" style="width: 390px;">
-                {%if user.is_authenticated%}
-                <li class="nav-item mr-3">
-                    <a href="javascript:{document.getElementById('logout').submit()}" class="nav-link"
-                    style="width:100% !important;line-height:64px;color:var(--aa);">
-                        <i class="fas fa-sign-out-alt"> </i> Logout
-                    </a>
-                    <form action="{%url 'logout'%}" method="POST" id="logout">
-                        {% csrf_token %}
-                        <input type="hidden">
-                    </form>
-                </li>
-
-                <li class="nav-item mr-3"
-                style="width:100% !important;line-height:64px;color:var(--bb);">
-                {% if 'admin' in request.path %} 
-                    <a href="{% url 'upload'%}" class="nav-link" style="color:var(--aa);">
-                        <i class="fas fa-upload"> </i> Upload
-                    </a>
-                {% else %} 
-                    <a href="/admin" class="nav-link" >
-                        <i class="fas fa-user-secret"> </i> Admin
-                    </a>
-                {% endif %}
-                </li>
-                {%else%}
-                <li {% if 'login' in request.path %} class="nav-item active mr-3" {% else %} class="nav-item mr-3"
-                    {% endif %}>
-                    <a style="color:var(--aa);" class="nav-link" href="{% url 'login'%}" >
-                        <i class="fas fa-sign-in-alt"> </i> Login</a>
-                </li>
-                <li class="nav-item mr-3"
-                >
-                    <a style="color:var(--aa);" href="{% url 'contact' %}" class="nav-link" >
-                        <i class="fas fa-envelope-open"> </i> Contact
-                    </a>
-                </li>
-                {%endif%}
-            </ul>
-        </div>-->
-        <div class="w3-top" id="navbar">
-            <div class="w3-bar w3-black w3-opacity-on w3-hover-opacity-on w3-center w3-small">
-                <a href="{% url 'index'%}" class="w3-bar-item w3-button" style="width:20% !important">HOME</a>
-                <a href="{% url 'about'%}" class="w3-bar-item w3-button" style="width:20% !important">ABOUT</a>
-                <a href="{% url 'browse'%}" class="w3-bar-item w3-button" style="width:20% !important">BROWSE</a>
-                {%if user.is_authenticated%}
-                {% if 'admin' in request.path %} 
-                <a href="{% url 'upload'%}" class="w3-bar-item w3-button" style="width:20% !important"><i class="fas fa-upload"> </i> UPLOAD</a>
-                {% else %}
-                <a href="/admin" class="w3-bar-item w3-button" style="width:20% !important"><i class="fas fa-user-secret"> </i> ADMIN</a>  
-                {% endif %}             
-                <a href="javascript:{document.getElementById('logout').submit()}" method="POST" class="w3-bar-item w3-button" style="width:20% !important"><i class="fas fa-sign-out-alt"> </i> LOGOUT</a>
-                <form action="{%url 'logout'%}" method="POST" id="logout">
-                        {% csrf_token %}
-                        <input type="hidden">
-                    </form>
-                {%else%}
-                <a href="{% url 'contact'%}" class="w3-bar-item w3-button" style="width:20% !important"><i class="fas fa-envelope-open"> </i> CONTACT</a>
-                <a href="{% url 'login'%}" class="w3-bar-item w3-button" style="width:20% !important"><i class="fas fa-sign-in-alt"> </i> LOGIN</a>
-                {% endif %}
-            </div>
-        </div>
-    <!-- </div>  -->
-<!-- </nav> -->
+<div class="w3-top" id="navbar">
+    <div class="w3-bar w3-black w3-opacity-on w3-hover-opacity-on w3-center w3-small">
+        <a href="{% url 'index'%}" class="w3-bar-item w3-button" style="width:20% !important">HOME</a>
+        <a href="{% url 'about'%}" class="w3-bar-item w3-button" style="width:20% !important">ABOUT</a>
+        <a href="{% url 'browse'%}" class="w3-bar-item w3-button" style="width:20% !important">BROWSE</a>
+        {%if user.is_authenticated%}
+        {% if 'admin' in request.path %} 
+        <a href="{% url 'upload'%}" class="w3-bar-item w3-button" style="width:20% !important"><i class="fas fa-upload"> </i> UPLOAD</a>
+        {% else %}
+        <a href="/admin" class="w3-bar-item w3-button" style="width:20% !important"><i class="fas fa-user-secret"> </i> ADMIN</a>  
+        {% endif %}             
+        <a href="javascript:{document.getElementById('logout').submit()}" method="POST" class="w3-bar-item w3-button" style="width:20% !important"><i class="fas fa-sign-out-alt"> </i> LOGOUT</a>
+        <form action="{%url 'logout'%}" method="POST" id="logout">
+                {% csrf_token %}
+                <input type="hidden">
+            </form>
+        {%else%}
+        <a href="{% url 'contact'%}" class="w3-bar-item w3-button" style="width:20% !important"><i class="fas fa-envelope-open"> </i> CONTACT</a>
+        <a href="{% url 'login'%}" class="w3-bar-item w3-button" style="width:20% !important"><i class="fas fa-sign-in-alt"> </i> LOGIN</a>
+        {% endif %}
+    </div>
+</div>
