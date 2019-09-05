@@ -30,7 +30,11 @@ class bubblesTestCase(TestCase):
    
 class patientsTestCase(TestCase):
    def test_gen_graph_valid_df(self):
+<<<<<<< HEAD
       df = pd.DataFrame(pd.read_csv('patientData.csv'))
+=======
+      df = pd.DataFrame(pd.read_csv('static/data/patientData.csv'))
+>>>>>>> tmp
       try:
          patients.gen_graph(df)
       except Exception:
@@ -45,7 +49,11 @@ class patientsTestCase(TestCase):
 
 class mapTestCase(TestCase):
    def test_gen_map_valid_df(self):
+<<<<<<< HEAD
       map_data = pd.read_csv("mapSwabs.csv")
+=======
+      map_data = pd.read_csv("static/data/mapSwabs.csv")
+>>>>>>> tmp
       try:
          map.gen_map(map_data)
       except Exception:
