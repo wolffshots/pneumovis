@@ -1,3 +1,7 @@
+"""
+Routing paths for the strains subsite
+"""
+
 from django.urls import path
 from . import views
 from swabs.models import Swab

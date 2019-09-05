@@ -1,8 +1,0 @@
-If your file has a header it should match this (it doesn't have to be identical in the actual content but these columns need to be right)
-
-Particcipant_ID,Barcode,geo_lat,geo_long,Week,npa_a4_growth,datecollection,Presence_of_Pneumococcus,dob,sex,HIVexposed,site,BCG_given_birth,BCG_date_birth,DTaP_given_610wk,DTaP_date_610wk,PCV_given_610wk,PCV_date_610wk,DTaP_given_10wk,DTaP_date_10wk,DTaP_given_14wk,DTaP_date_14wk,PCV_given_14wk,PCV_date_14wk,PCV_given_9m,PCV_date_9m,Disease,Serotype__autocolour,vaccine_status__autocolour,Sequence_Type,education,HHdsize,HomeType,Paraffin_stove,Coal_stove,BenzeneCat,TolueneCat,SO2Cat,NO2Cat,CO_Strict,CO_Broad,SO2Cat_Post,NO2Cat_Post,BenzeneCat_post,TolueneCat_post,CO_Strict_post,CO_Broad_post,weight_birth,mother_smoke_anytime,total_smokers_anytime,delivery_method,antibio_use_1yr
-
-The delimiter does not have to be commas as some other separators are supported
-
-This is an example of what the data lines can look like:
-PT1,104192,-33.674530029296875,18.995084762573242,21,Growth,2013-05-28,True,2012-08-05,Male,False,Gugulethu,True,2012-08-05,True,2012-09-17,True,2012-09-17,True,2012-10-15,True,2012-11-12,True,2012-11-12,True,2013-05-20,False,13,NVT,5647,some secondary,8,House,False,False,,,,,,,Below,Below,Below,Below,Below 

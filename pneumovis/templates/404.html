@@ -1,0 +1,57 @@
+{% extends 'base.html' %}
+
+{% load static %}
+<!-- Dynamic page title -->
+{%block title%}| About page{%endblock%}
+
+{% block content %}
+<section id="showcase-inner" class="py-5 text-white">
+    <div class="container">
+        <div class="row text-center">
+            <div class="col-md-12">
+                <h1 class="display-4">404</h1>
+                {% if not_found %}
+                <p class="lead">Unfortunately that {{not_found}} couldn't be found. Please contact an administrator if you believe this is a problem.</p>
+                {%else%}
+                <p class="lead">Unfortunately that page couldn't be found. Please contact an administrator if you believe this is a problem.</p>
+                {%endif%}
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Alerts -->
+{%include 'partials/_alerts.html'%}
+<!-- Breadcrumb -->
+<section id="bc" class="mt-3">
+    <div class="container">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item">
+                    {% if not_found %}
+                        {% if 'participant' in not_found %}
+                        <a href="{% url 'participants'%}">
+                            <i class="fas fa-home"></i> Participants</a>
+                        {%endif%}
+                        {% if 'swab' in not_found %}
+                        <a href="{% url 'swabs'%}">
+                            <i class="fas fa-home"></i> Swabs</a>
+                        {%endif%}
+                        {% if 'strain'  in not_found %}
+                        <a href="{% url 'strain'%}">
+                            <i class="fas fa-home"></i> Strains</a>
+                        {%endif%}
+                    {%else%}
+                        <a href="{% url 'index'%}">
+                            <i class="fas fa-home"></i> Home</a>
+                    {%endif%}
+                </li>
+                <li class="breadcrumb-item active"> 404</li>
+            </ol>
+    </div>
+</section>
+
+<section id="about" class="py-4">
+    <!-- Add 404 graphic -->
+</section>
+
+
+{% endblock%}

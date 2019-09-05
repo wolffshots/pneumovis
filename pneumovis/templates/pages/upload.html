@@ -6,8 +6,7 @@
 {%block title%}| Upload page{%endblock%}
 
 {% block content %}
-<!-- <section id="showcase-no-gif"> -->
-<section id="upload" class=" py-5" style="height:100%">
+<section id="upload" class=" py-5">
     <div class="container">
         <div class="row">
             <div class="col-md-8 mx-auto">
@@ -18,7 +17,6 @@
                             <i class="fas fa-user-plus"></i> Upload</h4>
                     </div>
                     <div class="card-body">
-                        <!-- Alerts -->
                         <form action="{%url 'upload'%}" method="POST" style="padding:10px;"
                             enctype="multipart/form-data">
                             <!-- important for security -->
@@ -52,15 +50,18 @@
                 </div>
             </div>
         </div>
+        <!-- <div class="progress">
+                <div class="determinate" style="width: 70%"></div>
+            </div> -->
     </div>
     <div class="container">
             <div class="row">
                 <div class="col-md-8 mx-auto">
                         <div class="card grey lighten-5">
 
-                                <div class="card-content">
-                                  <p>I am a very simple card. I am good at containing small bits of information. I am convenient because I require little markup to use effectively.</p>
-                                </div>
+                                <!-- <div class="card-content"> -->
+                                  <!-- <p>I am a very simple card. I am good at containing small bits of information. I am convenient because I require little markup to use effectively.</p> -->
+                                <!-- </div> -->
                                 <div class="card-tabs">
                                   <ul class="tabs tabs-fixed-width grey lighten-5">
                                     <li class="tab"><a class="active" href="#one">1: Required data format</a></li>
@@ -119,11 +120,11 @@
                                             <br>
                                             Please be very patient as it can take a few minutes to process and clean up large portions of data so if it seems like it is loading for a long time it is probably still busy
                                         </p>
-                                        <br>
+                                        <!-- <br>
                                         <p>
                                             <h5>E. Confirmation:</h5>
                                             The last thing that will happen is a message will be displayed at the top of the screen detailing the number of entries that were successfully added and the number that failed to be added
-                                        </p>
+                                        </p> -->
                                     </div>
                                   <!-- <div id="three">
                                       Test 3
@@ -135,9 +136,5 @@
         </div>
        
 </section>
-<section id="upload_instructions" class=" py-5" style="height:100%">
-    
 </section>
-</section>
-<!-- </section> -->
 {% endblock %}

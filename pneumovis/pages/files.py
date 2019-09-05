@@ -1,16 +1,34 @@
+"""
+A helper file to process files (especially the csv file for upload). This process happens in parallel.
+"""
 from swabs.models import Swab
+from django.http import HttpResponse
+from django.shortcuts import render, redirect
+
+from django.contrib import messages, auth
+from django.contrib.auth.models import User
+
+from django.db.models import Count
+
+from django.conf import settings
+from django.core.files.storage import FileSystemStorage
+
 successes = 0
 failures = 0
 delimiter = ''
 
+<<<<<<< HEAD
 def process_csv(filename,header,d):
+=======
+def process_csv(filename,header,delim):
+>>>>>>> 4c30aa1ff8914ccd784cef1fa1f9ff014cb47837
     global failures
     global successes
     global delimiter
     print("Processing file: ", filename)
     print("Header status: ", header)
-    print("Using delimiter: ", delimiter)
-    delimiter = delimiter
+    print("Using delimiter: ", delim)
+    delimiter = delim
     provided_file = open(filename, "r")
     # lines = provided_file.read()
     if delimiter == 'comma':
@@ -34,8 +52,8 @@ def process_csv(filename,header,d):
     # return result
     return render(request, 'pages/upload.html',context)
 
-def test():
-    return True
+# def test():
+#     return True
 
 def add_swab(Particcipant_ID,Barcode,Week,npa_a4_growth,datecollection,
 Presence_of_Pneumococcus,dob,sex,HIVexposed,site,BCG_given_birth,BCG_date_birth,DTaP_given_610wk,DTaP_date_610wk,PCV_given_610wk,PCV_date_610wk,DTaP_given_10wk,DTaP_date_10wk,DTaP_given_14wk,DTaP_date_14wk,PCV_given_14wk,PCV_date_14wk,PCV_given_9m,PCV_date_9m,Disease,Serotype_autocolour,vaccine_status_autocolour,Sequence_Type):

@@ -9,12 +9,36 @@
 {% block content %}
 <section id="showcase">
     <div style="padding: 10px;">
-        <div class="card" style="color:black;opacity:0.99;">
-            <div style="height:500px">
-                {% plotly_app name="SimpleExample" ratio=1 %}
+            <header class="w3-container w3-padding-32 w3-center" id="home" style="background-color:var(--akw); color:var(--akb)">
+                    <h1 class="w3-jumbo"><span class="w3-hide-small"></span> PNEUMOVIS</h1>
+                    <p>Bacterial Research Information</p>
+                    <img src="{% static 'img/microscope.png' %}" alt="Image unavailable" width="150" height="150">
+                </header>
+        <div class="" style="color:black;opacity:0.99;">
+            
+            <div style="height: 635px;" class=" card
+            {%plotly_class name='map' postfix='A'%}
+            ">
+            <i title="hover text" class="fas fa-info-circle text-right" style="margin:5px;"> Help</i>
+                {% plotly_app name="map" ratio=0.4 %}
             </div>
-            <div style="height:500px">
-                {% plotly_app name="SimpleExample2" ratio=1 %}
+            <div style="height:520px" class=" card
+            {%plotly_class name='incidence' postfix='A'%}
+            ">
+            <i title="hover text" class="fas fa-info-circle text-right" style="margin:5px;"> Help</i>
+                    {% plotly_app name="incidence" ratio=0.46 %}
+            </div>
+            <div style="height:560px" class=" card
+            {%plotly_class name='patients' postfix='A'%}
+            ">
+            <i title="hover text" class="fas fa-info-circle text-right" style="margin:5px;"> Help</i>
+                {% plotly_app name="patients" ratio=0.46 %}
+            </div>
+            <div style="height:540px" class=" card
+            {%plotly_class name='bubbles' postfix='A'%}
+            ">
+            <i title="hover text" class="fas fa-info-circle text-right" style="margin:5px;"> Help</i>
+                    {% plotly_app name="bubbles" ratio=0.4 %} 
             </div>
             <div style="height:500px">
                 {% plotly_app name="SimpleExample3" ratio=1 %}

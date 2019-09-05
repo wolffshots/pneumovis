@@ -11,7 +11,7 @@
     <div class="container">
         <div class="row text-center">
             <div class="col-md-12">
-                <h1 class="display-4">Browse the X participants and Y swabs currenlty recorded</h1>
+                <h1 class="display-4">Browse the {{num_participants}} participants and {{num_swabs}} swabs and {{num_strains}} strain combinnations currently recorded</h1>
             </div>
         </div>
     </div>
@@ -33,44 +33,68 @@
         <a href="{%url 'index'%}" class="btn btn-light mb-4">Back home</a>
         <div class="row">
             <div class="col-md-12">
-                <div class="row mb-5 fields" style="padding:10px;flex-wrap:unset;margin-right:8px;">
-                    <div class="col-md-6 card text-center"
-                        style="padding:10px;width:90%; margin:5px;padding-top:100px;padding-bottom:100px;background:rgba(240, 194, 240, 0.514) !important;">
-                        <ul class="list-group list-group-flush">
-                            <li class="list-group-item text-secondary"
-                                style="color:purple !important;background:rgba(240, 194, 240, 0);font-size: 3rem;">
-                                <i class="fas fa-stethoscope"></i>
-                                <a href="{%url 'swabs'%}">Browse the Swabs entries</a>
-                            </li>
+                
+            <div class="card purple">
+                    <div class="card-content white-text text-left">
+                            <div class="card-title text-left">Browse entries</div>
+                        <br>
+                      <p>
+                          This section of the site allows you to browse through the entries currently in the database.
+                      </p>
+                      <br>
+                      <p>
+                          If you are interested about how the data is extracted from the data there is a brief explanation in the Background tab below
+                      </p>
+                    </div>
+                    <div class="card-tabs">
+                        <ul class="tabs tabs-fixed-width tabs-transparent">
+                            <li class="tab"><a href="#navi" class="active">Browse</a></li>
+                            <li class="tab"><a href="#back" class="">Background</a></li>
                         </ul>
                     </div>
-                    <div class="col-md-6 card text-center"
-                        style="padding:10px;width:90%;margin:5px;padding-top:100px;padding-bottom:100px;background:rgba(240, 194, 240, 0.514)">
-                        <ul class="list-group list-group-flush">
-                            <li class="list-group-item text-secondary"
-                                style="color:purple !important;background:rgba(240, 194, 240, 0);font-size: 3rem;">
-                                <i class="fas fa-user-circle"></i>
-                                <a href="{%url 'participants'%}">Browse the Participants entries</a>
-                            </li>
-                        </ul>
+                    <div  class="card-content card-action text-white " style="background-color:var(--akw);">
+                        <div id="navi" class="active text-center" style="display: block !important;display: table;width:100%;font-size:2rem;">
+                            <br>
+                            <div class="child"style="display: table-cell;width:50%"><a href="{%url 'swabs'%}" class="" style="color:var(--awesome2)">Swabs</a></div>
+                            <div class="child"style="display: table-cell;"><a href="{%url 'participants'%}" class="" style="color:var(--awesome2)">Participants</a></div>
+                            <div class="child"style="display: table-cell;width:50%"><a href="{%url 'strains'%}" class="" style="color:var(--awesome2)">Strains</a></div>
+                            <br>
+                        </div>
+                        <div id="back" style="display: none;color:var(--awesome1);" class="">
+                            <div>
+                                <br>
+                                <h5 style>
+                                    Some background info on swabs
+                                </h5>
+                                <p>
+                                    The swabs are provided one a line in an Excel document with the initial line being a header line, naming the columns contained.
+                                </p>
+                                <br>
+                                <h6>Clean-up:</h6>
+                                <p>To make them easier to work with the document is converted into a CSV file using <a target="_blank" rel="noopener noreferrer" href="https://github.com/wireservice/csvkit" style="color:var(--awesome3);">CSVKit.</a></p>
+                                <p>The data then still needs a little bit of cleaning up which is in part down using the upload app that we made to replace blank values and remove decimal points where there should not be.</p>
+                                <br>
+                                <h6>Import:</h6>
+                                <p>A logged in admin has access to the upload app and has two ways to acces it:
+                                    <li>By navigating to the <a style="margin-right:0;" href="/admin">Admin</a> page and then using the button that appears in the top right of the navbar</li>
+                                    <li>By manually navigating to <a style="margin-right:0;" href="{%url 'upload'%}">'/upload'</a></li>
+                                </p>
+                                <p>The actual import process is detailed on the upload page itself</p>
+                                <br>
+                                <h6>Extraction:</h6>
+                                <p>Since the data is provided as a list of swabs the actual data for the participants and strains is extracted from these entries using the same Swab model with different operations on the data that is pulled from the database.</p>
+                                <br>
+                                <h6>Browsing data:</h6>
+                                <p>You can browse the data by clicking on one of the three links in the browse tab on this page. Swabs and participants are separated into pages as there are so many instances of them but strains are just displayed in a list because that is still managable.</p>
+                            </div>
+                            
+                          </div>
                     </div>
-
-                </div>
-
-            </div>
-            <div class="col-md-12 card text-center"
-                style="padding:10px;width:100%;margin:5px;padding-top:100px;padding-bottom:100px;background:rgba(240, 194, 240, 0.514)">
-                <ul class="list-group list-group-flush">
-                    <li class="list-group-item text-secondary"
-                        style="color:purple !important;background:rgba(240, 194, 240, 0);font-size: 3rem;">
-                        <i class="fas fa-user-circle"></i>
-                        <a href="{%url 'strains'%}">Browse the Strains entries</a>
-                    </li>
-                </ul>
-            </div>
+                  </div>
         </div>
-    </div>
 
+    </div>
+</div>
 </section>
 
 {% endblock%}

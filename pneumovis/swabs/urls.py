@@ -1,3 +1,7 @@
+"""
+Routing paths for the swabs subsite
+"""
+
 from django.urls import path
 from . import views
 

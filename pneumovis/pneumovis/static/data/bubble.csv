@@ -1,0 +1,11 @@
+area,year,population,numberExposed,hivexposed,numberWithPneumococcus,PneumococcusExposed,ModeSerotype,smokingexposed
+Gugulethu,2012,70,26,37.14,24,34.29,35A,12.86
+Mandalay,2012,50,2,4.00,31,62.00,9N,58
+Gugulethu,2013,248,92,37.10,216,87.10,15B,6.05
+Mandalay,2013,121,4,3.31,108,89.26,15B,60.33
+Gugulethu,2014,328,118,35.98,269,82.01,16F,5.79
+Mandalay,2014,119,4,3.26,107,89.92,16F,63.87
+Gugulethu,2015,294,115,39.12,270,91.84,35B,8.50
+Mandalay,2015,109,6,5.50,105,96.33,16F,64.22
+Gugulethu,2016,100,40,40.00,90,90.00,19F,12.00
+Mandalay,2016,51,4,7.84,46,90.20,15A,64.71

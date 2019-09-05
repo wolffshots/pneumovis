@@ -1,10 +1,31 @@
 /* Custom style sheet for PneumoVis */
+/* 28104E • 6237A0 • 9754CB • DEACF5 */
+:root {
+  --awesome1: #28104E !important;
+  --awesome2: #6237A0 !important;
+  --awesome3: #9754CB !important;
+  --awesome4: #DEACF5 !important;
+  --aa: #fff !important;
+  --bb: rgb(0, 0, 0) !important;
+  --akb: #27272796 !important;
+  --akw: hsla(0, 0%, 95%, 1) !important;
+  --ag: rgb(219, 219, 219) !important;
+  --adg:rgb(92, 92, 92) !important;
+}
+
+/* reset */
+*{
+  margin:0;
+  padding:0;
+  padding-bottom:0;
+}
 
 .btn-secondary {
-  color: #fff !important; }
+  color: var(--aa) !important; }
 
-img {
-  width: 100%; }
+/* img {
+  width: 100%; 
+} */
 
 .logo {
   width: 80px; }
@@ -20,7 +41,7 @@ img {
   /* background: url(../img/showcase.jpg) no-repeat top center fixed/cover; */
   position: relative;
   min-height: 650px;
-  color: #fff;
+  color: var(--aa);
   padding-top: 6rem; }
   #showcase .home-search {
     min-height: 400px;
@@ -47,7 +68,7 @@ img {
     left: 0;
     min-height: 100%;
     width: 100%;
-    background: rgba(32, 134, 107, 0.8); }
+    background: var(--awesome4); }
 
 #showcase-inner {
   background: url(../img/bacteria.jpg) no-repeat top center fixed/cover;
@@ -61,7 +82,7 @@ img {
     left: 0;
     min-height: 100%;
     width: 100%;
-    background: rgba(68, 26, 97, 0.8); }
+    background: var(--awesome1); }
   #showcase-inner.showcase-search {
     min-height: 270px; }
 
@@ -99,9 +120,13 @@ img {
 
 
 /* Jadon */
-body, h1,h2,h3,h4,h5,h6,ul,li,p,div,a,span,i,section,nav,ol {font-family: "Roboto", sans-serif}
+body, h1,h2,h3,h4,h5,h6,ul,li,p,div,a,span,section,nav,ol {font-family: "Roboto", sans-serif !important}
+/* i {font-family:-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji" !important;} */
 
-.breadcrumb{line-height: normal;}
+.breadcrumb{
+  line-height: normal;
+  background-color: var(--ag);
+}
 
 
 .card{font-family: "Roboto", sans-serif}
@@ -119,30 +144,30 @@ footer#main-footer {
 
 #showcase {
   /* background: url(../images/loading_1_2.gif) no-repeat top center; */
-    background: hsla(0, 0%, 95%, 1);
+    background: var(--akw);
     
     background-size: 100%;
     -webkit-background-size: 1400px;
     /* background-size: 200%; */
     position: relative;
     min-height: -webkit-fill-available;
-    color: #fff;
+    color: var(--aa);
     padding-top: 0.1rem;
 }
 .bg-primary {
-    background-color: #03020a !important;
+    background-color: var(--akb) !important;
 }
 .nav-item:hover{
-  background-color: #fff !important;
+  background-color: var(--aa) !important;
 }
 .nav-item{
   width: 50%;
   height: 100%;
-  color: black;
+  color: var(--bb);
   text-align: center !important;
 }
 .nav-link:hover{
-    color: black !important;
+    color: var(--bb) !important;
   }
 .mr-3{
   width: 100% !important;
@@ -165,40 +190,40 @@ footer#main-footer {
 }
 
 .btn-secondary {
-  background-color: #673AB7;
-  border-color: #9C27B0;
+  background-color: var(--awesome2);
+  border-color: var(--awesome3);
 }
 .btn-secondary:hover {
-  background-color: rgb(135, 75, 238);
-  border-color: #9C27B0;/*rgb(212, 57, 240);*/
+  background-color: var(--awesome2) !important;
+  border-color: var(--awesome3);/* #9C27B0;rgb(212, 57, 240); */
 }
 
 .card .card-action a:not(.btn):not(.btn-large):not(.btn-small):not(.btn-large):not(.btn-floating) {
-  color: rgb(135, 75, 238);
+  color: var(--awesome2);
   margin-right: 24px;
   -webkit-transition: color .3s ease;
   transition: color .3s ease;
   text-transform: uppercase;
 }
 .card .card-action a:not(.btn):not(.btn-large):not(.btn-small):not(.btn-large):not(.btn-floating):hover {
-  color: rgb(195, 45, 221);
+  color: var(--awesome3);
 }
 
 .tabs .tab a:hover, .tabs .tab a.active {
   background-color: transparent;
-  color: rgb(135, 75, 238);
+  color: var(--awesome1);
 }
 
 .tabs .indicator {
   position: absolute;
   bottom: 0;
   height: 2px;
-  background-color: rgb(135, 75, 238);
+  background-color: var(--awesome1);
   will-change: left, right;
 }
 
 .tabs .tab a {
-  color: rgb(135, 75, 238);
+  color: var(--awesome1);
   display: block;
   width: 100%;
   height: 100%;
@@ -212,5 +237,77 @@ footer#main-footer {
 
 .tabs .tab a:hover, .tabs .tab a.active {
   background-color: transparent;
-  color: rgb(135, 75, 238);
+  color: var(--awesome2);
+}
+
+.page-footer {
+  padding-top: 20px;
+  color: var(--aa);
+  background-color: var(--awesome1);
+}
+
+.btn:hover, .btn-large:hover, .btn-small:hover {
+  background-color: var(--awesome4);
+}
+.btn, .btn-large, .btn-small {
+  text-decoration: none;
+  color: var(--akw);
+  background-color: var(--awesome3);
+  text-align: center;
+  letter-spacing: .5px;
+  -webkit-transition: background-color .2s ease-out;
+  transition: background-color .2s ease-out;
+  cursor: pointer;
+}
+
+.purple.darken-1 {
+  background-color: var(--awesome2) !important;
+}
+
+.btn-light {
+  color: var(--akb);
+  background-color: var(--akw);
+  border-color: var(--akw);
+}
+.btn-light:hover {
+  color: var(--akb);
+  background-color: var(--ag);
+  border-color: var(--ag);
+}
+
+nav ul li.active {
+  background-color: rgba(0,0,0,0.0) !important;
+}
+
+.purple {
+  background-color: var(--awesome2) !important;
+}
+
+body {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
+
+main {
+  flex: 1 0 auto;
+}
+
+/* .wrapper{
+  min-height: 100%;
+  margin-bottom: -221px;
+}
+
+
+html, body {
+  height: 100%;
+  margin: 0;
+} */
+
+.breadcrumb:last-child {
+  color: var(--bb);
+}
+
+.w3-button{
+  color:var(--aa) !important;
 }

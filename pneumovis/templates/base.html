@@ -1,18 +1,26 @@
 {% load static%}
 <!DOCTYPE html> 
 <link rel="shortcut icon" type="image/ico" href="{% static 'favicon.ico' %}" />
-<html lang="en">
+<html lang="en"
+style="height: 100%;
+margin: 0;"
+>
     <!-- Head -->
     {% include 'partials/_head.html' %}
-<body>
+    <body style="background-color: var(--akw);"
+    style="height: 100%;
+    margin: 0;"
+    >
     <!-- Top bar -->
-    {% include 'partials/_topbar.html' %}
     <!-- Alerts -->
     {%include 'partials/_alerts.html'%}
     <!-- Nav bar -->
-    {% include 'partials/_navbar.html' %}
+    {%include 'partials/_navbar.html'%}
     <!-- Main content -->
+    <div class="wrapper"
+    style="min-height: 100vh;">
     {% block content %} {% endblock %}
+    </div>
     <!-- Footer -->
     {% include 'partials/_footer.html' %}
     <!-- Scripts -->

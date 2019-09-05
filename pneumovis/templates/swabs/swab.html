@@ -11,6 +11,16 @@
                 <h1 class="display-4">Swab #{{swab.Barcode}}</h1>
                 <p class="lead">
                     <i class="fas fa-map-marker"></i> {{swab.site}}</p>
+                <div>
+                    <i>
+                        Latitude: {{swab.geo_lat}}
+                    </i>
+                </div>
+                <div>
+                    <i>
+                        Longitude: {{swab.geo_long}}
+                    </i> 
+                </div>                
             </div>
         </div>
     </div>
@@ -35,18 +45,7 @@
     <div class="container">
         <a href="{%url 'swabs'%}" class="btn btn-light mb-4">Back To Swabs</a>
         <div class="row">
-            <div class="col-md-9">
-                <!-- Fields -->
-                <!-- <div class="col-md-6">
-                    <ul class="list-group list-group-flush">
-
-                    </ul>
-                </div>
-                <div class="col-md-6">
-                    <ul class="list-group list-group-flush">
-
-                    </ul>
-                </div> -->
+            <div class="col-md-12">
                 <div class="row mb-5 fields">
 
                     <!-- <div class=""> -->
@@ -68,10 +67,6 @@
                                 <i class="fas fa-check-square"></i> Presence of Pneumococcus:
                                 <span class="float-right">{{swab.Presence_of_Pneumococcus}}</span>
                             </li>
-                            <!-- <li class="list-group-item text-secondary">
-                                <i class=""></i> Presence of Pneumococcus:
-                                <span class="float-right">{{swab.Presence_of_Pneumococcus}}</span>
-                            </li> -->
                             <li class="list-group-item text-secondary" style="color:purple !important">
                                 <i class="fas fa-venus-mars"></i> Sex:
                                 <span class="float-right">{{swab.sex}}</span>
@@ -83,6 +78,17 @@
                             <li class="list-group-item text-secondary" style="color:purple !important">
                                 <i class="fas fa-calendar"></i> Date of birth:
                                 <span class="float-right">{{swab.dob}}</span>
+                            </li>
+                            <li class="list-group-item text-secondary" style="color:purple !important">
+                                    <!-- <i class="fas fa-calendar"></i>  -->
+                                    Weight at birth:
+                                    <span class="float-right">{{swab.weight_birth}}</span>
+                            </li>
+                            
+                            <li class="list-group-item text-secondary" style="color:purple !important">
+                                    <!-- <i class="fas fa-calendar"></i>  -->
+                                    Antibiotic use @ 1yr:
+                                    <span class="float-right">{{swab.antibio_use_1yr}}</span>
                             </li>
                         </ul>
                     </div>
@@ -112,6 +118,21 @@
                             <li class="list-group-item text-secondary" style="color:purple !important">
                                 <i class="fas fa-th-list"></i> Sequence Type:
                                 <span class="float-right">{{swab.Sequence_Type}}</span>
+                            </li>
+                            <li class="list-group-item text-secondary" style="color:purple !important">
+                                    <i class="fas fa-fire"></i> 
+                                    Mother's smoking status anytime:
+                                    <span class="float-right">{{swab.mother_smoke_anytime}}</span>
+                            </li>
+                            <li class="list-group-item text-secondary" style="color:purple !important">
+                                    <i class="fas fa-fire"></i> 
+                                    Total smoking status anytime:
+                                    <span class="float-right">{{swab.total_smokers_anytime}}</span>
+                            </li>
+                            <li class="list-group-item text-secondary" style="color:purple !important">
+                                    <!-- <i class="fas fa-calendar"></i>  -->
+                                    Birth delivery method:
+                                    <span class="float-right">{{swab.delivery_method}}</span>
                             </li>
                         </ul>
                     </div>
@@ -188,11 +209,109 @@
                     </div>
                     <!-- </div> -->
                 </div>
+                <div class="row mb-5 fields">
 
-            </div>
-            <div class="col-md-3">
-                <button class="btn-primary btn-block btn-lg" data-toggle="modal"
-                    data-target="#inquiryModal">Placeholder</button>
+                        <!-- <div class=""> -->
+                        
+                        <div class="col-md-6">
+                            <ul class="list-group list-group-flush">
+                                    <li class="list-group-item text-secondary" style="color:purple !important">
+                                            <!-- <i class="fas fa-id-card"></i>  -->
+                                            Education:
+                                            <span class="float-right">{{swab.education}}</span>
+                                        </li>
+                                        <li class="list-group-item text-secondary" style="color:purple !important">
+                                            <!-- <i class="fas fa-barcode"></i>  -->
+                                            HHd size:
+                                            <span class="float-right">{{swab.HHdsize}}</span>
+                                        </li>
+                                        <li class="list-group-item text-secondary" style="color:purple !important">
+                                            <!-- <i class="fas fa-tree"></i>  -->
+                                            Home type (if available):
+                                            <span class="float-right">{{swab.HomeType}}</span>
+                                        </li>
+                                        <li class="list-group-item text-secondary" style="color:purple !important">
+                                            <!-- <i class="fas fa-check-square"></i>  -->
+                                            Paraffin stove:
+                                            <span class="float-right">{{swab.Paraffin_stove}}</span>
+                                        </li>
+                                        <li class="list-group-item text-secondary" style="color:purple !important">
+                                            <!-- <i class="fas fa-venus-mars"></i>  -->
+                                            Coal stove:
+                                            <span class="float-right">{{swab.Coal_stove}}</span>
+                                        </li>
+                            </ul>
+                        </div>
+                        <div class="col-md-6">
+                                <ul class="list-group list-group-flush">
+                                    
+                                    <li class="list-group-item text-secondary" style="color:purple !important">
+                                        <!-- <i class="fas fa-clock"></i>  -->
+                                        Benzene Cat:
+                                        <span class="float-right">{{swab.BenzeneCat}}</span>
+                                    </li>
+                                    <li class="list-group-item text-secondary" style="color:purple !important">
+                                        <!-- <i class="fas fa-calendar"></i>  -->
+                                        Toluene Cat:
+                                        <span class="float-right">{{swab.TolueneCat}}</span>
+                                    </li>
+                                    <li class="list-group-item text-secondary" style="color:purple !important">
+                                            <!-- <i class="fas fa-calendar"></i>  -->
+                                            SO2 Cat:
+                                            <span class="float-right">{{swab.SO2Cat}}</span>
+                                    </li>
+                                    <li class="list-group-item text-secondary" style="color:purple !important">
+                                            <!-- <i class="fas fa-calendar"></i>  -->
+                                            NO2 Cat:
+                                            <span class="float-right">{{swab.NO2Cat}}</span>
+                                    </li>
+                                    <li class="list-group-item text-secondary" style="color:purple !important">
+                                            <!-- <i class="fas fa-calendar"></i>  -->
+                                            CO Strict:
+                                            <span class="float-right">{{swab.CO_Strict}}</span>
+                                    </li>
+                                    <li class="list-group-item text-secondary" style="color:purple !important">
+                                            <!-- <i class="fas fa-calendar"></i>  -->
+                                            CO Broad:
+                                            <span class="float-right">{{swab.CO_Broad}}</span>
+                                    </li>
+                                    <li class="list-group-item text-secondary" style="color:purple !important">
+                                            <!-- <i class="fas fa-calendar"></i>  -->
+                                            SO2 Cat Post:
+                                            <span class="float-right">{{swab.SO2Cat_Post}}</span>
+                                    </li>
+                                    
+                                    <li class="list-group-item text-secondary" style="color:purple !important">
+                                            <!-- <i class="fas fa-calendar"></i>  -->
+                                            NO2 Cat Post:
+                                            <span class="float-right">{{swab.NO2Cat_Post}}</span>
+                                    </li>
+                                    <li class="list-group-item text-secondary" style="color:purple !important">
+                                            <!-- <i class="fas fa-calendar"></i>  -->
+                                            Benzene Cat post:
+                                            <span class="float-right">{{swab.BenzeneCat_post}}</span>
+                                    </li>
+                                    <li class="list-group-item text-secondary" style="color:purple !important">
+                                            <!-- <i class="fas fa-calendar"></i>  -->
+                                            Toluene Cat post:
+                                            <span class="float-right">{{swab.TolueneCat_post}}</span>
+                                    </li>
+                                    <li class="list-group-item text-secondary" style="color:purple !important">
+                                            <!-- <i class="fas fa-calendar"></i>  -->
+                                            CO Strict post:
+                                            <span class="float-right">{{swab.CO_Strict_post}}</span>
+                                    </li>
+                                    <li class="list-group-item text-secondary" style="color:purple !important">
+                                            <!-- <i class="fas fa-calendar"></i>  -->
+                                            CO Broad post:
+                                            <span class="float-right">{{swab.CO_Broad_post}}</span>
+                                    </li>
+    
+                
+                                </ul>
+                            </div>
+                        <!-- </div> -->
+                    </div>
             </div>
         </div>
     </div>

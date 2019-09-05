@@ -1,18 +1,20 @@
+"""
+The file that processes user actions and page routes for most basic pages
+"""
 from django.http import HttpResponse
 from django.shortcuts import render, redirect
-
 from django.contrib import messages, auth
 from django.contrib.auth.models import User
-
-from .dash_apps import *
-
-from .files import *
-
 from django.conf import settings
 from django.core.files.storage import FileSystemStorage
+from django.db.models import Count
+
+from swabs.models import Swab
+from .dash_apps import *
+from .files import *
+from .tasks import *
 
 from datetime import datetime
-
 
 def index(request):
     return render(request, 'pages/index.html')
@@ -62,7 +64,15 @@ def ip(request):
 
 
 def browse(request):
-    return render(request, 'pages/browse.html')
+    num_swabs = len(Swab.objects.all())
+    num_participants = len(Swab.objects.order_by('Particcipant_ID').values('Particcipant_ID').annotate(dcount=Count('Particcipant_ID')))
+    num_strains = len(Swab.objects.order_by('Serotype_autocolour').values('Serotype_autocolour').annotate(dcount=Count('Serotype_autocolour')))
+    context={
+    'num_swabs':num_swabs,
+    'num_participants':num_participants,
+    'num_strains':num_strains,
+    }
+    return render(request, 'pages/browse.html',context)
 
 
 def upload(request):
@@ -86,9 +96,9 @@ def upload(request):
             # Spawn Subprocess
             # Check if user has made request recently and if so block it for a couple minutes to allow processes to finish
             import threading
-            t = threading.Thread(target=process_csv, args=(uploaded_file_url,header, delimiter), kwargs={})
-            t.setDaemon(True)
-            t.start()
+            upload_thread = threading.Thread(target=process_csv, args=(uploaded_file_url,header, delimiter), kwargs={})
+            upload_thread.setDaemon(True)
+            upload_thread.start()
             # p=subprocess.Popen(['/bin/cp',f , '/home/dutzy/Desktop'])
             
             # result = process_csv(uploaded_file_url,header, delimiter)
@@ -107,5 +117,4 @@ def upload(request):
 
 
 def contact(request):
-    # TODO add the Dr and our details
     return render(request, 'pages/contact.html')

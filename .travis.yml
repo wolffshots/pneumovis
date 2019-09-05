@@ -1,11 +1,18 @@
 language: python
 python:
   - "3.7"
-# command to install dependencies
+env:
+  - DJANGO=1.8 DB=postgres
+before_install:
+  - cd pneumovis
+  - export DJANGO_SETTINGS_MODULE=pneumovis.settings
 install:
   - pip install -r requirements.txt
-
-
-# command to run tests
+before-script:
+  - cd pneumovis
+  - cp ../config/database.yml.travis ../config/database.yml
+  - psql -c 'create database default;' -U postgres
+services:
+  - postgresql
 script:
-  - python3 pneumovis/manage.py test
+  - python3 manage.py test

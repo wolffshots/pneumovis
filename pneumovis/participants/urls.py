@@ -1,3 +1,7 @@
+"""
+The url routes for navigating to pages in the /participants subroute
+"""
+
 from django.urls import path
 from . import views
 from swabs.models import Swab

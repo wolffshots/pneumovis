@@ -68,3 +68,9 @@ class Swab(models.Model):
     def __str__(self):  # this is the primary field that is displayed similar to a toString
         """ Returns the barcode value for the current swap as that is the unique value for each swab """
         return str(self.Barcode)
+
+    def get_Particcipant_ID(self):
+        return str(self.Particcipant_ID)
+
+    def get_Barcode(self):
+        return str(self.Barcode)
