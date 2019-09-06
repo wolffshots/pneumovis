@@ -112,7 +112,7 @@ class aboutTestCase(TestCase):
 
 
 
-# test login process by creating users and checking correct response to valid and invalid credentials
+# test login process by creating user and checking correct response to valid credentials
 class TestAccountLogin(TestCase):
    def setUp(self):
       self.client = Client()
@@ -120,9 +120,4 @@ class TestAccountLogin(TestCase):
    def test_login_valid_credentials(self):
       user = User.objects.create_user('testuser', '[some email]', 'password')
       response = self.client.login(username=user.username, password=user.password)
-      self.assertTrue(user.is_authenticated)
-
-   def test_login_valid_credentials(self):
-      user = User.objects.create_user('testuser', '[some email]', 'password')
-      response = self.client.login(username="invalidorincorrect", password="invalidorincorrect")
       self.assertTrue(user.is_authenticated)
