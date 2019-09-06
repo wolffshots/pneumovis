@@ -1,10 +1,20 @@
 from django.test import TestCase
 from pages.dash_app_dir import bubbles, patients, map, incidence
+from pages import views
 import pandas as pd
+from django.contrib import messages, auth
+from django.shortcuts import render, redirect
+from django.http import HttpRequest
+
+from django.urls import reverse
+
+from django.test import TestCase
+from django.test.client import Client
+from django.contrib.auth.models import User
+# reverse resolves a view name + its args into a path, used to avoid hardcoding urls in tests
 
 
-
-# test figure is correctly made given valid input and excception raised for invalid input      
+# Visualisation Unit Tests  
 
 class bubblesTestCase(TestCase):
    def test_makeFigure_valid_entry_smoking(self):
@@ -59,5 +69,60 @@ class mapTestCase(TestCase):
          self.assertTrue('Empty dataframe' in context.exception)
 
 
+# Views Tests
 
 
+# simple view tests of main pages to check correct access patterns
+# mock user, check correct status (200=OK) received when attempting to access html page 
+class loginViewCase(TestCase):
+
+   def setUp(self):
+      self.client = Client()
+   
+   def test_invalid_user(self):
+      url = reverse('login')
+      response = self.client.get(url)
+     
+      self.assertEqual(response.status_code, 200)
+      self.assertTemplateUsed(response, 'pages/login.html')
+
+class browseViewCase(TestCase):
+
+   def setUp(self):
+      self.client = Client()
+   
+   def test_invalid_user(self):
+      url = reverse('browse')
+      response = self.client.get(url)
+     
+      self.assertEqual(response.status_code, 200)
+      self.assertTemplateUsed(response, 'pages/browse.html')
+
+class aboutTestCase(TestCase):
+
+   def setUp(self):
+      self.client = Client()
+   
+   def test_invalid_user(self):
+      url = reverse('about')
+      response = self.client.get(url)
+     
+      self.assertEqual(response.status_code, 200)
+      self.assertTemplateUsed(response, 'pages/about.html')
+
+
+
+# test login process by creating users and checking correct response to valid and invalid credentials
+class TestAccountLogin(TestCase):
+   def setUp(self):
+      self.client = Client()
+
+   def test_login_valid_credentials(self):
+      user = User.objects.create_user('testuser', '[some email]', 'password')
+      response = self.client.login(username=user.username, password=user.password)
+      self.assertTrue(user.is_authenticated)
+
+   def test_login_valid_credentials(self):
+      user = User.objects.create_user('testuser', '[some email]', 'password')
+      response = self.client.login(username="invalidorincorrect", password="invalidorincorrect")
+      self.assertTrue(user.is_authenticated)
