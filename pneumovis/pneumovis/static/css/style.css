@@ -18,7 +18,7 @@
   margin:0;
   padding:0;
   padding-bottom:0;
-  font-family: "Open Sans", sans-serif !important
+  /* font-family: "Open Sans", sans-serif !important */
 }
 
 .btn-secondary {
@@ -121,7 +121,7 @@
 
 
 /* Jadon */
-/* body, h1,h2,h3,h4,h5,h6,ul,li,p,div,a,span,section,nav,ol {font-family: "Open Sans", sans-serif !important} */
+body, h1,h2,h3,h4,h5,h6,ul,li,p,div,a,span,section,nav,ol {font-family: "Open Sans", sans-serif !important}
 
 .breadcrumb{
   line-height: normal;
