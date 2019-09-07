@@ -17,6 +17,7 @@ from .tasks import *
 from datetime import datetime
 
 def index(request):
+    messages.warning(request,'Please be aware that this page takes a while to load properly')
     return render(request, 'pages/index.html')
 
 
