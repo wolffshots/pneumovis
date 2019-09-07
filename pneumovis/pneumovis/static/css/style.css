@@ -144,7 +144,7 @@ footer#main-footer {
 
 #showcase {
   /* background: url(../images/loading_1_2.gif) no-repeat top center; */
-    background: var(--akw);
+    background-color: var(--aa);
     
     background-size: 100%;
     -webkit-background-size: 1400px;
@@ -310,4 +310,10 @@ html, body {
 
 .w3-button{
   color:var(--aa) !important;
+}
+.main-svg{
+  color:var(--grey) !important;
+}
+.Select-control{
+  background-color:var(--grey) !important;
 }
