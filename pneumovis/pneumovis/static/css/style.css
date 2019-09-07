@@ -120,8 +120,7 @@
 
 
 /* Jadon */
-body, h1,h2,h3,h4,h5,h6,ul,li,p,div,a,span,section,nav,ol {font-family: "Roboto", sans-serif !important}
-/* i {font-family:-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji" !important;} */
+body, h1,h2,h3,h4,h5,h6,ul,li,p,div,a,span,section,nav,ol {font-family: "Open Sans", sans-serif !important}
 
 .breadcrumb{
   line-height: normal;
