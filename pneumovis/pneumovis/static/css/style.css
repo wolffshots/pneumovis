@@ -121,7 +121,7 @@
 
 
 /* Jadon */
-body, h1,h2,h3,h4,h5,h6,ul,li,p,div,a,span,section,nav,ol {font-family: "Open Sans", sans-serif !important}
+/* body, h1,h2,h3,h4,h5,h6,ul,li,p,div,a,span,section,nav,ol {font-family: "Open Sans", sans-serif !important} */
 
 .breadcrumb{
   line-height: normal;
@@ -292,17 +292,6 @@ body {
 main {
   flex: 1 0 auto;
 }
-
-/* .wrapper{
-  min-height: 100%;
-  margin-bottom: -221px;
-}
-
-
-html, body {
-  height: 100%;
-  margin: 0;
-} */
 
 .breadcrumb:last-child {
   color: var(--bb);
