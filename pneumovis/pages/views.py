@@ -77,7 +77,6 @@ def browse(request):
 
 def upload(request):
     if request.method == 'POST':
-
         if request.user.is_authenticated:
             user_id = request.user.id
             uploaded_file = request.FILES['file_upload']
