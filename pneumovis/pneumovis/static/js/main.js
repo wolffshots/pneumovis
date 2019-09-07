@@ -3,7 +3,7 @@
 
 setTimeout(function(){
     $('#message').fadeOut('slow');
-},5000);
+},3000);
 
 $(document).ready(function(){
     $('.tabs').tabs();
