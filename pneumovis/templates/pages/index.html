@@ -25,13 +25,13 @@
             <div style="height:520px" class=" card
             {%plotly_class name='incidence' postfix='A'%}
             ">
-            <i title="Graph shows incidences of serotype presence in swabs collected during the trial." class="fas fa-info-circle text-right" style="margin:5px;"> Help</i>
+            <i title="Graph shows incidences of serotype presence in swabs collected during the trial. Use the range slider below the x axis to narrow in on a subset of the serotypes." class="fas fa-info-circle text-right" style="margin:5px;"> Help</i>
                     {% plotly_app name="incidence" ratio=0.46 %}
             </div>
             <div style="height:540px" class=" card
             {%plotly_class name='bubbles' postfix='A'%}
             ">
-            <i title="Graph shows relationship between smoking and HIV exposure and serotype colonisation incidence. Bubbles represent clinic areas rather than precise participant locations (see map above). Size of bubbles give a sense of the number of participant swabs collected in a particular year." class="fas fa-info-circle text-right" style="margin:5px;"> Help</i>
+            <i title="Graph shows relationship between smoking and HIV exposure (use the dropdown menu to change between the two) and serotype colonisation. Bubbles represent clinic areas rather than precise participant locations (see map above). Size of bubbles give a sense of the number of participant swabs collected in a particular year. Use the timeline to view changes from year to year." class="fas fa-info-circle text-right" style="margin:5px;"> Help</i>
                     {% plotly_app name="bubbles" ratio=0.4 %} 
             </div>
             <div style="height:560px" class=" card

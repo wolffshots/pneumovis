@@ -86,13 +86,26 @@ def gen_graph(dfName):
 layout = dict(
     title = 'Patient Timelines',
     yaxis = go.layout.YAxis(title = 'Year',type='date',range=['2011-01-01','2017-01-01']),
-    xaxis = go.layout.XAxis(title = 'Patient',type='category',
-    rangeslider=dict(
-      visible=True
-    )
+    xaxis = go.layout.XAxis(title = 'Patient',type='category'
     ),
     yaxis_range=[datetime.datetime(2012,1,1),
-                                datetime.datetime(2017,1,1)]
+                                datetime.datetime(2017,1,1)],
+
+
+   annotations= [{
+    "text": "                 \U0001f397 = HIV Exposed \uD83D\uDEAC = Smoking Exposed \u2642 = Male \u2640 = Female \uD83D\uDC89 = Vaccinated ",
+      "font": {
+      "size": 13,
+      "color": 'rgb(116, 101, 130)',
+    },
+    "showarrow": False,
+    "align": 'center',
+    "x": 0.5,
+    "y": 1,
+    "xref": 'paper',
+    "yref": 'paper',
+  }]
+
   )
 
 
