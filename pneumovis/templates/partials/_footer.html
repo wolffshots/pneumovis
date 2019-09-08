@@ -8,9 +8,11 @@
       <div class="col l4 offset-l2 s12">
         <h5 class="white-text">Links</h5>
         <ul>
-          <li><a class="grey-text text-lighten-3" href="{% url 'about'%}">About the reasearch</a></li>
+          <li><a class="grey-text text-lighten-3" href="{% url 'about'%}">About the research</a></li>
           <li><a class="grey-text text-lighten-3" href="{% url 'contact'%}">Contact the team</a></li>
+          {%if user.is_authenticated%}
           <li><a class="grey-text text-lighten-3" href="/admin">View admin functions</a></li>
+          {%endif%}
           <li><a class="grey-text text-lighten-3" href="{% url 'browse'%}">Browse the data</a></li>
         </ul>
       </div>

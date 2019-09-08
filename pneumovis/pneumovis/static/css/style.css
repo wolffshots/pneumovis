@@ -18,6 +18,7 @@
   margin:0;
   padding:0;
   padding-bottom:0;
+  /* font-family: "Open Sans", sans-serif !important */
 }
 
 .btn-secondary {
@@ -120,8 +121,7 @@
 
 
 /* Jadon */
-body, h1,h2,h3,h4,h5,h6,ul,li,p,div,a,span,section,nav,ol {font-family: "Roboto", sans-serif !important}
-/* i {font-family:-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji" !important;} */
+body, h1,h2,h3,h4,h5,h6,ul,li,p,div,a,span,section,nav,ol {font-family: "Open Sans", sans-serif !important}
 
 .breadcrumb{
   line-height: normal;
@@ -144,7 +144,7 @@ footer#main-footer {
 
 #showcase {
   /* background: url(../images/loading_1_2.gif) no-repeat top center; */
-    background: var(--akw);
+    background-color: var(--aa);
     
     background-size: 100%;
     -webkit-background-size: 1400px;
@@ -293,21 +293,16 @@ main {
   flex: 1 0 auto;
 }
 
-/* .wrapper{
-  min-height: 100%;
-  margin-bottom: -221px;
-}
-
-
-html, body {
-  height: 100%;
-  margin: 0;
-} */
-
 .breadcrumb:last-child {
   color: var(--bb);
 }
 
 .w3-button{
   color:var(--aa) !important;
+}
+.main-svg{
+  color:var(--grey) !important;
+}
+.Select-control{
+  background-color:var(--grey) !important;
 }

@@ -17,6 +17,7 @@ from .tasks import *
 from datetime import datetime
 
 def index(request):
+    messages.warning(request,'Please be aware that this page takes a while to load properly')
     return render(request, 'pages/index.html')
 
 
@@ -77,7 +78,6 @@ def browse(request):
 
 def upload(request):
     if request.method == 'POST':
-
         if request.user.is_authenticated:
             user_id = request.user.id
             uploaded_file = request.FILES['file_upload']
