@@ -23,7 +23,7 @@ def bubbles_load():
     available_xVars=["Patients Exposed to HIV (%)","Patients Exposed to Smoking (%)"]
 
     # define app html layout
-    app.layout = html.Div(children=[
+    app.layout = html.Div(style={'font-family':'sans-serif'},children=[
         html.H1(children=''),
         html.Div(children=''''''),
 

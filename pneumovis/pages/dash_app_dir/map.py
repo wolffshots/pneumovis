@@ -23,7 +23,7 @@ app = DjangoDash('map')
 def map_load():
     
     # define app html layout
-    app.layout = html.Div(children=[
+    app.layout = html.Div(style={'font-family':'sans-serif'},children=[
         html.H1(children=''),
         html.Div(children=''''''),
 
