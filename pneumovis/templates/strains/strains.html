@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 {% load humanize %}
 <!-- Dynamic page title -->
-{%block title%}| Browse strains{%endblock%}
+{%block title%}| Browse serotypes{%endblock%}
 
 {%block content%}
 <!-- Title -->
@@ -9,7 +9,7 @@
     <div class="container">
         <div class="row text-center">
             <div class="col-md-12">
-                <h1 class="display-4">Recorded strains</h1>
+                <h1 class="display-4">Recorded serotypes</h1>
                 <p class="lead">
                     <!-- <i class="fas fa-map-marker"></i> {{listing.site}}</p> -->
             </div>
@@ -23,7 +23,7 @@
                 <li class="breadcrumb-item">
                     <a href="{%url 'index'%}">Home</a>
                 </li>
-                <li class="breadcrumb-item active">Strains
+                <li class="breadcrumb-item active">Serotypes
                 </li>
             </ol>
     </div>

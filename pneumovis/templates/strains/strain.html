@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 {% load humanize %}
 <!-- Dynamic page title -->
-{%block title%}| Strain {{ Serotype_autocolour }}{%endblock%}
+{%block title%}| Serotype {{ Serotype_autocolour }}{%endblock%}
 
 
 {%block content%}
@@ -9,7 +9,7 @@
     <div class="container">
         <div class="row text-center">
             <div class="col-md-12">
-                <h1 class="display-4">Strain: {{Serotype_autocolour }}</h1>
+                <h1 class="display-4">Serotype: {{Serotype_autocolour }}</h1>
                 <p class="lead">
                     <!-- <i class="fas fa-map-marker"></i> {{listing.site}}</p> -->
             </div>
@@ -24,7 +24,7 @@
                     <a href="{%url 'index'%}">Home</a>
                 </li>
                 <li class="breadcrumb-item">
-                    <a href="{%url 'strains'%}">Strains</a>
+                    <a href="{%url 'strains'%}">Serotypes</a>
                 </li>
                 <li class="breadcrumb-item active">{{Serotype_autocolour }}</li>
             </ol>
@@ -38,8 +38,9 @@
             <div class="container">
                 <h1 style="text-align:center">{{Serotype_autocolour}}</h1>
             </div>
-            <p align="center"> 
+            <p align="center"> Vaccinable (covered by PCV): Yes 
             </p>
+            <p align="center">Serotype 6A is one of the more common serotypes in this trial. It has similar structure to serotype 6C.</p>
             <p align="center">{{mess}}</p>
         </div>
     </div>
